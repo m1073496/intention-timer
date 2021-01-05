@@ -9,18 +9,38 @@
     <title>Intention Timer</title>
   </head>
   <body>
-    <header>
-      <h1 class="h1">Intention Timer</h1>
+    <header class="header">
+      <h1 id="h1">Intention Timer</h1>
     </header>
     <main class="main">
-      <article class="current-activity">
+      <section class="current-activity">
         <h2>New Activity</h2>
-        <form>
-        </form>
-      </article>
-      <article class="past-activity">
+        <article>
+          <h3>Select a category:</h3>
+          <form>
+            <p>Study</p> <!-- use box here rather than button -->
+            <p>Mediate</p> <!-- use box here rather than button -->
+            <p>Exercise</p> <!-- use box here rather than button -->
+          </form>
+          <form>
+            <p>What would you like to accomplish during this time?</p>
+          </form>
+          <form>
+            <p>Minutes</p>
+            <p>Seconds</p>
+            <!-- minutes input box -->
+            <!-- seconds input box -->
+          </form>
+          <section>
+            <button>START ACTIVITY</button>
+          </section>
+        </article>
+      </section>
+      <section class="past-activity">
         <h2>Past Activities</h2>
-      </article>
+          <p>You haven't logged any activities yet.</p>
+          <p>Complete the form to the left to get started!</p>
+      </section>
     </main>
     <script src="./Activity.js"></script>
     <script src="./main.js"></script>
