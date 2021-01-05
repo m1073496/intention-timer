@@ -1,0 +1,32 @@
+body {
+    margin: 0;
+    font-family: "Montserrat";
+}
+
+.header {
+    border: 0.5em solid black;
+    color: #FFF;
+    background-color: #46424D;
+    margin: 0;
+    text-align: center;
+}
+
+.main-container {
+    border: 0.5em solid black;
+
+}
+
+
+/* Colors
+Main background: #2B2733
+Text on main background: #CBC9CF
+Header, cards: #46424D
+Card shadow: #26222D
+Text on header and cards: #FFF
+Study: #B3FD78
+Meditate: #C278FD
+Exercise: #FD8078
+Error: #EFB7EC
+
+Fonts
+Montserrat, both 300 and 400 weights are used in the comp. You’ll need to link this in the HTML. */
