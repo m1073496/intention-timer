@@ -46,26 +46,31 @@ body {
 }
 
 .category-boxes {
+    border: 0.5em solid black;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    border: 0.5em solid black;
+
 }
 
 .accomplish-input {
-    display: flex;
     border: 0.5em solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;    
 }
 
 .time-input {
-    display: flex;
     border: 0.5em solid black;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-around;
 }
 
 .start-button {
+    border: 0.5em solid black;
     display: flex;
     justify-content: flex-end;
-    border: 0.5em solid black;
 }
 
 /* ---------------------PAST ACTIVITY SECTION--------------- */
