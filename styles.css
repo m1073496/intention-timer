@@ -63,11 +63,6 @@ form {
   font-weight: 400;
 }
 
-.category-text {
-  font-size: 1.1rem;
-  font-weight: 300;
-}
-
 .category-box-wrapper {
   display: flex;
   justify-content: space-between;
@@ -75,14 +70,21 @@ form {
 }
 
 .category-boxes {
-  border: 0.1em solid#FFF;
+  border: 0.15em solid#FFF;
+  border-radius: 5px;
   width: 10em;
   text-align: center;
 }
 
 .category-image {
-  width: 2em;
-  text-align: center;
+  width: 1.5em;
+  margin-top: 10px;
+}
+
+.category-text {
+  font-size: 1.1rem;
+  font-weight: 300;
+  margin: 0 0 10px 0;
 }
 
 .accomplish-input {
