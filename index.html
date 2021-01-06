@@ -15,27 +15,29 @@
     <main class="main-container">
       <section class="new-activity">
         <h2 class="h2">New Activity</h2>
-        <article class="category-container">
-          <form class="categories">
+        <form class="form">
+          <article class="categories">
             <h3 class="h3">Select a category:</h3>
-            <div class="category-boxes study-box">
-              <img class="category-image"src="./assets/study.svg">
-              <p class="category-text">Study</p>
-            </div>
-            <div class="category-boxes">
-              <img class="category-image"src="./assets/meditate.svg">
-              <p class="category-text">Meditate</p>
-            </div>
-            <div class="category-boxes exercise-box">
-              <img class="category-image b"src="./assets/exercise.svg">
-              <p class="category-text">Exercise</p>
-            </div>
-          </form>
-          <form class="accomplish-input">
+            <section class="category-box-wrapper">
+              <div class="category-boxes study-box">
+                <img class="category-image"src="./assets/study.svg">
+                <p class="category-text">Study</p>
+              </div>
+              <div class="category-boxes">
+                <img class="category-image"src="./assets/meditate.svg">
+                <p class="category-text">Meditate</p>
+              </div>
+              <div class="category-boxes exercise-box">
+                <img class="category-image b"src="./assets/exercise.svg">
+                <p class="category-text">Exercise</p>
+              </div>
+            </section>
+          </article>
+          <article class="accomplish-input">
             <h3 class="h3">What would you like to accomplish during this time?</h3>
             <input type="text" id="accomplish-input" value=""/>
-          </form>
-          <form class="time-input">
+          </article>
+          <article class="time-input">
             <div>
               <h3 class="h3">Minutes</h3>
               <input type="text" id="minutes-input" value=""/>
@@ -44,11 +46,11 @@
               <h3 class="h3">Seconds</h3>
               <input type="text" id="seconds-input" value=""/>
             </div>
-          </form>
-          <section class="start-button-wrapper">
+          </article>
+          <article class="start-button-wrapper">
             <button class="start-button">START ACTIVITY</button>
-          </section>
-        </article>
+          </article>
+        </form>
       </section>
       <section class="past-activity">
         <h2 class="h2">Past Activities</h2>

@@ -45,7 +45,7 @@ body {
   background-color:#2B2733;
 }
 
-.category-container {
+form {
   /* border: 0.5em solid black; */
   border-radius: 5px;
   display: flex;
@@ -68,28 +68,10 @@ body {
   font-weight: 300;
 }
 
-/* h3 {
-  width: 47vw;
-} */
-
-.categories {
-  /* border: 0.5em solid red; */
+.category-box-wrapper {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 47vw;
-}
-
-.study-box {
-  /* border: 0.5em solid red;
-  color: red; */
-  margin-right: auto;
-}
-
-.exercise-box {
-  /* border: 0.5em solid red;
-  color: red; */
-  margin-left: auto;
 }
 
 .category-boxes {
