@@ -1,18 +1,18 @@
 body {
-    margin: 0;
-    font-family: "Montserrat", sans-serif;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
 }
 
 /* ---------------------HEADER SECTION--------------- */
 .header {
-    /* border: 0.5em solid black; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    color: #FFF;
-    background-color: #46424D;
-    height: 8.5vh;
+  /* border: 0.5em solid black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  color: #FFF;
+  background-color: #46424D;
+  height: 8.5vh;
 }
 
 .h1 {
@@ -22,13 +22,13 @@ body {
 
 /* ---------------------MAIN SECTION--------------- */
 .main-container {
-    /* border: 0.5em solid black; */
-    display: flex;
-    flex-direction: row;
-    justify-content:space-between;
-    height: 91.5vh;
-    color: #FFF;
-    background-color: #46424D;
+  /* border: 0.5em solid black; */
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  height: 91.5vh;
+  color: #FFF;
+  background-color: #46424D;
 }
 
 .h2 {
@@ -38,98 +38,98 @@ body {
 
 /* ---------------------NEW ACTIVITY SECTION--------------- */
 .new-activity {
-    /* border: 0.5em solid black; */
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-    background-color:#2B2733;
+  /* border: 0.5em solid black; */
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  background-color:#2B2733;
 }
 
 .category-container {
-    /* border: 0.5em solid black; */
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items:center;
-    height: 75vh;
-    width: 95%;
-    margin-left: 1em;
-    background-color: #46424D;
+  /* border: 0.5em solid black; */
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items:center;
+  height: 75vh;
+  width: 95%;
+  margin-left: 1em;
+  background-color: #46424D;
 }
 
 .h3 {
-    font-size: 1.2rem;
-    font-weight: 400;
+  font-size: 1.2rem;
+  font-weight: 400;
 }
 
 .category-text {
-    font-size: 1.1rem;
-    font-weight: 300;
+  font-size: 1.1rem;
+  font-weight: 300;
 }
 
 /* h3 {
-    width: 47vw;
+  width: 47vw;
 } */
 
 .categories {
-    /* border: 0.5em solid red; */
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 47vw;
+  /* border: 0.5em solid red; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 47vw;
 }
 
 .study-box {
-    /* border: 0.5em solid red;
-    color: red; */
-    margin-right: auto;
+  /* border: 0.5em solid red;
+  color: red; */
+  margin-right: auto;
 }
 
 .exercise-box {
-    /* border: 0.5em solid red;
-    color: red; */
-    margin-left: auto;
+  /* border: 0.5em solid red;
+  color: red; */
+  margin-left: auto;
 }
 
 .category-boxes {
-    border: 0.1em solid#FFF;
-    width: 10em;
-    text-align: center;
+  border: 0.1em solid#FFF;
+  width: 10em;
+  text-align: center;
 }
 
 .category-image {
-    width: 2em;
-    text-align: center;
+  width: 2em;
+  text-align: center;
 }
 
 .accomplish-input {
-    /* border: 0.5em solid blue; */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    width: 47vw;
-    /* margin-left: 2.8em;    */
+  /* border: 0.5em solid blue; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 47vw;
+  /* margin-left: 2.8em;    */
 }
 
 .time-input {
-    /* border: 0.5em solid green; */
-    display: flex;
-    width: 47vw;
-    justify-content:space-between;
+  /* border: 0.5em solid green; */
+  display: flex;
+  width: 47vw;
+  justify-content:space-between;
 }
 
 #minutes-input,
 #seconds-input {
-    /* width: 22.7vw; */
-    margin-top: 1.5em;
+  /* width: 22.7vw; */
+  margin-top: 1.5em;
 }
 
 .start-button-wrapper {
-    /* border: 0.5em solid black; */
-    display: flex;
-    justify-content: flex-end;
-    width: 47vw;
+  /* border: 0.5em solid black; */
+  display: flex;
+  justify-content: flex-end;
+  width: 47vw;
 }
 
 .start-button {
@@ -139,9 +139,9 @@ body {
 
 /* ---------------------PAST ACTIVITY SECTION--------------- */
 .past-activity {
-    /* border: 0.5em solid black; */
-    width: 39.7%;
-    background-color:#2B2733;
+  /* border: 0.5em solid black; */
+  width: 39.7%;
+  background-color:#2B2733;
 }
 
 .activity-message {
