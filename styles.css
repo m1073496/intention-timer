@@ -37,20 +37,25 @@ body {
 
 .category-container {
     /* border: 0.5em solid black; */
+    border-radius: 5px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     height: 75vh;
     width: 95%;
+    margin-left: 1em;
     background-color: #46424D;
 }
 
+h3 {
+    margin-left: 2.5em;   
+}
+
 .categories {
-    border: 0.5em solid red;
+    /* border: 0.5em solid red; */
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-
 }
 
 .category-boxes {
@@ -65,23 +70,32 @@ body {
 }
 
 .accomplish-input {
-    border: 0.5em solid blue;
+    /* border: 0.5em solid blue; */
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;    
+    justify-content: space-evenly; 
+    margin-left: 2.8em;   
 }
 
 .time-input {
-    border: 0.5em solid green;
+    /* border: 0.5em solid green; */
     display: flex;
-    /* flex-direction: column; */
-    justify-content: space-around;
+    justify-content: space-evenly;
+    /* margin-left: 2.8em;
+    margin-right: 6em; */
+}
+
+#minutes-input,
+#seconds-input {
+    width: 22.7vw;
+    margin-top: 1.5em;
 }
 
 .start-button {
-    border: 0.5em solid black;
+    /* border: 0.5em solid black; */
     display: flex;
     justify-content: flex-end;
+    margin-right: 2.8em;
 }
 
 /* ---------------------PAST ACTIVITY SECTION--------------- */
