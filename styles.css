@@ -109,12 +109,12 @@ form {
 .minutes-input,
 .seconds-input,
 .accomplish-input {
+  background-color: #46424D;
   border-top: none;
   border-left: none;
   border-right: none;
   border-bottom: 0.15em solid #CBC9CF;
   width: 100%;
-  background-color: #46424D;
   color: #FFF;
   font-size: 1.25rem;
 }
