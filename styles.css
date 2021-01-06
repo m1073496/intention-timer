@@ -45,23 +45,34 @@ body {
     background-color: #46424D;
 }
 
-.category-boxes {
-    border: 0.5em solid black;
+.categories {
+    border: 0.5em solid red;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 
 }
 
+.category-boxes {
+    border: 0.1em solid#FFF;
+    width: 10em;
+    text-align: center;
+}
+
+.category-image {
+    width: 2em;
+    text-align: center;
+}
+
 .accomplish-input {
-    border: 0.5em solid black;
+    border: 0.5em solid blue;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;    
 }
 
 .time-input {
-    border: 0.5em solid black;
+    border: 0.5em solid green;
     display: flex;
     /* flex-direction: column; */
     justify-content: space-around;
