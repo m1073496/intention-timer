@@ -39,9 +39,9 @@ body {
 /* ---------------------NEW ACTIVITY SECTION--------------- */
 .new-activity {
   /* border: 0.5em solid black; */
-  display: flex;
-  flex-direction: column;
-  width: 60%;
+  border-right: 0.25em solid #46424D;
+  width: 67%;
+  padding: 0 25px 25px 35px;
   background-color:#2B2733;
 }
 
@@ -51,10 +51,10 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  align-items:center;
+  align-items: center;
   height: 75vh;
-  width: 95%;
-  margin-left: 1em;
+  width: 100%;
+  /* margin-left: 1em; */
   background-color: #46424D;
 }
 
@@ -71,7 +71,7 @@ form {
 .category-box-wrapper {
   display: flex;
   justify-content: space-between;
-  width: 47vw;
+  width: 45vw;
 }
 
 .category-boxes {
@@ -90,14 +90,14 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  width: 47vw;
+  width: 45vw;
   /* margin-left: 2.8em;    */
 }
 
 .time-input {
   /* border: 0.5em solid green; */
   display: flex;
-  width: 47vw;
+  width: 45vw;
   justify-content:space-between;
 }
 
@@ -111,25 +111,34 @@ form {
   /* border: 0.5em solid black; */
   display: flex;
   justify-content: flex-end;
-  width: 47vw;
+  width: 45vw;
 }
 
 .start-button {
+  border: none;
+  border-radius: 5px;
   font-size: 1rem;
   font-weight: 300;
+  padding: 10px 30px;
 }
 
 /* ---------------------PAST ACTIVITY SECTION--------------- */
 .past-activity {
   /* border: 0.5em solid black; */
-  width: 39.7%;
+  width: 33%;
+  padding: 0 25px 25px 35px;
   background-color:#2B2733;
+}
+
+.message-container {
+  padding: 25px 0;
 }
 
 .activity-message {
   font-size: 1rem;
   font-weight: 300;
   text-align: center;
+  margin: 10px 0;
 }
 
 
