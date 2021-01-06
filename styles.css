@@ -41,6 +41,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    align-items:center;
     height: 75vh;
     width: 95%;
     margin-left: 1em;
@@ -48,7 +49,7 @@ body {
 }
 
 h3 {
-    margin-left: 2.5em;   
+    width: 47vw;
 }
 
 .categories {
@@ -56,6 +57,19 @@ h3 {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    width: 47vw;
+}
+
+.study-box {
+    /* border: 0.5em solid red;
+    color: red; */
+    margin-right: auto;
+}
+
+.exercise-box {
+    /* border: 0.5em solid red;
+    color: red; */
+    margin-left: auto;
 }
 
 .category-boxes {
@@ -74,20 +88,20 @@ h3 {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly; 
-    margin-left: 2.8em;   
+    width: 47vw;
+    /* margin-left: 2.8em;    */
 }
 
 .time-input {
     /* border: 0.5em solid green; */
     display: flex;
-    justify-content: space-evenly;
-    /* margin-left: 2.8em;
-    margin-right: 6em; */
+    width: 47vw;
+    justify-content:space-between;
 }
 
 #minutes-input,
 #seconds-input {
-    width: 22.7vw;
+    /* width: 22.7vw; */
     margin-top: 1.5em;
 }
 
@@ -95,7 +109,7 @@ h3 {
     /* border: 0.5em solid black; */
     display: flex;
     justify-content: flex-end;
-    margin-right: 2.8em;
+    width: 47vw;
 }
 
 /* ---------------------PAST ACTIVITY SECTION--------------- */
