@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: "Montserrat";
+    font-family: "Montserrat", sans-serif;
 }
 
 /* ---------------------HEADER SECTION--------------- */
@@ -12,7 +12,12 @@ body {
     margin: 0;
     color: #FFF;
     background-color: #46424D;
-    height: 10vh;
+    height: 8.5vh;
+}
+
+.h1 {
+  font-size: 1.35rem;
+  font-weight: 300;
 }
 
 /* ---------------------MAIN SECTION--------------- */
@@ -21,9 +26,14 @@ body {
     display: flex;
     flex-direction: row;
     justify-content:space-between;
-    height: 95vh;
+    height: 91.5vh;
     color: #FFF;
     background-color: #46424D;
+}
+
+.h2 {
+  font-size: 1.5rem;
+  font-weight: 300;
 }
 
 /* ---------------------NEW ACTIVITY SECTION--------------- */
@@ -48,9 +58,19 @@ body {
     background-color: #46424D;
 }
 
-h3 {
-    width: 47vw;
+.h3 {
+    font-size: 1.2rem;
+    font-weight: 400;
 }
+
+.category-text {
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+/* h3 {
+    width: 47vw;
+} */
 
 .categories {
     /* border: 0.5em solid red; */
@@ -87,7 +107,7 @@ h3 {
     /* border: 0.5em solid blue; */
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly; 
+    justify-content: space-evenly;
     width: 47vw;
     /* margin-left: 2.8em;    */
 }
@@ -105,11 +125,16 @@ h3 {
     margin-top: 1.5em;
 }
 
-.start-button {
+.start-button-wrapper {
     /* border: 0.5em solid black; */
     display: flex;
     justify-content: flex-end;
     width: 47vw;
+}
+
+.start-button {
+  font-size: 1rem;
+  font-weight: 300;
 }
 
 /* ---------------------PAST ACTIVITY SECTION--------------- */
@@ -117,6 +142,12 @@ h3 {
     /* border: 0.5em solid black; */
     width: 39.7%;
     background-color:#2B2733;
+}
+
+.activity-message {
+  font-size: 1rem;
+  font-weight: 300;
+  text-align: center;
 }
 
 
