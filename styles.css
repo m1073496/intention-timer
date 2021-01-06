@@ -9,13 +9,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 8.5vh;
   margin: 0;
   color: #FFF;
   background-color: #46424D;
-  height: 8.5vh;
 }
 
-.h1 {
+.title {
   font-size: 1.35rem;
   font-weight: 300;
 }
@@ -31,7 +31,7 @@ body {
   background-color: #46424D;
 }
 
-.h2 {
+.subhead {
   font-size: 1.5rem;
   font-weight: 300;
   color: #CBC9CF;
@@ -56,9 +56,10 @@ form {
   height: 75vh;
   width: 100%;
   background-color: #46424D;
+  box-shadow: 10px 10px 10px #26222D;
 }
 
-.h3 {
+.form-label {
   font-size: 1.2rem;
   font-weight: 400;
 }
@@ -82,9 +83,9 @@ form {
 }
 
 .category-text {
+  margin: 0 0 10px 0;
   font-size: 1.1rem;
   font-weight: 300;
-  margin: 0 0 10px 0;
 }
 
 .accomplish {
@@ -109,14 +110,12 @@ form {
 .minutes-input,
 .seconds-input,
 .accomplish-input {
-  background-color: #46424D;
-  border-top: none;
-  border-left: none;
-  border-right: none;
+  border: none;
   border-bottom: 0.15em solid #CBC9CF;
   width: 100%;
-  color: #FFF;
   font-size: 1.25rem;
+  color: #FFF;
+  background-color: #46424D;
 }
 
 .start-button-wrapper {
@@ -129,9 +128,10 @@ form {
 .start-button {
   border: none;
   border-radius: 5px;
+  height: 5vh;
+  padding: 10px 30px;
   font-size: 1rem;
   font-weight: 300;
-  padding: 10px 30px;
 }
 
 /* ---------------------PAST ACTIVITY SECTION--------------- */
