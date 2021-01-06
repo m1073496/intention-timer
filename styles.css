@@ -55,7 +55,6 @@ form {
   align-items: center;
   height: 75vh;
   width: 100%;
-  /* margin-left: 1em; */
   background-color: #46424D;
 }
 
@@ -94,7 +93,6 @@ form {
   flex-direction: column;
   justify-content: space-evenly;
   width: 45vw;
-  /* margin-left: 2.8em;    */
 }
 
 .time {
