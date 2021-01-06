@@ -3,17 +3,76 @@ body {
     font-family: "Montserrat";
 }
 
+/* ---------------------HEADER SECTION--------------- */
 .header {
-    border: 0.5em solid black;
+    /* border: 0.5em solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
     color: #FFF;
     background-color: #46424D;
-    margin: 0;
-    text-align: center;
+    height: 10vh;
 }
 
+/* ---------------------MAIN SECTION--------------- */
 .main-container {
-    border: 0.5em solid black;
+    /* border: 0.5em solid black; */
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    height: 95vh;
+    color: #FFF;
+    background-color: #46424D;
+}
 
+/* ---------------------NEW ACTIVITY SECTION--------------- */
+.new-activity {
+    /* border: 0.5em solid black; */
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    background-color:#2B2733;
+}
+
+.category-container {
+    /* border: 0.5em solid black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 75vh;
+    width: 95%;
+    background-color: #46424D;
+}
+
+.category-boxes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border: 0.5em solid black;
+}
+
+.accomplish-input {
+    display: flex;
+    border: 0.5em solid black;
+}
+
+.time-input {
+    display: flex;
+    border: 0.5em solid black;
+}
+
+.start-button {
+    display: flex;
+    justify-content: flex-end;
+    border: 0.5em solid black;
+}
+
+/* ---------------------PAST ACTIVITY SECTION--------------- */
+.past-activity {
+    /* border: 0.5em solid black; */
+    width: 39.7%;
+    background-color:#2B2733;
 }
 
 
