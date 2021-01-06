@@ -1,0 +1,135 @@
+body {
+    margin: 0;
+    font-family: "Montserrat";
+}
+
+/* ---------------------HEADER SECTION--------------- */
+.header {
+    /* border: 0.5em solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    color: #FFF;
+    background-color: #46424D;
+    height: 10vh;
+}
+
+/* ---------------------MAIN SECTION--------------- */
+.main-container {
+    /* border: 0.5em solid black; */
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    height: 95vh;
+    color: #FFF;
+    background-color: #46424D;
+}
+
+/* ---------------------NEW ACTIVITY SECTION--------------- */
+.new-activity {
+    /* border: 0.5em solid black; */
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    background-color:#2B2733;
+}
+
+.category-container {
+    /* border: 0.5em solid black; */
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items:center;
+    height: 75vh;
+    width: 95%;
+    margin-left: 1em;
+    background-color: #46424D;
+}
+
+h3 {
+    width: 47vw;
+}
+
+.categories {
+    /* border: 0.5em solid red; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 47vw;
+}
+
+.study-box {
+    /* border: 0.5em solid red;
+    color: red; */
+    margin-right: auto;
+}
+
+.exercise-box {
+    /* border: 0.5em solid red;
+    color: red; */
+    margin-left: auto;
+}
+
+.category-boxes {
+    border: 0.1em solid#FFF;
+    width: 10em;
+    text-align: center;
+}
+
+.category-image {
+    width: 2em;
+    text-align: center;
+}
+
+.accomplish-input {
+    /* border: 0.5em solid blue; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly; 
+    width: 47vw;
+    /* margin-left: 2.8em;    */
+}
+
+.time-input {
+    /* border: 0.5em solid green; */
+    display: flex;
+    width: 47vw;
+    justify-content:space-between;
+}
+
+#minutes-input,
+#seconds-input {
+    /* width: 22.7vw; */
+    margin-top: 1.5em;
+}
+
+.start-button {
+    /* border: 0.5em solid black; */
+    display: flex;
+    justify-content: flex-end;
+    width: 47vw;
+}
+
+/* ---------------------PAST ACTIVITY SECTION--------------- */
+.past-activity {
+    /* border: 0.5em solid black; */
+    width: 39.7%;
+    background-color:#2B2733;
+}
+
+
+/* Colors
+Main background: #2B2733
+Text on main background: #CBC9CF
+Header, cards: #46424D
+Card shadow: #26222D
+Text on header and cards: #FFF
+Study: #B3FD78
+Meditate: #C278FD
+Exercise: #FD8078
+Error: #EFB7EC
+
+Fonts
+Montserrat, both 300 and 400 weights are used in the comp. You’ll need to link this in the HTML. */

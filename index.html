@@ -5,22 +5,67 @@
     <meta charset="utf-8">
     <!-- insert font info here -->
     <link href="" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="./styles.css">
     <title>Intention Timer</title>
   </head>
   <body>
-    <header>
-      <h1 class="h1">Intention Timer</h1>
+    <header class="header">
+      <h1 id="h1">INTENTION TIMER</h1>
     </header>
-    <main class="main">
-      <article class="current-activity">
+    <main class="main-container">
+      <section class="new-activity">
         <h2>New Activity</h2>
-        <form>
-        </form>
-      </article>
-      <article class="past-activity">
+        <article class="category-container">
+          <h3>Select a category:</h3>
+          <form class="categories">
+            <div class="category-boxes study-box">
+              <img class="category-image"src="./assets/study.svg">
+              <p>Study</p> <!-- use box here rather than button -->
+            </div>
+            <div class="category-boxes">
+              <img class="category-image"src="./assets/meditate.svg">
+              <p>Meditate</p> <!-- use box here rather than button -->
+            </div>
+            <div class="category-boxes exercise-box">
+              <img class="category-image b"src="./assets/exercise.svg">
+              <p>Exercise</p> <!-- use box here rather than button -->
+            </div>
+          </form>
+          <form class="accomplish-input">
+            <p>What would you like to accomplish during this time?</p>
+            <p>
+              <label for="accomplish"></label>
+              <input type="text" id="accomplish-input" value=""/>
+            </p>
+          </form>
+          <form class="time-input">
+            <div>
+              <p>Minutes</p>
+              <p>
+                <label for="time"></label>
+                <input type="text" id="minutes-input" value=""/>
+              </p>
+            </div>
+            <div>
+              <p>Seconds</p>
+              <p>
+                <label for="time"></label>
+                <input type="text" id="seconds-input" value=""/>
+              </p>
+            </div>
+          </form>
+          <section class="start-button">
+            <button>START ACTIVITY</button>
+          </section>
+        </article>
+      </section>
+      <section class="past-activity">
         <h2>Past Activities</h2>
-      </article>
+          <p>You haven't logged any activities yet.</p>
+          <p>Complete the form to the left to get started!</p>
+      </section>
     </main>
     <script src="./Activity.js"></script>
     <script src="./main.js"></script>
