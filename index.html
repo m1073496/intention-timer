@@ -9,46 +9,43 @@
   </head>
   <body>
     <header class="header">
-      <h1 id="h1">INTENTION TIMER</h1>
+      <h1 class="h1">INTENTION TIMER</h1>
     </header>
     <main class="main-container">
       <section class="new-activity">
-        <h2>New Activity</h2>
+        <h2 class="h2">New Activity</h2>
         <article class="category-container">
-          <h3>Select a category:</h3>
+          <h3 class="h3">Select a category:</h3>
           <form class="categories">
             <div class="category-boxes study-box">
               <img class="category-image"src="./assets/study.svg">
-              <p>Study</p> <!-- use box here rather than button -->
+              <p class="category-text">Study</p>
             </div>
             <div class="category-boxes">
               <img class="category-image"src="./assets/meditate.svg">
-              <p>Meditate</p> <!-- use box here rather than button -->
+              <p class="category-text">Meditate</p>
             </div>
             <div class="category-boxes exercise-box">
               <img class="category-image b"src="./assets/exercise.svg">
-              <p>Exercise</p> <!-- use box here rather than button -->
+              <p class="category-text">Exercise</p>
             </div>
           </form>
           <form class="accomplish-input">
-            <p>What would you like to accomplish during this time?</p>
+            <h3 class="h3">What would you like to accomplish during this time?</h3>
             <p>
-              <label for="accomplish"></label>
               <input type="text" id="accomplish-input" value=""/>
             </p>
           </form>
           <form class="time-input">
             <div>
-              <p>Minutes</p>
+              <h3 class="h3">Minutes</h3>
               <p>
-                <label for="time"></label>
                 <input type="text" id="minutes-input" value=""/>
               </p>
             </div>
             <div>
-              <p>Seconds</p>
+              <h3 class="h3">Seconds</h3>
               <p>
-                <label for="time"></label>
                 <input type="text" id="seconds-input" value=""/>
               </p>
             </div>
@@ -59,9 +56,9 @@
         </article>
       </section>
       <section class="past-activity">
-        <h2>Past Activities</h2>
-        <p>You haven't logged any activities yet.</p>
-        <p>Complete the form to the left to get started!</p>
+        <h2 class="h2">Past Activities</h2>
+        <p class="activity-message">You haven't logged any activities yet.</p>
+        <p class="activity-message">Complete the form to the left to get started!</p>
       </section>
     </main>
     <script src="./Activity.js"></script>
