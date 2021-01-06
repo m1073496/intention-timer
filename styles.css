@@ -87,7 +87,7 @@ form {
   margin: 0 0 10px 0;
 }
 
-.accomplish-input {
+.accomplish {
   /* border: 0.5em solid blue; */
   display: flex;
   flex-direction: column;
@@ -96,7 +96,7 @@ form {
   /* margin-left: 2.8em;    */
 }
 
-.time-input {
+.time {
   /* border: 0.5em solid green; */
   display: flex;
   width: 45vw;
