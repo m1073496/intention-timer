@@ -98,13 +98,16 @@ form {
   /* border: 0.5em solid green; */
   display: flex;
   width: 45vw;
-  justify-content:space-between;
+  justify-content: space-between;
+}
+
+.time-container {
+  flex-basis: 40%;
 }
 
 #minutes-input,
 #seconds-input {
-  /* width: 22.7vw; */
-  margin-top: 1.5em;
+  width: 100%;
 }
 
 .start-button-wrapper {
