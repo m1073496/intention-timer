@@ -21,7 +21,9 @@ startActivityButton.addEventListener('click', startButtonEvents);
 //Add functions below
 function startButtonEvents(event) {
   event.preventDefault();
-  checkInputValidity();
+  if (checkInputValidity()) {
+    createNewActivity();
+  }
   // var getActivityInput = {
   //   activity: "Exercise", //need to pull value based on clicked button
   //   accomplishDescription: accomplishInput.value,
@@ -34,14 +36,23 @@ function startButtonEvents(event) {
 
 function checkInputValidity() {
   if (accomplishInput.value === "") {
-      alert('Please enter description');
+     alert('Please enter description');
+     return false;
   } else if (!minutesInput.value == true || isNaN(minutesInput.value)) {
-      alert('Please enter valid minutes input');
+     alert('Please enter valid minutes input');
+     return false;
   } else if (!secondsInput.value == true || isNaN(secondsInput.value) || secondsInput.value > 59) {
-      alert(`Please enter valid seconds input`);
-  };
+     alert(`Please enter valid seconds input`);
+     return false;
+  } else {
+      return true;
+  }
 };
 
+function createNewActivity(event) {
+  var newActivity = new Activity(event.target.innerText, accomplishInput.value, minutesInput.value, secondsInput.value);
+  console.log(newActivity);
+};
 
 // function alertNoInput(dataModel) {
 //   // console.log('test=', !isNaN(`${dataModel.minutes}`));
