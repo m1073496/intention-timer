@@ -43,15 +43,19 @@ body, html {
   background-color:#2B2733;
 }
 
-form {
+.category-timer-wrapper {
   border-radius: 5px;
+  height: 75vh;
+  background-color: #46424D;
+  box-shadow: 10px 10px 10px #26222D;
+}
+
+form {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  height: 75vh;
-  background-color: #46424D;
-  box-shadow: 10px 10px 10px #26222D;
+  height: 100%;
 }
 
 .form-label {

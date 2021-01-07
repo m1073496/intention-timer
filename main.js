@@ -1,4 +1,5 @@
 //Add targeting variables below
+var activityInputForm = document.querySelector('form');
 var categoryBoxWrapper = document.querySelector('.category-box-wrapper');
 var studyBox = document.querySelector('.study-box');
 var studyImage = document.querySelector('.study-image');
@@ -22,7 +23,7 @@ startActivityButton.addEventListener('click', startButtonEvents);
 function startButtonEvents(event) {
   event.preventDefault();
   var getActivityInput = {
-    activity: "Exercise", //need to pull value based on clicked button
+    activity: studyBox.innerText, //"Exercise", //need to pull value based on clicked button
     accomplishDescription: accomplishInput.value,
     minutes: minutesInput.value,
     seconds: secondsInput.value,
@@ -42,6 +43,7 @@ function alertNoInput(dataModel) {
     {
       return alert(`Please input all information`);
     } else {
+      activityInputForm.classList.add('hidden');  
       //create activity instance x = new Activity 
       //push activity instance to an array to save for later
       console.log(dataModel);
@@ -140,3 +142,13 @@ function selectExerciseBox() {
 //OTHER OUT OF SCOPE
 //Capture Input for activity box in activity object
 //Push object to Activity class vs individual strings
+
+
+// When the Start Activity button is clicked, the user should no 
+// longer see the form, and instead see a timer clock. The timer 
+// clock should display the user-provided minutes and seconds, as 
+// well as the description. The category should not appear, but 
+// the outline of the circle should match the color associated 
+// with the category.
+
+//1) hide something...
