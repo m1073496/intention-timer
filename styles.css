@@ -1,16 +1,14 @@
-body {
+body, html {
   margin: 0;
   font-family: "Montserrat", sans-serif;
 }
 
 /* ---------------------HEADER SECTION--------------- */
 .header {
-  /* border: 0.5em solid black; */
   display: flex;
   justify-content: center;
   align-items: center;
   height: 8.5vh;
-  margin: 0;
   color: #FFF;
   background-color: #46424D;
 }
@@ -20,9 +18,8 @@ body {
   font-weight: 300;
 }
 
-/* ---------------------MAIN SECTION--------------- */
+/* ---------------------LEFT-HAND CONTAINER--------------- */
 .main-container {
-  /* border: 0.5em solid black; */
   display: flex;
   flex-direction: row;
   justify-content:space-between;
@@ -32,29 +29,27 @@ body {
 }
 
 .subhead {
-  font-size: 1.5rem;
+  margin-top: 25px;
+  margin-bottom: 10px;
   font-weight: 300;
   color: #CBC9CF;
 }
 
 /* ---------------------NEW ACTIVITY SECTION--------------- */
 .new-activity {
-  /* border: 0.5em solid black; */
   border-right: 0.25em solid #46424D;
   width: 67%;
-  padding: 0 25px 25px 35px;
+  padding: 0 25px 25px 25px;
   background-color:#2B2733;
 }
 
 form {
-  /* border: 0.5em solid black; */
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   height: 75vh;
-  width: 100%;
   background-color: #46424D;
   box-shadow: 10px 10px 10px #26222D;
 }
@@ -64,6 +59,7 @@ form {
   font-weight: 400;
 }
 
+/* --------------------CATEGORY FORM---------------------- */
 .category-box-wrapper {
   display: flex;
   justify-content: space-between;
@@ -85,19 +81,18 @@ form {
 .category-text {
   margin: 0 0 10px 0;
   font-size: 1.1rem;
-  font-weight: 300;
 }
 
+/* --------------------ACCOMPLISH FORM-------------------- */
 .accomplish {
-  /* border: 0.5em solid blue; */
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   width: 45vw;
 }
 
+/* ----------------------TIMING FORM---------------------- */
 .time {
-  /* border: 0.5em solid green; */
   display: flex;
   width: 45vw;
   justify-content: space-between;
@@ -112,14 +107,18 @@ form {
 .accomplish-input {
   border: none;
   border-bottom: 0.15em solid #CBC9CF;
-  width: 100%;
+  width: 98.3%;
   font-size: 1.25rem;
   color: #FFF;
   background-color: #46424D;
 }
 
+.accomplish-input {
+  width: 99.3%;
+}
+
+/* -----------------START ACTIVITY BUTTON----------------- */
 .start-button-wrapper {
-  /* border: 0.5em solid black; */
   display: flex;
   justify-content: flex-end;
   width: 45vw;
@@ -134,11 +133,10 @@ form {
   font-weight: 300;
 }
 
-/* ---------------------PAST ACTIVITY SECTION--------------- */
+/* -----------------RIGHT-HAND CONTAINER------------------ */
 .past-activity {
-  /* border: 0.5em solid black; */
   width: 33%;
-  padding: 0 25px 25px 35px;
+  padding: 0 25px 25px 25px;
   background-color:#2B2733;
 }
 
