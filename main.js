@@ -1,6 +1,8 @@
+//Add targeting variables below
 var categoryBoxWrapper = document.querySelector('.category-box-wrapper');
 var studyBox = document.querySelector('.study-box');
 var studyImage = document.querySelector('.study-image');
+var studyText = document.querySelector('.study-text');
 var studyImageActive = document.querySelector('.study-image-active');
 var meditateBox = document.querySelector('.meditate-box');
 var meditateImage = document.querySelector('.meditate-image');
@@ -8,13 +10,44 @@ var meditateImageActive = document.querySelector('.meditate-image-active');
 var exerciseBox = document.querySelector('.exercise-box');
 var exerciseImage = document.querySelector('.exercise-image');
 var exerciseImageActive = document.querySelector('.exercise-image-active');
-var minutesInput = document.querySelector('.minutes-input');
-var secondsInput = document.querySelector('.seconds-input');
+var accomplishInput = document.querySelector('#accomplishInput');
+var minutesInput = document.querySelector('#minutesInput');
+var secondsInput = document.querySelector('#secondsInput');
+var startActivityButton = document.querySelector('.start-button');
 
-
-
+//Add event listeners below
 categoryBoxWrapper.addEventListener('click', activateCategory);
+startActivityButton.addEventListener('click', startButtonEvents);
 
+//Add functions below
+function startButtonEvents(event) {
+  event.preventDefault();
+  var getActivityInput = {
+    activity: "Exercise", //need to pull value based on clicked button
+    accomplishDescription: accomplishInput.value,
+    minutes: minutesInput.value,
+    seconds: secondsInput.value,
+  };
+  alertNoInput(getActivityInput);
+  // console.log(event);
+};
+
+function alertNoInput(dataModel) {
+  // console.log('test=', !isNaN(`${dataModel.minutes}`));
+  if (
+    `${dataModel.accomplishDescription}` === "" || 
+    (`${dataModel.minutes}` === "" || isNaN(`${dataModel.minutes}`)) ||
+    `${dataModel.seconds}` === "" || isNaN(`${dataModel.seconds}`)
+    //need validation for the activity box
+    )
+    {
+      return alert(`Please input all information`);
+    } else {
+      //create activity instance x = new Activity 
+      //push activity instance to an array to save for later
+      console.log(dataModel);
+    };
+  };
 
 function activateCategory(event) {
   if (event.target.classList.contains('study-box') || 
