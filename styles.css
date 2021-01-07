@@ -84,14 +84,17 @@ form {
 }
 
 .study-border {
+  color: #B3FD78;
   border-color: #B3FD78;
 }
 
 .meditate-border {
+  color: #C278FD;
   border-color: #C278FD;
 }
 
 .exercise-border {
+  color: #FD8078;
   border-color: #FD8078;
 }
 
