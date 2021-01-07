@@ -8,6 +8,9 @@ var meditateImageActive = document.querySelector('.meditate-image-active');
 var exerciseBox = document.querySelector('.exercise-box');
 var exerciseImage = document.querySelector('.exercise-image');
 var exerciseImageActive = document.querySelector('.exercise-image-active');
+var minutesInput = document.querySelector('.minutes-input');
+var secondsInput = document.querySelector('.seconds-input');
+
 
 
 categoryBoxWrapper.addEventListener('click', activateCategory);
