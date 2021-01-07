@@ -35,7 +35,7 @@ function submitForm() {
 };
 
 function checkInputValidity() {
-  if (accomplishInput.value === "") {
+  if (!accomplishInput.value == true) {
      alert('Please enter description');
      return false;
   } else if (!minutesInput.value == true || isNaN(minutesInput.value)) {
