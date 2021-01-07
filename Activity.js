@@ -13,9 +13,7 @@ class Activity {
   }
 
   markComplete() {
-    if (this.minutes == 0 && this.seconds == 0) {
-      this.completed = true;
-    };
+
   }
 
   saveToStorage() {
