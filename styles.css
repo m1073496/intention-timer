@@ -1,0 +1,168 @@
+body, html {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* ---------------------HEADER SECTION--------------- */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 8.5vh;
+  color: #FFF;
+  background-color: #46424D;
+}
+
+.title {
+  font-size: 1.35rem;
+  font-weight: 300;
+}
+
+/* ---------------------LEFT-HAND CONTAINER--------------- */
+.main-container {
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  height: 91.5vh;
+  color: #FFF;
+  background-color: #46424D;
+}
+
+.subhead {
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-weight: 300;
+  color: #CBC9CF;
+}
+
+/* ---------------------NEW ACTIVITY SECTION--------------- */
+.new-activity {
+  border-right: 0.25em solid #46424D;
+  width: 67%;
+  padding: 0 25px 25px 25px;
+  background-color:#2B2733;
+}
+
+form {
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 75vh;
+  background-color: #46424D;
+  box-shadow: 10px 10px 10px #26222D;
+}
+
+.form-label {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+/* --------------------CATEGORY FORM---------------------- */
+.category-box-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 45vw;
+}
+
+.category-boxes {
+  border: 0.15em solid#FFF;
+  border-radius: 5px;
+  width: 10em;
+  text-align: center;
+}
+
+.category-image {
+  width: 1.5em;
+  margin-top: 10px;
+}
+
+.category-text {
+  margin: 0 0 10px 0;
+  font-size: 1.1rem;
+}
+
+/* --------------------ACCOMPLISH FORM-------------------- */
+.accomplish {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 45vw;
+}
+
+/* ----------------------TIMING FORM---------------------- */
+.time {
+  display: flex;
+  width: 45vw;
+  justify-content: space-between;
+}
+
+.time-container {
+  flex-basis: 40%;
+}
+
+.minutes-input,
+.seconds-input,
+.accomplish-input {
+  border: none;
+  border-bottom: 0.15em solid #CBC9CF;
+  width: 98.3%;
+  font-size: 1.25rem;
+  color: #FFF;
+  background-color: #46424D;
+}
+
+.accomplish-input {
+  width: 99.3%;
+}
+
+/* -----------------START ACTIVITY BUTTON----------------- */
+.start-button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  width: 45vw;
+}
+
+.start-button {
+  border: none;
+  border-radius: 5px;
+  height: 5vh;
+  padding: 10px 30px;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+/* -----------------RIGHT-HAND CONTAINER------------------ */
+.past-activity {
+  width: 33%;
+  padding: 0 25px 25px 25px;
+  background-color:#2B2733;
+}
+
+.message-container {
+  padding: 25px 0;
+}
+
+.activity-message {
+  font-size: 1rem;
+  font-weight: 300;
+  text-align: center;
+  margin: 10px 0;
+  color: #CBC9CF;
+}
+
+
+/* Colors
+Main background: #2B2733
+Text on main background: #CBC9CF
+Header, cards: #46424D
+Card shadow: #26222D
+Text on header and cards: #FFF
+Study: #B3FD78
+Meditate: #C278FD
+Exercise: #FD8078
+Error: #EFB7EC
+
+Fonts
+Montserrat, both 300 and 400 weights are used in the comp. You’ll need to link this in the HTML. */
