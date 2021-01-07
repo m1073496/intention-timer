@@ -21,45 +21,57 @@ startActivityButton.addEventListener('click', startButtonEvents);
 //Add functions below
 function startButtonEvents(event) {
   event.preventDefault();
-  var getActivityInput = {
-    activity: "Exercise", //need to pull value based on clicked button
-    accomplishDescription: accomplishInput.value,
-    minutes: minutesInput.value,
-    seconds: secondsInput.value,
-  };
-  alertNoInput(getActivityInput);
+  checkInputValidity();
+  // var getActivityInput = {
+  //   activity: "Exercise", //need to pull value based on clicked button
+  //   accomplishDescription: accomplishInput.value,
+  //   minutes: minutesInput.value,
+  //   seconds: secondsInput.value,
+  // };
+  // alertNoInput(getActivityInput);
   // console.log(event);
 };
 
-function alertNoInput(dataModel) {
-  // console.log('test=', !isNaN(`${dataModel.minutes}`));
-  if (
-    `${dataModel.accomplishDescription}` === "" || 
-    (`${dataModel.minutes}` === "" || isNaN(`${dataModel.minutes}`)) ||
-    `${dataModel.seconds}` === "" || isNaN(`${dataModel.seconds}`)
-    //need validation for the activity box
-    )
-    {
-      return alert(`Please input all information`);
-    } else {
-      //create activity instance x = new Activity 
-      //push activity instance to an array to save for later
-      console.log(dataModel);
-    };
+function checkInputValidity() {
+  if (accomplishInput.value === "") {
+      alert('Please enter description');
+  } else if (!minutesInput.value == true || isNaN(minutesInput.value)) {
+      alert('Please enter valid minutes input');
+  } else if (!secondsInput.value == true || isNaN(secondsInput.value) || secondsInput.value > 59) {
+      alert(`Please enter valid seconds input`);
   };
+};
+
+
+// function alertNoInput(dataModel) {
+//   // console.log('test=', !isNaN(`${dataModel.minutes}`));
+//   if (
+//     `${dataModel.accomplishDescription}` === "" ||
+//     (`${dataModel.minutes}` === "" || isNaN(`${dataModel.minutes}`)) ||
+//     `${dataModel.seconds}` === "" || isNaN(`${dataModel.seconds}`)
+//     //need validation for the activity box
+//     )
+//     {
+//       return alert(`Please input all information`);
+//     } else {
+//       //create activity instance x = new Activity
+//       //push activity instance to an array to save for later
+//       console.log(dataModel);
+//     };
+//   };
 
 function activateCategory(event) {
-  if (event.target.classList.contains('study-box') || 
+  if (event.target.classList.contains('study-box') ||
     event.target.classList.contains('study-image')) {
     selectStudyBox();
     console.log(studyBox.innerText);
     return studyBox.innerText;
-  } else if (event.target.classList.contains('meditate-box')|| 
+  } else if (event.target.classList.contains('meditate-box')||
     event.target.classList.contains('meditate-image')) {
     selectMeditateBox();
     console.log(meditateBox.innerText);
     return meditateBox.innerText;
-  } else if (event.target.classList.contains('exercise-box')|| 
+  } else if (event.target.classList.contains('exercise-box')||
     event.target.classList.contains('exercise-image')) {
     selectExerciseBox();
     console.log(exerciseBox.innerText);
@@ -114,11 +126,11 @@ function selectExerciseBox() {
 //3a) address lack of click me on the text              TBD
 //4) should only be able to select one box at a time    DONE
 
-// Bullet #2: 
-// An input field should be provided for What would you like to 
-// accomplish during this time?, minutes and seconds. The minutes 
-// and seconds fields should only accept numbers. (Hint: more than 
-// one layer should probably be put into place to ensure this. Make 
+// Bullet #2:
+// An input field should be provided for What would you like to
+// accomplish during this time?, minutes and seconds. The minutes
+// and seconds fields should only accept numbers. (Hint: more than
+// one layer should probably be put into place to ensure this. Make
 // sure that e cannot be accepted.)
 
 //Input for accomplish box
@@ -135,7 +147,7 @@ function selectExerciseBox() {
 //4) Validation === "" code validation                  DONE
 //5) Validation === numbers only placeholder text       NO
 //6) Validation === numbers only code validation        DONE
-//7) validation for e     
+//7) validation for e
 
 //OTHER OUT OF SCOPE
 //Capture Input for activity box in activity object
