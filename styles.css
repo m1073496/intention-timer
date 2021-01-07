@@ -138,10 +138,13 @@ form {
 
 /* ---------------------PAST ACTIVITY SECTION--------------- */
 .past-activity {
-  /* border: 0.5em solid black; */
   width: 33%;
   padding: 0 25px 25px 35px;
   background-color:#2B2733;
+}
+
+.top {
+  margin-left: -8px;
 }
 
 .message-container {
