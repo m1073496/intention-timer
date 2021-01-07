@@ -153,6 +153,15 @@ form {
 }
 
 
+/* -----------------HIDE THINGS------------------ */
+
+.hidden {
+  display: none;
+}
+
+
+/* -----------------SPEC DETAILS------------------ */
+
 /* Colors
 Main background: #2B2733
 Text on main background: #CBC9CF
