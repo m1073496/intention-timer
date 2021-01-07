@@ -24,17 +24,10 @@ function submitForm() {
   if (checkInputValidity()) {
     createNewActivity();
   }
-  // var getActivityInput = {
-  //   activity: "Exercise", //need to pull value based on clicked button
-  //   accomplishDescription: accomplishInput.value,
-  //   minutes: minutesInput.value,
-  //   seconds: secondsInput.value,
-  // };
-  // alertNoInput(getActivityInput);
-  // console.log(event);
 };
 
 function checkInputValidity() {
+  //validation for activity boxes
   if (!accomplishInput.value == true) {
      alert('Please enter description');
      return false;
@@ -52,24 +45,8 @@ function checkInputValidity() {
 function createNewActivity(event) {
   var newActivity = new Activity("Exercise", accomplishInput.value, minutesInput.value, secondsInput.value);
   console.log(newActivity);
+  //save activities in localStorage or array??
 };
-
-// function alertNoInput(dataModel) {
-//   // console.log('test=', !isNaN(`${dataModel.minutes}`));
-//   if (
-//     `${dataModel.accomplishDescription}` === "" ||
-//     (`${dataModel.minutes}` === "" || isNaN(`${dataModel.minutes}`)) ||
-//     `${dataModel.seconds}` === "" || isNaN(`${dataModel.seconds}`)
-//     //need validation for the activity box
-//     )
-//     {
-//       return alert(`Please input all information`);
-//     } else {
-//       //create activity instance x = new Activity
-//       //push activity instance to an array to save for later
-//       console.log(dataModel);
-//     };
-//   };
 
 function activateCategory(event) {
   if (event.target.classList.contains('study-box') ||
