@@ -2,7 +2,6 @@
 var categoryBoxWrapper = document.querySelector('.category-box-wrapper');
 var studyBox = document.querySelector('.study-box');
 var studyImage = document.querySelector('.study-image');
-var studyText = document.querySelector('.study-text');
 var studyImageActive = document.querySelector('.study-image-active');
 var meditateBox = document.querySelector('.meditate-box');
 var meditateImage = document.querySelector('.meditate-image');
