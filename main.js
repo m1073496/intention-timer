@@ -14,6 +14,11 @@ var minutesInput = document.querySelector('#minutesInput');
 var secondsInput = document.querySelector('#secondsInput');
 var startActivityButton = document.querySelector('.start-button');
 
+
+var currentActivity;
+//currentActivity will get pushed to pastActivities array when property "completed" is marked true
+var pastActivities = [];
+
 //Add event listeners below
 categoryBoxWrapper.addEventListener('click', activateCategory);
 startActivityButton.addEventListener('click', submitForm);
@@ -42,9 +47,9 @@ function checkInputValidity() {
   }
 };
 
-function createNewActivity(event) {
-  var newActivity = new Activity("Exercise", accomplishInput.value, minutesInput.value, secondsInput.value);
-  console.log(newActivity);
+function createNewActivity() {
+  currentActivity = new Activity("Exercise", accomplishInput.value, minutesInput.value, secondsInput.value);
+  console.log(currentActivity);
   //save activities in localStorage or array??
 };
 
