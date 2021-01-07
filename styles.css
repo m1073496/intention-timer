@@ -83,6 +83,18 @@ form {
   font-size: 1.1rem;
 }
 
+.study-border {
+  border-color: #B3FD78;
+}
+
+.meditate-border {
+  border-color: #C278FD;
+}
+
+.exercise-border {
+  border-color: #FD8078;
+}
+
 /* --------------------ACCOMPLISH FORM-------------------- */
 .accomplish {
   display: flex;
@@ -152,6 +164,15 @@ form {
   color: #CBC9CF;
 }
 
+
+/* -----------------HIDE THINGS------------------ */
+
+.hidden {
+  display: none;
+}
+
+
+/* -----------------SPEC DETAILS------------------ */
 
 /* Colors
 Main background: #2B2733
