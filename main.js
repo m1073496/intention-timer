@@ -16,10 +16,10 @@ var startActivityButton = document.querySelector('.start-button');
 
 //Add event listeners below
 categoryBoxWrapper.addEventListener('click', activateCategory);
-startActivityButton.addEventListener('click', startButtonEvents);
+startActivityButton.addEventListener('click', submitForm);
 
 //Add functions below
-function startButtonEvents(event) {
+function submitForm() {
   event.preventDefault();
   if (checkInputValidity()) {
     createNewActivity();
@@ -50,7 +50,7 @@ function checkInputValidity() {
 };
 
 function createNewActivity(event) {
-  var newActivity = new Activity(event.target.innerText, accomplishInput.value, minutesInput.value, secondsInput.value);
+  var newActivity = new Activity("Exercise", accomplishInput.value, minutesInput.value, secondsInput.value);
   console.log(newActivity);
 };
 
