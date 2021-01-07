@@ -113,6 +113,10 @@ form {
   background-color: #46424D;
 }
 
+.accomplish-input {
+  width: 99%;
+}
+
 /* -----------------START ACTIVITY BUTTON----------------- */
 .start-button-wrapper {
   display: flex;
