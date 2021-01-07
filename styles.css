@@ -1,11 +1,10 @@
-body {
+body, html {
   margin: 0;
   font-family: "Montserrat", sans-serif;
 }
 
 /* ---------------------HEADER SECTION--------------- */
 .header {
-  /* border: 0.5em solid black; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,9 +19,8 @@ body {
   font-weight: 300;
 }
 
-/* ---------------------MAIN SECTION--------------- */
+/* ---------------------LEFT-HAND CONTAINER--------------- */
 .main-container {
-  /* border: 0.5em solid black; */
   display: flex;
   flex-direction: row;
   justify-content:space-between;
@@ -41,7 +39,6 @@ body {
 
 /* ---------------------NEW ACTIVITY SECTION--------------- */
 .new-activity {
-  /* border: 0.5em solid black; */
   border-right: 0.25em solid #46424D;
   width: 67%;
   padding: 0 25px 25px 35px;
@@ -49,7 +46,6 @@ body {
 }
 
 form {
-  /* border: 0.5em solid black; */
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -66,6 +62,7 @@ form {
   font-weight: 400;
 }
 
+/* --------------------CATEGORY FORM---------------------- */
 .category-box-wrapper {
   display: flex;
   justify-content: space-between;
@@ -90,16 +87,16 @@ form {
   font-weight: 300;
 }
 
+/* --------------------ACCOMPLISH FORM-------------------- */
 .accomplish {
-  /* border: 0.5em solid blue; */
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   width: 45vw;
 }
 
+/* ----------------------TIMING FORM---------------------- */
 .time {
-  /* border: 0.5em solid green; */
   display: flex;
   width: 45vw;
   justify-content: space-between;
@@ -120,8 +117,8 @@ form {
   background-color: #46424D;
 }
 
+/* -----------------START ACTIVITY BUTTON----------------- */
 .start-button-wrapper {
-  /* border: 0.5em solid black; */
   display: flex;
   justify-content: flex-end;
   width: 45vw;
@@ -136,7 +133,7 @@ form {
   font-weight: 300;
 }
 
-/* ---------------------PAST ACTIVITY SECTION--------------- */
+/* -----------------RIGHT-HAND CONTAINER------------------ */
 .past-activity {
   width: 33%;
   padding: 0 25px 25px 35px;
