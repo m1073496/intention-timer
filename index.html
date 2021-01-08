@@ -43,19 +43,35 @@
                     <p class="category-text">Exercise</p>
                   </div>
                 </section>
+                <div class="category-warning hidden">
+                  <img class="error-icon" src="./assets/warning.svg" alt="Error">
+                  <p>An activity category is required.</p>
+                </div>
               </article>
               <article class="accomplish">
                 <h3 class="form-label">What would you like to accomplish during this time?</h3>
                 <input type="text" class="accomplish-input" id="accomplishInput"/>
+                <div class="category-warning hidden">
+                  <img class="error-icon" src="./assets/warning.svg" alt="Error">
+                  <p>An activity description is required.</p>
+                </div>
               </article>
               <article class="time">
                 <div class="time-container">
                   <h3 class="form-label">Minutes</h3>
                   <input type="text" class="minutes-input" id="minutesInput"/>
+                  <div class="category-warning hidden">
+                    <img class="error-icon" src="./assets/warning.svg" alt="Error">
+                    <p>A number is required.</p>
+                  </div>
                 </div>
                 <div class="time-container">
                   <h3 class="form-label">Seconds</h3>
                   <input type="text" class="seconds-input" id="secondsInput"/>
+                  <div class="category-warning hidden">
+                    <img class="error-icon" src="./assets/warning.svg" alt="Error">
+                    <p>A number is required.</p>
+                  </div>
                 </div>
               </article>
               <article class="start-button-wrapper">
