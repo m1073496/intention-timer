@@ -40,7 +40,7 @@ body, html {
   border-right: 0.25em solid #46424D;
   width: 67%;
   padding: 0 25px 25px 25px;
-  background-color:#2B2733;
+  background-color: #2B2733;
 }
 
 form {
@@ -99,6 +99,11 @@ form {
 }
 
 /* --------------------ACCOMPLISH FORM-------------------- */
+.error-warning {
+  width: 3.5vh;
+  /* background-color: #46424D; */
+}
+
 .accomplish {
   display: flex;
   flex-direction: column;
