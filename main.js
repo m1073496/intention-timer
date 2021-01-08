@@ -38,8 +38,8 @@ function submitForm() {
   event.preventDefault();
   if (checkInputValidity()) {
     createNewActivity();
-    activityInputForm.classList.add('hidden');
-    timerBoxWrapper.classList.remove('hidden');
+    hide(activityInputForm);
+    show(timerBoxWrapper);
   };
 };
 
@@ -89,11 +89,11 @@ function selectStudyBox() {
   studyImage.classList.toggle('hidden');
   studyImageActive.classList.toggle('hidden');
   studyBox.classList.toggle('study-border');
-  meditateImage.classList.remove('hidden');
-  meditateImageActive.classList.add('hidden');
+  show(meditateImage);
+  hide(meditateImageActive);
   meditateBox.classList.remove('meditate-border');
-  exerciseImage.classList.remove('hidden');
-  exerciseImageActive.classList.add('hidden');
+  show(exerciseImage);
+  hide(exerciseImageActive);
   exerciseBox.classList.remove('exercise-border');
   document.querySelector('.start-circle-text').style.borderColor = "#B3FD78";
   //will need to return a value that this is clicked
@@ -103,11 +103,11 @@ function selectMeditateBox() {
   meditateImage.classList.toggle('hidden');
   meditateImageActive.classList.toggle('hidden');
   meditateBox.classList.toggle('meditate-border');
-  studyImage.classList.remove('hidden');
-  studyImageActive.classList.add('hidden');
+  show(studyImage);
+  hide(studyImageActive);
   studyBox.classList.remove('study-border');
-  exerciseImage.classList.remove('hidden');
-  exerciseImageActive.classList.add('hidden');
+  show(exerciseImage);
+  hide(exerciseImageActive);
   exerciseBox.classList.remove('exercise-border');
   document.querySelector('.start-circle-text').style.borderColor = "#C278FD";
   //will need to return a value that this is clicked
@@ -117,11 +117,11 @@ function selectExerciseBox() {
   exerciseImage.classList.toggle('hidden');
   exerciseImageActive.classList.toggle('hidden');
   exerciseBox.classList.toggle('exercise-border');
-  studyImage.classList.remove('hidden');
-  studyImageActive.classList.add('hidden');
+  show(studyImage);
+  hide(studyImageActive);
   studyBox.classList.remove('study-border');
-  meditateImage.classList.remove('hidden');
-  meditateImageActive.classList.add('hidden');
+  show(meditateImage);
+  hide(meditateImageActive);
   meditateBox.classList.remove('meditate-border');
   document.querySelector('.start-circle-text').style.borderColor = "#FD8078";
   //will need to return a value that this is clicked
