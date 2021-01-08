@@ -40,8 +40,8 @@ function submitForm() {
     createNewActivity();
     hide(activityInputForm);
     show(timerBoxWrapper);
-  };
-};
+  }
+}
 
 function checkInputValidity() {
   //Add validation conditional here for activity boxes to make sure one is clicked
@@ -56,15 +56,15 @@ function checkInputValidity() {
      return false;
   } else {
       return true;
-  };
-};
+  }
+}
 
 function createNewActivity() {
   //"Exercise" is a placeholder for category box input
   currentActivity = new Activity("Exercise", accomplishInput.value, minutesInput.value, secondsInput.value);
   console.log(currentActivity);
   //save activities in localStorage or array??
-};
+}
 
 function activateCategory(event) {
   if (event.target.classList.contains('study-box') ||
@@ -82,8 +82,8 @@ function activateCategory(event) {
     selectExerciseBox();
     console.log(exerciseBox.innerText);
     return exerciseBox.innerText;
-  };
-};
+  }
+}
 
 function selectStudyBox() {
   studyImage.classList.toggle('hidden');
@@ -97,7 +97,7 @@ function selectStudyBox() {
   exerciseBox.classList.remove('exercise-active');
   document.querySelector('.start-circle-text').style.borderColor = "#B3FD78";
   //will need to return a value that this is clicked
-};
+}
 
 function selectMeditateBox() {
   meditateImage.classList.toggle('hidden');
@@ -111,7 +111,7 @@ function selectMeditateBox() {
   exerciseBox.classList.remove('exercise-active');
   document.querySelector('.start-circle-text').style.borderColor = "#C278FD";
   //will need to return a value that this is clicked
-};
+}
 
 function selectExerciseBox() {
   exerciseImage.classList.toggle('hidden');
@@ -125,4 +125,4 @@ function selectExerciseBox() {
   meditateBox.classList.remove('meditate-active');
   document.querySelector('.start-circle-text').style.borderColor = "#FD8078";
   //will need to return a value that this is clicked
-};
+}
