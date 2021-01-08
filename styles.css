@@ -152,9 +152,6 @@ form {
 }
 
 /* --------------------ACCOMPLISH FORM-------------------- */
-::placeholder {
-  font-size: 1rem;
-}
 
 .accomplish {
   display: flex;
