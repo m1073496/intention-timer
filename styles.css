@@ -40,7 +40,7 @@ body, html {
   border-right: 0.25em solid #46424D;
   width: 67%;
   padding: 0 25px 25px 25px;
-  background-color:#2B2733;
+  background-color: #2B2733;
 }
 
 .category-timer-wrapper {
@@ -71,7 +71,7 @@ timer-box-wrapper {
   align-items: center;
   height: 10vh;
   margin: 0;
-  font-family: "Montserrat400", sans-serif;  
+  font-family: "Montserrat400", sans-serif;
   font-size: 5em;
 }
 
@@ -129,6 +129,7 @@ form {
 .category-text {
   margin: 0 0 10px 0;
   font-size: 1.1rem;
+  pointer-events: none;
 }
 
 .study-border {
@@ -147,6 +148,10 @@ form {
 }
 
 /* --------------------ACCOMPLISH FORM-------------------- */
+::placeholder {
+  font-size: 1rem;
+}
+
 .accomplish {
   display: flex;
   flex-direction: column;

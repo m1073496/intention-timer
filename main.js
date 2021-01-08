@@ -16,55 +16,58 @@ var minutesInput = document.querySelector('#minutesInput');
 var secondsInput = document.querySelector('#secondsInput');
 var startActivityButton = document.querySelector('.start-button');
 
+
+var currentActivity;
+//currentActivity will get pushed to pastActivities array when property "completed" is marked true
+var pastActivities = [];
+
 //Add event listeners below
 categoryBoxWrapper.addEventListener('click', activateCategory);
-startActivityButton.addEventListener('click', startButtonEvents);
+startActivityButton.addEventListener('click', submitForm);
 
 //Add functions below
-function startButtonEvents(event) {
+function submitForm() {
   event.preventDefault();
-  var getActivityInput = {
-    activity: studyBox.innerText, //"Exercise", //need to pull value based on clicked button
-    accomplishDescription: accomplishInput.value,
-    minutes: minutesInput.value,
-    seconds: secondsInput.value,
+  if (checkInputValidity()) {
+    createNewActivity();
   };
-  alertNoInput(getActivityInput);
-  // console.log(event);
 };
 
-function alertNoInput(dataModel) {
-  // console.log('test=', !isNaN(`${dataModel.minutes}`));
-  if (
-    `${dataModel.accomplishDescription}` === "" 
-    // || 
-    // (`${dataModel.minutes}` === "" || isNaN(`${dataModel.minutes}`)) ||
-    // `${dataModel.seconds}` === "" || isNaN(`${dataModel.seconds}`)
-    //need validation for the activity box
-    )
-    {
-      return alert(`Please input all information`);
-    } else {
-      activityInputForm.classList.add('hidden');  
-      timerBoxWrapper.classList.remove('hidden');
-      //create activity instance x = new Activity 
-      //push activity instance to an array to save for later
-      console.log(dataModel);
-    };
+function checkInputValidity() {
+  //Add validation conditional here for activity boxes to make sure one is clicked
+  if (!accomplishInput.value === true) {
+     alert('Please enter description');
+     return false;
+  } else if (!minutesInput.value === true || isNaN(minutesInput.value)) {
+     alert('Please enter valid minutes input');
+     return false;
+  } else if (!secondsInput.value === true || isNaN(secondsInput.value) || secondsInput.value > 59) {
+     alert(`Please enter valid seconds input`);
+     return false;
+  } else {
+      return true;
   };
+};
+
+function createNewActivity() {
+  //"Exercise" is a placeholder for category box input
+  currentActivity = new Activity("Exercise", accomplishInput.value, minutesInput.value, secondsInput.value);
+  console.log(currentActivity);
+  //save activities in localStorage or array??
+};
 
 function activateCategory(event) {
-  if (event.target.classList.contains('study-box') || 
+  if (event.target.classList.contains('study-box') ||
     event.target.classList.contains('study-image')) {
     selectStudyBox();
     console.log(studyBox.innerText);
     return studyBox.innerText;
-  } else if (event.target.classList.contains('meditate-box')|| 
+  } else if (event.target.classList.contains('meditate-box')||
     event.target.classList.contains('meditate-image')) {
     selectMeditateBox();
     console.log(meditateBox.innerText);
     return meditateBox.innerText;
-  } else if (event.target.classList.contains('exercise-box')|| 
+  } else if (event.target.classList.contains('exercise-box')||
     event.target.classList.contains('exercise-image')) {
     selectExerciseBox();
     console.log(exerciseBox.innerText);
@@ -122,11 +125,11 @@ function selectExerciseBox() {
 //3a) address lack of click me on the text              TBD
 //4) should only be able to select one box at a time    DONE
 
-// Bullet #2: 
-// An input field should be provided for What would you like to 
-// accomplish during this time?, minutes and seconds. The minutes 
-// and seconds fields should only accept numbers. (Hint: more than 
-// one layer should probably be put into place to ensure this. Make 
+// Bullet #2:
+// An input field should be provided for What would you like to
+// accomplish during this time?, minutes and seconds. The minutes
+// and seconds fields should only accept numbers. (Hint: more than
+// one layer should probably be put into place to ensure this. Make
 // sure that e cannot be accepted.)
 
 //Input for accomplish box
@@ -143,16 +146,16 @@ function selectExerciseBox() {
 //4) Validation === "" code validation                  DONE
 //5) Validation === numbers only placeholder text       NO
 //6) Validation === numbers only code validation        DONE
-//7) validation for e     
+//7) validation for e
 
 //OTHER OUT OF SCOPE
 //Capture Input for activity box in activity object
 //Push object to Activity class vs individual strings
 
 
-// When the Start Activity button is clicked, the user should no 
-// longer see the form, and instead see a timer clock. The timer 
-// clock should display the user-provided minutes and seconds, as 
-// well as the description. The category should not appear, but 
-// the outline of the circle should match the color associated 
+// When the Start Activity button is clicked, the user should no
+// longer see the form, and instead see a timer clock. The timer
+// clock should display the user-provided minutes and seconds, as
+// well as the description. The category should not appear, but
+// the outline of the circle should match the color associated
 // with the category.
