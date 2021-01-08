@@ -81,16 +81,30 @@ function activateCategory(event) {
   }
 }
 
+function deactivateExercise() {
+  show(exerciseImage);
+  hide(exerciseImageActive);
+  exerciseBox.classList.remove('exercise-active');
+}
+
+function deactivateMeditate() {
+  show(meditateImage);
+  hide(meditateImageActive);
+  meditateBox.classList.remove('meditate-active');
+}
+
+function deactivateStudy() {
+  show(studyImage);
+  hide(studyImageActive);
+  studyBox.classList.remove('study-active');
+}
+
 function selectStudyBox() {
   studyImage.classList.toggle('hidden');
   studyImageActive.classList.toggle('hidden');
   studyBox.classList.toggle('study-active');
-  show(meditateImage);
-  hide(meditateImageActive);
-  meditateBox.classList.remove('meditate-active');
-  show(exerciseImage);
-  hide(exerciseImageActive);
-  exerciseBox.classList.remove('exercise-active');
+  deactivateMeditate();
+  deactivateExercise();
   document.querySelector('.start-circle-text').style.borderColor = "#B3FD78";
   //will need to return a value that this is clicked
 }
@@ -99,12 +113,8 @@ function selectMeditateBox() {
   meditateImage.classList.toggle('hidden');
   meditateImageActive.classList.toggle('hidden');
   meditateBox.classList.toggle('meditate-active');
-  show(studyImage);
-  hide(studyImageActive);
-  studyBox.classList.remove('study-active');
-  show(exerciseImage);
-  hide(exerciseImageActive);
-  exerciseBox.classList.remove('exercise-active');
+  deactivateStudy();
+  deactivateExercise();
   document.querySelector('.start-circle-text').style.borderColor = "#C278FD";
   //will need to return a value that this is clicked
 }
@@ -113,12 +123,8 @@ function selectExerciseBox() {
   exerciseImage.classList.toggle('hidden');
   exerciseImageActive.classList.toggle('hidden');
   exerciseBox.classList.toggle('exercise-active');
-  show(studyImage);
-  hide(studyImageActive);
-  studyBox.classList.remove('study-active');
-  show(meditateImage);
-  hide(meditateImageActive);
-  meditateBox.classList.remove('meditate-active');
+  deactivateStudy();
+  deactivateMeditate();
   document.querySelector('.start-circle-text').style.borderColor = "#FD8078";
   //will need to return a value that this is clicked
 }
