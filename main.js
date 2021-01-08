@@ -48,10 +48,10 @@ function checkInputValidity() {
   if (!accomplishInput.value) {
      alert('Please enter description');
      return false;
-  } else if (!minutesInput.value || isNaN(minutesInput.value)) {
+  } else if (!minutesInput.value || isNaN(minutesInput.value) || minutesInput.value > 1440 || parseInt(minutesInput.value) < 0) {
      alert('Please enter valid minutes input');
      return false;
-  } else if (!secondsInput.value || isNaN(secondsInput.value) || secondsInput.value > 59) {
+  } else if (!secondsInput.value || isNaN(secondsInput.value) || secondsInput.value > 59 || parseInt(secondsInput.value) < 0) {
      alert(`Please enter valid seconds input`);
      return false;
   } else {
