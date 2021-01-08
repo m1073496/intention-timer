@@ -33,13 +33,13 @@ function submitForm() {
 
 function checkInputValidity() {
   //validation for activity boxes
-  if (!accomplishInput.value == true) {
+  if (!accomplishInput.value === true) {
      alert('Please enter description');
      return false;
-  } else if (!minutesInput.value == true || isNaN(minutesInput.value)) {
+  } else if (!minutesInput.value === true || isNaN(minutesInput.value)) {
      alert('Please enter valid minutes input');
      return false;
-  } else if (!secondsInput.value == true || isNaN(secondsInput.value) || secondsInput.value > 59) {
+  } else if (!secondsInput.value === true || isNaN(secondsInput.value) || secondsInput.value > 59) {
      alert(`Please enter valid seconds input`);
      return false;
   } else {
