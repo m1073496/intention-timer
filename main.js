@@ -26,6 +26,14 @@ categoryBoxWrapper.addEventListener('click', activateCategory);
 startActivityButton.addEventListener('click', submitForm);
 
 //Add functions below
+function show(element) {
+  element.classList.remove('hidden');
+}
+
+function hide(element) {
+  element.classList.add('hidden');
+}
+
 function submitForm() {
   event.preventDefault();
   if (checkInputValidity()) {
