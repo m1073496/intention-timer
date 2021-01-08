@@ -62,7 +62,6 @@ function checkInputValidity() {
 function createNewActivity() {
   //"Exercise" is a placeholder for category box input
   currentActivity = new Activity("Exercise", accomplishInput.value, minutesInput.value, secondsInput.value);
-  console.log(currentActivity);
   //save activities in localStorage or array??
 }
 
@@ -70,17 +69,14 @@ function activateCategory(event) {
   if (event.target.classList.contains('study-box') ||
     event.target.classList.contains('study-image')) {
     selectStudyBox();
-    console.log(studyBox.innerText);
     return studyBox.innerText;
   } else if (event.target.classList.contains('meditate-box')||
     event.target.classList.contains('meditate-image')) {
     selectMeditateBox();
-    console.log(meditateBox.innerText);
     return meditateBox.innerText;
   } else if (event.target.classList.contains('exercise-box')||
     event.target.classList.contains('exercise-image')) {
     selectExerciseBox();
-    console.log(exerciseBox.innerText);
     return exerciseBox.innerText;
   }
 }
