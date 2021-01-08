@@ -34,7 +34,7 @@ function hide(element) {
   element.classList.add('hidden');
 }
 
-function submitForm() {
+function submitForm(event) {
   event.preventDefault();
   if (checkInputValidity()) {
     createNewActivity();
