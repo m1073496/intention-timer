@@ -1,4 +1,6 @@
 //Add targeting variables below
+var activityInputForm = document.querySelector('form');
+var timerBoxWrapper = document.querySelector('.timer-box-wrapper');
 var categoryBoxWrapper = document.querySelector('.category-box-wrapper');
 var studyBox = document.querySelector('.study-box');
 var studyImage = document.querySelector('.study-image');
@@ -22,7 +24,7 @@ startActivityButton.addEventListener('click', startButtonEvents);
 function startButtonEvents(event) {
   event.preventDefault();
   var getActivityInput = {
-    activity: "Exercise", //need to pull value based on clicked button
+    activity: studyBox.innerText, //"Exercise", //need to pull value based on clicked button
     accomplishDescription: accomplishInput.value,
     minutes: minutesInput.value,
     seconds: secondsInput.value,
@@ -34,14 +36,17 @@ function startButtonEvents(event) {
 function alertNoInput(dataModel) {
   // console.log('test=', !isNaN(`${dataModel.minutes}`));
   if (
-    `${dataModel.accomplishDescription}` === "" || 
-    (`${dataModel.minutes}` === "" || isNaN(`${dataModel.minutes}`)) ||
-    `${dataModel.seconds}` === "" || isNaN(`${dataModel.seconds}`)
+    `${dataModel.accomplishDescription}` === "" 
+    // || 
+    // (`${dataModel.minutes}` === "" || isNaN(`${dataModel.minutes}`)) ||
+    // `${dataModel.seconds}` === "" || isNaN(`${dataModel.seconds}`)
     //need validation for the activity box
     )
     {
       return alert(`Please input all information`);
     } else {
+      activityInputForm.classList.add('hidden');  
+      timerBoxWrapper.classList.remove('hidden');
       //create activity instance x = new Activity 
       //push activity instance to an array to save for later
       console.log(dataModel);
@@ -77,6 +82,7 @@ function selectStudyBox() {
   exerciseImage.classList.remove('hidden');
   exerciseImageActive.classList.add('hidden');
   exerciseBox.classList.remove('exercise-border');
+  document.querySelector('.start-circle-text').style.borderColor = "#B3FD78";
   //will need to return a value that this is clicked
 };
 
@@ -90,6 +96,7 @@ function selectMeditateBox() {
   exerciseImage.classList.remove('hidden');
   exerciseImageActive.classList.add('hidden');
   exerciseBox.classList.remove('exercise-border');
+  document.querySelector('.start-circle-text').style.borderColor = "#C278FD";
   //will need to return a value that this is clicked
 };
 
@@ -103,6 +110,7 @@ function selectExerciseBox() {
   meditateImage.classList.remove('hidden');
   meditateImageActive.classList.add('hidden');
   meditateBox.classList.remove('meditate-border');
+  document.querySelector('.start-circle-text').style.borderColor = "#FD8078";
   //will need to return a value that this is clicked
 };
 
@@ -140,3 +148,11 @@ function selectExerciseBox() {
 //OTHER OUT OF SCOPE
 //Capture Input for activity box in activity object
 //Push object to Activity class vs individual strings
+
+
+// When the Start Activity button is clicked, the user should no 
+// longer see the form, and instead see a timer clock. The timer 
+// clock should display the user-provided minutes and seconds, as 
+// well as the description. The category should not appear, but 
+// the outline of the circle should match the color associated 
+// with the category.

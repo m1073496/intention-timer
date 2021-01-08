@@ -43,15 +43,63 @@ body, html {
   background-color:#2B2733;
 }
 
-form {
+.category-timer-wrapper {
   border-radius: 5px;
+  height: 75vh;
+  background-color: #46424D;
+  box-shadow: 10px 10px 10px #26222D;
+}
+
+/*---------------------TIMER BOX-------------------- */
+timer-box-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.timer-box-header {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 10vh;
+  margin: 0;
+}
+
+.countdown-clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  margin: 0;
+  font-family: "Montserrat400", sans-serif;  
+  font-size: 5em;
+}
+
+.start-circle-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 42vh;
+}
+
+.start-circle-text {
+  border: 0.15em solid #FFF;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 29vh;
+  width: 17vw;
+  font-size: 1.5em
+}
+
+/*--------------------TBD--------------------------- */
+form {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  height: 75vh;
-  background-color: #46424D;
-  box-shadow: 10px 10px 10px #26222D;
+  height: 100%;
 }
 
 .form-label {
