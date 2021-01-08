@@ -50,6 +50,51 @@ body, html {
   box-shadow: 10px 10px 10px #26222D;
 }
 
+/*---------------------TIMER BOX-------------------- */
+timer-box-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.timer-box-header {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 10vh;
+  margin: 0;
+}
+
+.countdown-clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  margin: 0;
+  font-family: "Montserrat400", sans-serif;  
+  font-size: 5em;
+}
+
+.start-circle-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 42vh;
+  font-family: "Montserrat300", sans-serif;
+}
+
+.start-circle-text {
+  border: 0.15em solid #FFF;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 29vh;
+  width: 17vw;
+  font-size: 1.5em
+}
+
+/*--------------------TBD--------------------------- */
 form {
   display: flex;
   flex-direction: column;

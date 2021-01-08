@@ -1,5 +1,6 @@
 //Add targeting variables below
 var activityInputForm = document.querySelector('form');
+var timerBoxWrapper = document.querySelector('.timer-box-wrapper');
 var categoryBoxWrapper = document.querySelector('.category-box-wrapper');
 var studyBox = document.querySelector('.study-box');
 var studyImage = document.querySelector('.study-image');
@@ -35,15 +36,17 @@ function startButtonEvents(event) {
 function alertNoInput(dataModel) {
   // console.log('test=', !isNaN(`${dataModel.minutes}`));
   if (
-    `${dataModel.accomplishDescription}` === "" || 
-    (`${dataModel.minutes}` === "" || isNaN(`${dataModel.minutes}`)) ||
-    `${dataModel.seconds}` === "" || isNaN(`${dataModel.seconds}`)
+    `${dataModel.accomplishDescription}` === "" 
+    // || 
+    // (`${dataModel.minutes}` === "" || isNaN(`${dataModel.minutes}`)) ||
+    // `${dataModel.seconds}` === "" || isNaN(`${dataModel.seconds}`)
     //need validation for the activity box
     )
     {
       return alert(`Please input all information`);
     } else {
       activityInputForm.classList.add('hidden');  
+      timerBoxWrapper.classList.remove('hidden');
       //create activity instance x = new Activity 
       //push activity instance to an array to save for later
       console.log(dataModel);
