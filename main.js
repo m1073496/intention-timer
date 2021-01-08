@@ -28,11 +28,11 @@ function submitForm() {
   event.preventDefault();
   if (checkInputValidity()) {
     createNewActivity();
-  }
+  };
 };
 
 function checkInputValidity() {
-  //validation for activity boxes
+  //Add validation conditional here for activity boxes to make sure one is clicked
   if (!accomplishInput.value === true) {
      alert('Please enter description');
      return false;
@@ -44,10 +44,11 @@ function checkInputValidity() {
      return false;
   } else {
       return true;
-  }
+  };
 };
 
 function createNewActivity() {
+  //"Exercise" is a placeholder for category box input
   currentActivity = new Activity("Exercise", accomplishInput.value, minutesInput.value, secondsInput.value);
   console.log(currentActivity);
   //save activities in localStorage or array??
