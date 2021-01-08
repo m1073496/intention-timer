@@ -30,6 +30,8 @@ function submitForm() {
   event.preventDefault();
   if (checkInputValidity()) {
     createNewActivity();
+    activityInputForm.classList.add('hidden');
+    timerBoxWrapper.classList.remove('hidden');
   };
 };
 
