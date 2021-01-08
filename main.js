@@ -1,4 +1,6 @@
 //Add targeting variables below
+var activityInputForm = document.querySelector('form');
+var timerBoxWrapper = document.querySelector('.timer-box-wrapper');
 var categoryBoxWrapper = document.querySelector('.category-box-wrapper');
 var studyBox = document.querySelector('.study-box');
 var studyImage = document.querySelector('.study-image');
@@ -83,6 +85,7 @@ function selectStudyBox() {
   exerciseImage.classList.remove('hidden');
   exerciseImageActive.classList.add('hidden');
   exerciseBox.classList.remove('exercise-border');
+  document.querySelector('.start-circle-text').style.borderColor = "#B3FD78";
   //will need to return a value that this is clicked
 };
 
@@ -96,6 +99,7 @@ function selectMeditateBox() {
   exerciseImage.classList.remove('hidden');
   exerciseImageActive.classList.add('hidden');
   exerciseBox.classList.remove('exercise-border');
+  document.querySelector('.start-circle-text').style.borderColor = "#C278FD";
   //will need to return a value that this is clicked
 };
 
@@ -109,6 +113,7 @@ function selectExerciseBox() {
   meditateImage.classList.remove('hidden');
   meditateImageActive.classList.add('hidden');
   meditateBox.classList.remove('meditate-border');
+  document.querySelector('.start-circle-text').style.borderColor = "#FD8078";
   //will need to return a value that this is clicked
 };
 
@@ -146,3 +151,11 @@ function selectExerciseBox() {
 //OTHER OUT OF SCOPE
 //Capture Input for activity box in activity object
 //Push object to Activity class vs individual strings
+
+
+// When the Start Activity button is clicked, the user should no
+// longer see the form, and instead see a timer clock. The timer
+// clock should display the user-provided minutes and seconds, as
+// well as the description. The category should not appear, but
+// the outline of the circle should match the color associated
+// with the category.
