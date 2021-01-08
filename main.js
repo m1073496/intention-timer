@@ -82,6 +82,7 @@ function selectStudyBox() {
   exerciseImage.classList.remove('hidden');
   exerciseImageActive.classList.add('hidden');
   exerciseBox.classList.remove('exercise-border');
+  document.querySelector('.start-circle-text').style.borderColor = "#B3FD78";
   //will need to return a value that this is clicked
 };
 
@@ -95,6 +96,7 @@ function selectMeditateBox() {
   exerciseImage.classList.remove('hidden');
   exerciseImageActive.classList.add('hidden');
   exerciseBox.classList.remove('exercise-border');
+  document.querySelector('.start-circle-text').style.borderColor = "#C278FD";
   //will need to return a value that this is clicked
 };
 
@@ -108,6 +110,7 @@ function selectExerciseBox() {
   meditateImage.classList.remove('hidden');
   meditateImageActive.classList.add('hidden');
   meditateBox.classList.remove('meditate-border');
+  document.querySelector('.start-circle-text').style.borderColor = "#FD8078";
   //will need to return a value that this is clicked
 };
 
@@ -153,5 +156,3 @@ function selectExerciseBox() {
 // well as the description. The category should not appear, but 
 // the outline of the circle should match the color associated 
 // with the category.
-
-//1) hide something...
