@@ -106,7 +106,6 @@ function selectStudyBox() {
   deactivateMeditate();
   deactivateExercise();
   document.querySelector('.start-circle-text').style.borderColor = "#B3FD78";
-  //will need to return a value that this is clicked
 }
 
 function selectMeditateBox() {
@@ -116,7 +115,6 @@ function selectMeditateBox() {
   deactivateStudy();
   deactivateExercise();
   document.querySelector('.start-circle-text').style.borderColor = "#C278FD";
-  //will need to return a value that this is clicked
 }
 
 function selectExerciseBox() {
@@ -126,5 +124,4 @@ function selectExerciseBox() {
   deactivateStudy();
   deactivateMeditate();
   document.querySelector('.start-circle-text').style.borderColor = "#FD8078";
-  //will need to return a value that this is clicked
 }
