@@ -124,6 +124,7 @@ form {
 .category-image {
   width: 1.5em;
   margin-top: 10px;
+  pointer-events: none;
 }
 
 .category-text {
