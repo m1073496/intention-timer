@@ -133,17 +133,17 @@ form {
   pointer-events: none;
 }
 
-.study-border {
+.study-active {
   color: #B3FD78;
   border-color: #B3FD78;
 }
 
-.meditate-border {
+.meditate-active {
   color: #C278FD;
   border-color: #C278FD;
 }
 
-.exercise-border {
+.exercise-active {
   color: #FD8078;
   border-color: #FD8078;
 }

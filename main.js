@@ -88,13 +88,13 @@ function activateCategory(event) {
 function selectStudyBox() {
   studyImage.classList.toggle('hidden');
   studyImageActive.classList.toggle('hidden');
-  studyBox.classList.toggle('study-border');
+  studyBox.classList.toggle('study-active');
   show(meditateImage);
   hide(meditateImageActive);
-  meditateBox.classList.remove('meditate-border');
+  meditateBox.classList.remove('meditate-active');
   show(exerciseImage);
   hide(exerciseImageActive);
-  exerciseBox.classList.remove('exercise-border');
+  exerciseBox.classList.remove('exercise-active');
   document.querySelector('.start-circle-text').style.borderColor = "#B3FD78";
   //will need to return a value that this is clicked
 };
@@ -102,13 +102,13 @@ function selectStudyBox() {
 function selectMeditateBox() {
   meditateImage.classList.toggle('hidden');
   meditateImageActive.classList.toggle('hidden');
-  meditateBox.classList.toggle('meditate-border');
+  meditateBox.classList.toggle('meditate-active');
   show(studyImage);
   hide(studyImageActive);
-  studyBox.classList.remove('study-border');
+  studyBox.classList.remove('study-active');
   show(exerciseImage);
   hide(exerciseImageActive);
-  exerciseBox.classList.remove('exercise-border');
+  exerciseBox.classList.remove('exercise-active');
   document.querySelector('.start-circle-text').style.borderColor = "#C278FD";
   //will need to return a value that this is clicked
 };
@@ -116,13 +116,13 @@ function selectMeditateBox() {
 function selectExerciseBox() {
   exerciseImage.classList.toggle('hidden');
   exerciseImageActive.classList.toggle('hidden');
-  exerciseBox.classList.toggle('exercise-border');
+  exerciseBox.classList.toggle('exercise-active');
   show(studyImage);
   hide(studyImageActive);
-  studyBox.classList.remove('study-border');
+  studyBox.classList.remove('study-active');
   show(meditateImage);
   hide(meditateImageActive);
-  meditateBox.classList.remove('meditate-border');
+  meditateBox.classList.remove('meditate-active');
   document.querySelector('.start-circle-text').style.borderColor = "#FD8078";
   //will need to return a value that this is clicked
 };
