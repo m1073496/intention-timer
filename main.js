@@ -19,6 +19,8 @@ var warningCategory = document.querySelector('.warning-category');
 var warningDescription = document.querySelector('.warning-description');
 var warningMinutes = document.querySelector('.warning-minutes');
 var warningSeconds = document.querySelector('.warning-seconds');
+var countdownMinutes = document.querySelector('.countdown-minutes');
+var countdownSeconds = document.querySelector('.countdown-seconds');
 
 var categoryIsClicked = {
   studySelected: false,
@@ -49,6 +51,8 @@ function submitForm(event) {
     hide(activityInputForm);
     show(timerBoxWrapper);
   }
+  countdownMinutes.innerText = currentActivity.minutes;
+  countdownSeconds.innerText = currentActivity.seconds;
 }
 
 function checkInputValidity() {
