@@ -15,8 +15,18 @@ var accomplishInput = document.querySelector('#accomplishInput');
 var minutesInput = document.querySelector('#minutesInput');
 var secondsInput = document.querySelector('#secondsInput');
 var startActivityButton = document.querySelector('.start-button');
+var warningCategory = document.querySelector('.warning-category');
+var warningDescription = document.querySelector('.warning-description');
+var warningMinutes = document.querySelector('.warning-minutes');
+var warningSeconds = document.querySelector('.warning-seconds');
+var countdownMinutes = document.querySelector('.countdown-minutes');
+var countdownSeconds = document.querySelector('.countdown-seconds');
 
-
+var categoryIsClicked = {
+  studySelected: false,
+  meditateSelected: false,
+  exerciseSelected: false
+};
 var currentActivity;
 //currentActivity will get pushed to pastActivities array when property "completed" is marked true
 var pastActivities = [];
@@ -41,21 +51,25 @@ function submitForm(event) {
     hide(activityInputForm);
     show(timerBoxWrapper);
   }
+  countdownMinutes.innerText = currentActivity.minutes;
+  countdownSeconds.innerText = currentActivity.seconds;
 }
 
 function checkInputValidity() {
-  //Add validation conditional here for activity boxes to make sure one is clicked
-  if (!accomplishInput.value) {
-     alert('Please enter description');
+  if (categoryIsClicked.studySelected === false && categoryIsClicked.meditateSelected === false && categoryIsClicked.exerciseSelected === false) {
+    show(warningCategory);
+    return false;
+  } if (!accomplishInput.value) {
+     show(warningDescription);
      return false;
   } else if (!minutesInput.value || isNaN(minutesInput.value) || minutesInput.value > 1440 || parseInt(minutesInput.value) < 0) {
-     alert('Please enter valid minutes input');
+     show(warningMinutes);
      return false;
   } else if (!secondsInput.value || isNaN(secondsInput.value) || secondsInput.value > 59 || parseInt(secondsInput.value) < 0) {
-     alert(`Please enter valid seconds input`);
+     show(warningSeconds);
      return false;
   } else {
-      return true;
+     return true;
   }
 }
 
@@ -106,6 +120,7 @@ function selectStudyBox() {
   deactivateMeditate();
   deactivateExercise();
   document.querySelector('.start-circle-text').style.borderColor = "#B3FD78";
+  categoryIsClicked.studySelected = true;
 }
 
 function selectMeditateBox() {
@@ -115,6 +130,7 @@ function selectMeditateBox() {
   deactivateStudy();
   deactivateExercise();
   document.querySelector('.start-circle-text').style.borderColor = "#C278FD";
+  categoryIsClicked.meditateSelected = true;
 }
 
 function selectExerciseBox() {
@@ -124,4 +140,5 @@ function selectExerciseBox() {
   deactivateStudy();
   deactivateMeditate();
   document.querySelector('.start-circle-text').style.borderColor = "#FD8078";
+  categoryIsClicked.exerciseSelected = true;
 }

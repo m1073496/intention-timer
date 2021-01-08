@@ -111,6 +111,18 @@ form {
 }
 
 /* --------------------CATEGORY FORM---------------------- */
+.category-warning {
+  display: flex;
+  align-items: baseline;
+}
+
+.error-icon {
+  width: 1.5em;
+  margin-right: .5em;
+  margin-top: 10px;
+  pointer-events: none;
+}
+
 .category-box-wrapper {
   display: flex;
   justify-content: space-between;
