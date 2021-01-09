@@ -79,49 +79,49 @@ function checkCategoryValidity() {
 
 function checkDescripValidity() {
   if (!accomplishInput.value) {
-     show(warningDescription);
-     return false;
+    show(warningDescription);
+    return false;
   } else {
-     hide(warningDescription);
-     return true;
+    hide(warningDescription);
+    return true;
   }
 }
 
 function checkMinutesValidity() {
   if (!parseInt(minutesInput.value) || isNaN(minutesInput.value)) {
-     show(warningMinutes);
-     show(minutesMissing);
-     hide(minutesRange);
-     return false;
+    show(warningMinutes);
+    show(minutesMissing);
+    hide(minutesRange);
+    return false;
   } else if (parseInt(minutesInput.value) > 1440 || parseInt(minutesInput.value) < 0) {
-     show(warningMinutes);
-     show(minutesRange);
-     hide(minutesMissing);
-     return false;
-   } else {
-     hide(warningMinutes);
-     hide(minutesMissing);
-     hide(minutesRange);
-     return true;
-   }
+    show(warningMinutes);
+    show(minutesRange);
+    hide(minutesMissing);
+    return false;
+  } else {
+    hide(warningMinutes);
+    hide(minutesMissing);
+    hide(minutesRange);
+    return true;
+  }
 }
 
 function checkSecondsValidity() {
   if (!parseInt(secondsInput.value) || isNaN(secondsInput.value)) {
-     show(warningSeconds);
-     show(secondsMissing);
-     hide(secondsRange);
-     return false;
+    show(warningSeconds);
+    show(secondsMissing);
+    hide(secondsRange);
+    return false;
   } else if (parseInt(secondsInput.value) > 59 || parseInt(secondsInput.value) < 0) {
-     show(warningSeconds);
-     show(secondsRange);
-     hide(secondsMissing);
-     return false;
+    show(warningSeconds);
+    show(secondsRange);
+    hide(secondsMissing);
+    return false;
   } else {
-     hide(warningSeconds);
-     hide(secondsMissing);
-     hide(secondsRange);
-     return true;
+    hide(warningSeconds);
+    hide(secondsMissing);
+    hide(secondsRange);
+    return true;
   }
 }
 
