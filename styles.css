@@ -117,10 +117,16 @@ form {
 }
 
 .error-icon {
-  width: 1.5em;
+  width: 1rem;
   margin-right: .5em;
   margin-top: 10px;
   pointer-events: none;
+}
+
+.error-text {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #EFB7EC;
 }
 
 .category-box-wrapper {
@@ -213,6 +219,17 @@ form {
   font-size: 1rem;
   font-weight: 300;
 }
+
+/* TODO: try reinstating */
+/* .study-circle {
+  border-color: #B3FD78;
+}
+.meditate-circle {
+  border-color: #C278FD;
+}
+.exercise-circle {
+  border-color: #FD8078;
+} */
 
 /* -----------------RIGHT-HAND CONTAINER------------------ */
 .past-activity {

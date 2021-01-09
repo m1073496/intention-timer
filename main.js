@@ -25,6 +25,7 @@ var minutesMissing = document.querySelector('.minutes-missing');
 var minutesRange = document.querySelector('.minutes-range');
 var secondsMissing = document.querySelector('.seconds-missing');
 var secondsRange = document.querySelector('.seconds-range');
+// var startCircle = document.querySelector('.start-circle-text');
 
 var categoryIsClicked = {
   studySelected: false,
@@ -50,7 +51,7 @@ function hide(element) {
 
 function submitForm(event) {
   event.preventDefault();
-  if (checkInputValidity()) {
+  if (validateInput()) {
     createNewActivity();
     hide(activityInputForm);
     show(timerBoxWrapper);
@@ -59,15 +60,15 @@ function submitForm(event) {
   }
 }
 
-function checkInputValidity() {
-  if (checkCategoryValidity() === true && checkDescripValidity() === true && checkMinutesValidity() === true && checkSecondsValidity() === true) {
+function validateInput() {
+  if (validateCategory() && validateDescription() && validateMinutes() && validateSeconds()) {
     return true;
   } else {
     return false;
   }
 }
 
-function checkCategoryValidity() {
+function validateCategory() {
   if (categoryIsClicked.studySelected === false && categoryIsClicked.meditateSelected === false && categoryIsClicked.exerciseSelected === false) {
     show(warningCategory);
     return false;
@@ -77,67 +78,67 @@ function checkCategoryValidity() {
   }
 }
 
-function checkDescripValidity() {
+function validateDescription() {
   if (!accomplishInput.value) {
-     show(warningDescription);
-     return false;
+    show(warningDescription);
+    return false;
   } else {
-     hide(warningDescription);
-     return true;
+    hide(warningDescription);
+    return true;
   }
 }
 
-function checkMinutesValidity() {
-  if (!minutesInput.value || isNaN(minutesInput.value)) {
-     show(warningMinutes);
-     show(minutesMissing);
-     hide(minutesRange);
-     return false;
-  } else if (minutesInput.value > 1440 || parseInt(minutesInput.value) < 0) {
-     show(warningMinutes);
-     show(minutesRange);
-     hide(minutesMissing);
-     return false;
-   } else {
-     hide(warningMinutes);
-     hide(minutesMissing);
-     hide(minutesRange);
-     return true;
-   }
+function validateMinutes() {
+  if (!parseInt(minutesInput.value) || isNaN(minutesInput.value)) {
+    show(warningMinutes);
+    show(minutesMissing);
+    hide(minutesRange);
+    return false;
+  } else if (parseInt(minutesInput.value) > 1440 || parseInt(minutesInput.value) < 0) {
+    show(warningMinutes);
+    show(minutesRange);
+    hide(minutesMissing);
+    return false;
+  } else {
+    hide(warningMinutes);
+    hide(minutesMissing);
+    hide(minutesRange);
+    return true;
+  }
 }
 
-function checkSecondsValidity() {
-  if (!secondsInput.value || isNaN(secondsInput.value)) {
-     show(warningSeconds);
-     show(secondsMissing);
-     hide(secondsRange);
-     return false;
-  } else if (secondsInput.value > 59 || parseInt(secondsInput.value) < 0) {
-     show(warningSeconds);
-     show(secondsRange);
-     hide(secondsMissing);
-     return false;
+function validateSeconds() {
+  if (!parseInt(secondsInput.value) || isNaN(secondsInput.value)) {
+    show(warningSeconds);
+    show(secondsMissing);
+    hide(secondsRange);
+    return false;
+  } else if (parseInt(secondsInput.value) > 59 || parseInt(secondsInput.value) < 0) {
+    show(warningSeconds);
+    show(secondsRange);
+    hide(secondsMissing);
+    return false;
   } else {
-     hide(warningSeconds);
-     hide(secondsMissing);
-     hide(secondsRange);
-     return true;
+    hide(warningSeconds);
+    hide(secondsMissing);
+    hide(secondsRange);
+    return true;
   }
 }
 
 function createNewActivity() {
   //"Exercise" is a placeholder for category box input
-  currentActivity = new Activity(findCategoryChoice(), accomplishInput.value, minutesInput.value, secondsInput.value);
+  currentActivity = new Activity(findCategoryChoice(), accomplishInput.value, parseInt(minutesInput.value), parseInt(secondsInput.value));
   //save activities in localStorage or array??
 }
 
 function findCategoryChoice() {
   var activitySelected;
-  if (categoryIsClicked.studySelected === true) {
+  if (categoryIsClicked.studySelected) {
     activitySelected = `Study`;
-  } else if (categoryIsClicked.meditateSelected === true) {
+  } else if (categoryIsClicked.meditateSelected) {
     activitySelected = `Meditate`;
-  } else if (categoryIsClicked.exerciseSelected === true) {
+  } else if (categoryIsClicked.exerciseSelected) {
     activitySelected = `Exercise`;
   }
   return activitySelected;
@@ -183,6 +184,7 @@ function selectStudyBox() {
   studyBox.classList.toggle('study-active');
   deactivateMeditate();
   deactivateExercise();
+  // startCircle.classList.add('study-circle');
   document.querySelector('.start-circle-text').style.borderColor = "#B3FD78";
   categoryIsClicked.studySelected = true;
 }
@@ -193,6 +195,7 @@ function selectMeditateBox() {
   meditateBox.classList.toggle('meditate-active');
   deactivateStudy();
   deactivateExercise();
+  // startCircle.classList.add('meditate-circle');
   document.querySelector('.start-circle-text').style.borderColor = "#C278FD";
   categoryIsClicked.meditateSelected = true;
 }
@@ -203,6 +206,7 @@ function selectExerciseBox() {
   exerciseBox.classList.toggle('exercise-active');
   deactivateStudy();
   deactivateMeditate();
+  // startCircle.classList.add('exercise-circle');
   document.querySelector('.start-circle-text').style.borderColor = "#FD8078";
   categoryIsClicked.exerciseSelected = true;
 }
