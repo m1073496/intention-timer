@@ -50,7 +50,7 @@ function hide(element) {
 
 function submitForm(event) {
   event.preventDefault();
-  if (checkInputValidity()) {
+  if (validateInput()) {
     createNewActivity();
     hide(activityInputForm);
     show(timerBoxWrapper);
@@ -59,15 +59,15 @@ function submitForm(event) {
   }
 }
 
-function checkInputValidity() {
-  if (checkCategoryValidity() && checkDescripValidity() && checkMinutesValidity() && checkSecondsValidity()) {
+function validateInput() {
+  if (validateCategory() && validateDescription() && validateMinutes() && validateSeconds()) {
     return true;
   } else {
     return false;
   }
 }
 
-function checkCategoryValidity() {
+function validateCategory() {
   if (categoryIsClicked.studySelected === false && categoryIsClicked.meditateSelected === false && categoryIsClicked.exerciseSelected === false) {
     show(warningCategory);
     return false;
@@ -77,7 +77,7 @@ function checkCategoryValidity() {
   }
 }
 
-function checkDescripValidity() {
+function validateDescription() {
   if (!accomplishInput.value) {
     show(warningDescription);
     return false;
@@ -87,7 +87,7 @@ function checkDescripValidity() {
   }
 }
 
-function checkMinutesValidity() {
+function validateMinutes() {
   if (!parseInt(minutesInput.value) || isNaN(minutesInput.value)) {
     show(warningMinutes);
     show(minutesMissing);
@@ -106,7 +106,7 @@ function checkMinutesValidity() {
   }
 }
 
-function checkSecondsValidity() {
+function validateSeconds() {
   if (!parseInt(secondsInput.value) || isNaN(secondsInput.value)) {
     show(warningSeconds);
     show(secondsMissing);
