@@ -27,11 +27,6 @@ var secondsMissing = document.querySelector('.seconds-missing');
 var secondsRange = document.querySelector('.seconds-range');
 // var startCircle = document.querySelector('.start-circle-text');
 
-var categoryIsClicked = {
-  studySelected: false,
-  meditateSelected: false,
-  exerciseSelected: false
-};
 var currentActivity;
 //currentActivity will get pushed to pastActivities array when property "completed" is marked true
 var pastActivities = [];
@@ -69,7 +64,8 @@ function validateInput() {
 }
 
 function validateCategory() {
-  if (categoryIsClicked.studySelected === false && categoryIsClicked.meditateSelected === false && categoryIsClicked.exerciseSelected === false) {
+  var myChoice = document.querySelector('input[name="radioCategory"]:checked');
+  if (myChoice === null) {
     show(warningCategory);
     return false;
   } else {
@@ -127,36 +123,25 @@ function validateSeconds() {
 }
 
 function createNewActivity() {
-  //"Exercise" is a placeholder for category box input
   currentActivity = new Activity(findCategoryChoice(), accomplishInput.value, parseInt(minutesInput.value), parseInt(secondsInput.value));
   //save activities in localStorage or array??
 }
 
 function findCategoryChoice() {
-  var activitySelected;
-  if (categoryIsClicked.studySelected) {
-    activitySelected = `Study`;
-  } else if (categoryIsClicked.meditateSelected) {
-    activitySelected = `Meditate`;
-  } else if (categoryIsClicked.exerciseSelected) {
-    activitySelected = `Exercise`;
-  }
-  return activitySelected;
+  var myChoice = document.querySelector('input[name="radioCategory"]:checked').value;
+  return myChoice;
 }
 
 function activateCategory(event) {
   if (event.target.classList.contains('study-box') ||
     event.target.classList.contains('study-image')) {
     selectStudyBox();
-    return studyBox.innerText;
   } else if (event.target.classList.contains('meditate-box')||
     event.target.classList.contains('meditate-image')) {
     selectMeditateBox();
-    return meditateBox.innerText;
   } else if (event.target.classList.contains('exercise-box')||
     event.target.classList.contains('exercise-image')) {
     selectExerciseBox();
-    return exerciseBox.innerText;
   }
 }
 
@@ -186,7 +171,6 @@ function selectStudyBox() {
   deactivateExercise();
   // startCircle.classList.add('study-circle');
   document.querySelector('.start-circle-text').style.borderColor = "#B3FD78";
-  categoryIsClicked.studySelected = true;
 }
 
 function selectMeditateBox() {
@@ -197,7 +181,6 @@ function selectMeditateBox() {
   deactivateExercise();
   // startCircle.classList.add('meditate-circle');
   document.querySelector('.start-circle-text').style.borderColor = "#C278FD";
-  categoryIsClicked.meditateSelected = true;
 }
 
 function selectExerciseBox() {
@@ -208,5 +191,4 @@ function selectExerciseBox() {
   deactivateMeditate();
   // startCircle.classList.add('exercise-circle');
   document.querySelector('.start-circle-text').style.borderColor = "#FD8078";
-  categoryIsClicked.exerciseSelected = true;
 }
