@@ -60,7 +60,7 @@ function submitForm(event) {
 }
 
 function checkInputValidity() {
-  if (checkCategoryValidity() === true && checkDescripValidity() === true && checkMinutesValidity() === true && checkSecondsValidity() === true) {
+  if (checkCategoryValidity() && checkDescripValidity() && checkMinutesValidity() && checkSecondsValidity()) {
     return true;
   } else {
     return false;
@@ -133,11 +133,11 @@ function createNewActivity() {
 
 function findCategoryChoice() {
   var activitySelected;
-  if (categoryIsClicked.studySelected === true) {
+  if (categoryIsClicked.studySelected) {
     activitySelected = `Study`;
-  } else if (categoryIsClicked.meditateSelected === true) {
+  } else if (categoryIsClicked.meditateSelected) {
     activitySelected = `Meditate`;
-  } else if (categoryIsClicked.exerciseSelected === true) {
+  } else if (categoryIsClicked.exerciseSelected) {
     activitySelected = `Exercise`;
   }
   return activitySelected;
