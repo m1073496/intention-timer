@@ -85,7 +85,7 @@ function validateDescription() {
 }
 
 function validateMinutes() {
-  if (!parseInt(minutesInput.value) || isNaN(minutesInput.value)) {
+  if (!minutesInput.value || isNaN(minutesInput.value)) {
     show(warningMinutes);
     show(minutesMissing);
     hide(minutesRange);
@@ -104,7 +104,7 @@ function validateMinutes() {
 }
 
 function validateSeconds() {
-  if (!parseInt(secondsInput.value) || isNaN(secondsInput.value)) {
+  if (!secondsInput.value || isNaN(secondsInput.value)) {
     show(warningSeconds);
     show(secondsMissing);
     hide(secondsRange);
