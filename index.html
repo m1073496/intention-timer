@@ -31,21 +31,24 @@
               <article class="categories">
                 <h3 class="form-label">Select a category:</h3>
                 <section class="category-box-wrapper">
-                  <div class="category-boxes study-box">
+                  <input type="radio" class="radio-study" id="radioStudy" name="radioCategory" value="study">
+                  <label for="radioStudy" class="study-box category-inactive">
                     <img class="category-image study-image" src="./assets/study.svg" alt="option 1: select study activity">
                     <img class="category-image study-image-active hidden" src="./assets/study-active.svg" alt="study activity selected">
                     <p class="category-text">Study</p>
-                  </div>
-                  <div class="category-boxes meditate-box">
+                  </label>
+                  <input type="radio" class="radio-meditate" id="radioMeditate" name="radioCategory" value="meditate">
+                  <label for="radioMeditate" class="meditate-box category-inactive">
                     <img class="category-image meditate-image" src="./assets/meditate.svg" alt="option 2: select meditate activity">
                     <img class="category-image meditate-image-active hidden" src="./assets/meditate-active.svg" alt="meditate activity selected">
                     <p class="category-text">Meditate</p>
-                  </div>
-                  <div class="category-boxes exercise-box">
+                  </label>
+                  <input type="radio" class="radio-exercise" id="radioExercise" name="radioCategory" value="exercise">
+                  <label for="radioExercise" class="exercise-box category-inactive">
                     <img class="category-image exercise-image" src="./assets/exercise.svg" alt="option 3: select exercise activity">
                     <img class="category-image exercise-image-active hidden" src="./assets/exercise-active.svg" alt="exercise activity selected">
                     <p class="category-text">Exercise</p>
-                  </div>
+                  </label>
                 </section>
                 <div class="category-warning warning-category hidden">
                   <img class="error-icon" src="./assets/warning.svg" alt="Error">

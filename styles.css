@@ -135,10 +135,15 @@ form {
   width: 45vw;
 }
 
-.category-boxes {
-  border: 0.15em solid#FFF;
-  border-radius: 5px;
+.category-box-wrapper input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.category-box-wrapper label {
   width: 10em;
+  font-size: 1.1rem;
   text-align: center;
 }
 
@@ -152,6 +157,11 @@ form {
   margin: 0 0 10px 0;
   font-size: 1.1rem;
   pointer-events: none;
+}
+
+.category-inactive {
+  border: 0.15em solid#FFF;
+  border-radius: 5px;
 }
 
 .study-active {
