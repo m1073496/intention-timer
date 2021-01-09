@@ -50,8 +50,8 @@ function submitForm(event) {
     createNewActivity();
     hide(activityInputForm);
     show(timerBoxWrapper);
-    countdownMinutes.innerText = currentActivity.minutes;
-    countdownSeconds.innerText = currentActivity.seconds;
+    countdownMinutes.innerText = formatNumber(currentActivity.minutes);
+    countdownSeconds.innerText = formatNumber(currentActivity.seconds);
   }
 }
 
@@ -119,6 +119,14 @@ function validateSeconds() {
     hide(secondsMissing);
     hide(secondsRange);
     return true;
+  }
+}
+
+function formatNumber(number) {
+  var parsedNumber = parseInt(number);
+  if (parsedNumber < 10) {
+    var stringNumber = `0` + parsedNumber;
+    return stringNumber;
   }
 }
 
