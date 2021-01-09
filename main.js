@@ -21,6 +21,10 @@ var warningMinutes = document.querySelector('.warning-minutes');
 var warningSeconds = document.querySelector('.warning-seconds');
 var countdownMinutes = document.querySelector('.countdown-minutes');
 var countdownSeconds = document.querySelector('.countdown-seconds');
+var minutesMissing = document.querySelector('.minutes-missing');
+var minutesRange = document.querySelector('.minutes-range');
+var secondsMissing = document.querySelector('.seconds-missing');
+var secondsRange = document.querySelector('.seconds-range');
 
 var categoryIsClicked = {
   studySelected: false,
@@ -50,33 +54,93 @@ function submitForm(event) {
     createNewActivity();
     hide(activityInputForm);
     show(timerBoxWrapper);
+    countdownMinutes.innerText = currentActivity.minutes;
+    countdownSeconds.innerText = currentActivity.seconds;
   }
-  countdownMinutes.innerText = currentActivity.minutes;
-  countdownSeconds.innerText = currentActivity.seconds;
 }
 
 function checkInputValidity() {
+  if (checkCategoryValidity() === true && checkDescripValidity() === true && checkMinutesValidity() === true && checkSecondsValidity() === true) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function checkCategoryValidity() {
   if (categoryIsClicked.studySelected === false && categoryIsClicked.meditateSelected === false && categoryIsClicked.exerciseSelected === false) {
     show(warningCategory);
     return false;
-  } if (!accomplishInput.value) {
+  } else {
+    hide(warningCategory);
+    return true;
+  }
+}
+
+function checkDescripValidity() {
+  if (!accomplishInput.value) {
      show(warningDescription);
      return false;
-  } else if (!minutesInput.value || isNaN(minutesInput.value) || minutesInput.value > 1440 || parseInt(minutesInput.value) < 0) {
+  } else {
+     hide(warningDescription);
+     return true;
+  }
+}
+
+function checkMinutesValidity() {
+  if (!minutesInput.value || isNaN(minutesInput.value)) {
      show(warningMinutes);
+     show(minutesMissing);
+     hide(minutesRange);
      return false;
-  } else if (!secondsInput.value || isNaN(secondsInput.value) || secondsInput.value > 59 || parseInt(secondsInput.value) < 0) {
+  } else if (minutesInput.value > 1440 || parseInt(minutesInput.value) < 0) {
+     show(warningMinutes);
+     show(minutesRange);
+     hide(minutesMissing);
+     return false;
+   } else {
+     hide(warningMinutes);
+     hide(minutesMissing);
+     hide(minutesRange);
+     return true;
+   }
+}
+
+function checkSecondsValidity() {
+  if (!secondsInput.value || isNaN(secondsInput.value)) {
      show(warningSeconds);
+     show(secondsMissing);
+     hide(secondsRange);
+     return false;
+  } else if (secondsInput.value > 59 || parseInt(secondsInput.value) < 0) {
+     show(warningSeconds);
+     show(secondsRange);
+     hide(secondsMissing);
      return false;
   } else {
+     hide(warningSeconds);
+     hide(secondsMissing);
+     hide(secondsRange);
      return true;
   }
 }
 
 function createNewActivity() {
   //"Exercise" is a placeholder for category box input
-  currentActivity = new Activity("Exercise", accomplishInput.value, minutesInput.value, secondsInput.value);
+  currentActivity = new Activity(findCategoryChoice(), accomplishInput.value, minutesInput.value, secondsInput.value);
   //save activities in localStorage or array??
+}
+
+function findCategoryChoice() {
+  var activitySelected;
+  if (categoryIsClicked.studySelected === true) {
+    activitySelected = `Study`;
+  } else if (categoryIsClicked.meditateSelected === true) {
+    activitySelected = `Meditate`;
+  } else if (categoryIsClicked.exerciseSelected === true) {
+    activitySelected = `Exercise`;
+  }
+  return activitySelected;
 }
 
 function activateCategory(event) {
