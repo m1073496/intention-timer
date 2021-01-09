@@ -73,9 +73,21 @@ function checkInputValidity() {
   }
 }
 
+function findCategoryChoice() {
+  var activitySelected;
+  if (categoryIsClicked.studySelected === true) {
+    activitySelected = `Study`;
+  } else if (categoryIsClicked.meditateSelected === true) {
+    activitySelected = `Meditate`;
+  } else if (categoryIsClicked.exerciseSelected === true) {
+    activitySelected = `Exercise`;
+  }
+  return activitySelected;
+}
+
 function createNewActivity() {
   //"Exercise" is a placeholder for category box input
-  currentActivity = new Activity("Exercise", accomplishInput.value, minutesInput.value, secondsInput.value);
+  currentActivity = new Activity(findCategoryChoice(), accomplishInput.value, minutesInput.value, secondsInput.value);
   //save activities in localStorage or array??
 }
 
