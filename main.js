@@ -93,7 +93,7 @@ function checkMinutesValidity() {
      show(minutesMissing);
      hide(minutesRange);
      return false;
-  } else if (parseInt(minutesInput.value > 1440) || parseInt(minutesInput.value) < 0) {
+  } else if (parseInt(minutesInput.value) > 1440 || parseInt(minutesInput.value) < 0) {
      show(warningMinutes);
      show(minutesRange);
      hide(minutesMissing);
@@ -112,7 +112,7 @@ function checkSecondsValidity() {
      show(secondsMissing);
      hide(secondsRange);
      return false;
-  } else if (parseInt(secondsInput.value > 59) || parseInt(secondsInput.value) < 0) {
+  } else if (parseInt(secondsInput.value) > 59 || parseInt(secondsInput.value) < 0) {
      show(warningSeconds);
      show(secondsRange);
      hide(secondsMissing);
