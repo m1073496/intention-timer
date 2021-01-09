@@ -50,9 +50,9 @@ function submitForm(event) {
     createNewActivity();
     hide(activityInputForm);
     show(timerBoxWrapper);
+    countdownMinutes.innerText = currentActivity.minutes;
+    countdownSeconds.innerText = currentActivity.seconds;
   }
-  countdownMinutes.innerText = currentActivity.minutes;
-  countdownSeconds.innerText = currentActivity.seconds;
 }
 
 function checkInputValidity() {
