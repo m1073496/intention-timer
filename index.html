@@ -49,7 +49,7 @@
                 </section>
                 <div class="category-warning warning-category hidden">
                   <img class="error-icon" src="./assets/warning.svg" alt="Error">
-                  <p>An activity category is required.</p>
+                  <p class="error-text">An activity category is required.</p>
                 </div>
               </article>
               <article class="accomplish">
@@ -57,7 +57,7 @@
                 <input type="text" class="accomplish-input" id="accomplishInput"/>
                 <div class="category-warning warning-description hidden">
                   <img class="error-icon" src="./assets/warning.svg" alt="Error">
-                  <p>An activity description is required.</p>
+                  <p class="error-text">A description is required.</p>
                 </div>
               </article>
               <article class="time">
@@ -66,8 +66,8 @@
                   <input type="text" class="minutes-input" id="minutesInput"/>
                   <div class="category-warning warning-minutes hidden">
                     <img class="error-icon" src="./assets/warning.svg" alt="Error">
-                    <p class="minutes-missing hidden">A number is required.</p>
-                    <p class="minutes-range hidden">Enter a number between 0 - 1,440.</p>
+                    <p class="minutes-missing error-text hidden">A number is required.</p>
+                    <p class="minutes-range error-text hidden">Enter a number between 0 and 1,440.</p>
                   </div>
                 </div>
                 <div class="time-container">
@@ -75,8 +75,8 @@
                   <input type="text" class="seconds-input" id="secondsInput"/>
                   <div class="category-warning warning-seconds hidden">
                     <img class="error-icon" src="./assets/warning.svg" alt="Error">
-                    <p class="seconds-missing hidden">A number is required.</p>
-                    <p class="seconds-range hidden">Enter a number between 0 - 59.</p>
+                    <p class="seconds-missing error-text hidden">A number is required.</p>
+                    <p class="seconds-range error-text hidden">Enter a number between 0 and 59.</p>
                   </div>
                 </div>
               </article>
