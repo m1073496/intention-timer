@@ -88,12 +88,12 @@ function checkDescripValidity() {
 }
 
 function checkMinutesValidity() {
-  if (!minutesInput.value || isNaN(minutesInput.value)) {
+  if (!parseInt(minutesInput.value) || isNaN(minutesInput.value)) {
      show(warningMinutes);
      show(minutesMissing);
      hide(minutesRange);
      return false;
-  } else if (minutesInput.value > 1440 || parseInt(minutesInput.value) < 0) {
+  } else if (parseInt(minutesInput.value > 1440) || parseInt(minutesInput.value) < 0) {
      show(warningMinutes);
      show(minutesRange);
      hide(minutesMissing);
@@ -107,12 +107,12 @@ function checkMinutesValidity() {
 }
 
 function checkSecondsValidity() {
-  if (!secondsInput.value || isNaN(secondsInput.value)) {
+  if (!parseInt(secondsInput.value) || isNaN(secondsInput.value)) {
      show(warningSeconds);
      show(secondsMissing);
      hide(secondsRange);
      return false;
-  } else if (secondsInput.value > 59 || parseInt(secondsInput.value) < 0) {
+  } else if (parseInt(secondsInput.value > 59) || parseInt(secondsInput.value) < 0) {
      show(warningSeconds);
      show(secondsRange);
      hide(secondsMissing);
@@ -127,7 +127,7 @@ function checkSecondsValidity() {
 
 function createNewActivity() {
   //"Exercise" is a placeholder for category box input
-  currentActivity = new Activity(findCategoryChoice(), accomplishInput.value, minutesInput.value, secondsInput.value);
+  currentActivity = new Activity(findCategoryChoice(), accomplishInput.value, parseInt(minutesInput.value), parseInt(secondsInput.value));
   //save activities in localStorage or array??
 }
 
