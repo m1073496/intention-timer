@@ -25,6 +25,7 @@ var minutesMissing = document.querySelector('.minutes-missing');
 var minutesRange = document.querySelector('.minutes-range');
 var secondsMissing = document.querySelector('.seconds-missing');
 var secondsRange = document.querySelector('.seconds-range');
+// var startCircle = document.querySelector('.start-circle-text');
 
 var categoryIsClicked = {
   studySelected: false,
@@ -183,6 +184,7 @@ function selectStudyBox() {
   studyBox.classList.toggle('study-active');
   deactivateMeditate();
   deactivateExercise();
+  // startCircle.classList.add('study-circle');
   document.querySelector('.start-circle-text').style.borderColor = "#B3FD78";
   categoryIsClicked.studySelected = true;
 }
@@ -193,6 +195,7 @@ function selectMeditateBox() {
   meditateBox.classList.toggle('meditate-active');
   deactivateStudy();
   deactivateExercise();
+  // startCircle.classList.add('meditate-circle');
   document.querySelector('.start-circle-text').style.borderColor = "#C278FD";
   categoryIsClicked.meditateSelected = true;
 }
@@ -203,6 +206,7 @@ function selectExerciseBox() {
   exerciseBox.classList.toggle('exercise-active');
   deactivateStudy();
   deactivateMeditate();
+  // startCircle.classList.add('exercise-circle');
   document.querySelector('.start-circle-text').style.borderColor = "#FD8078";
   categoryIsClicked.exerciseSelected = true;
 }

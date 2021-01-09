@@ -220,6 +220,17 @@ form {
   font-weight: 300;
 }
 
+/* TODO: try reinstating */
+/* .study-circle {
+  border-color: #B3FD78;
+}
+.meditate-circle {
+  border-color: #C278FD;
+}
+.exercise-circle {
+  border-color: #FD8078;
+} */
+
 /* -----------------RIGHT-HAND CONTAINER------------------ */
 .past-activity {
   width: 33%;
