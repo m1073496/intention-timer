@@ -48,13 +48,11 @@ class Activity {
         return;
       }
 
-      var days = Math.floor(distance / day);
-      var hours = Math.floor((distance % day) / hour);
-      var minutes = Math.floor((distance % hour) / minute);
+      var minutes = Math.floor(distance / minute);
       var seconds = Math.floor((distance % minute) / second);
 
       return {
-        days, hours, minutes, seconds
+        minutes, seconds
       }
     }
 
@@ -66,7 +64,6 @@ class Activity {
 
     showRemaining();
     timer = setInterval(showRemaining, 1000);
-    // timer = setInterval(showRemaining, 100);
   }
 
   markComplete() {
