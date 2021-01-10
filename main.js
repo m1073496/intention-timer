@@ -41,15 +41,21 @@ startActivityButton.addEventListener('click', submitForm);
 startTimerButton.addEventListener('click', function() {
   currentActivity.startTimer();
 });
-logActivityButton.addEventListener('click', logActivity);
+logActivityButton.addEventListener('click', logActivtyEvents);
 
-function logActivity() {
-  console.log('yes');
+//Add functions below
+function completeActivity() {
+  countdownClock.innerText = "Congrats! Keep it up!!";
+  countdownClock.style.fontSize = "3em";
+  startTimerButton.innerText = "COMPLETE";
+  show(logActivityButton);
+}
+
+function logActivtyEvents() {
   hide(timerBoxWrapper);
   show(createNewActivityButton);
 }
 
-//Add functions below
 function show(element) {
   element.classList.remove('hidden');
 }
