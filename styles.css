@@ -104,12 +104,18 @@ timer-box-wrapper {
   font-size: 1.5em;
 }
 
+.log-button-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .log-button {
   border: none;
   border-radius: 5px;
   height: 5.5vh;
-  width: 100%;
-  margin-top: 1em;
+  width: 17vw;
+  /* margin-top: 1em; */
   padding: 10px 30px;
   font-size: 1rem;
   font-weight: 300;
