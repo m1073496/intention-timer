@@ -301,6 +301,9 @@ form {
 
 
 /* -----------------HIDE THINGS------------------ */
+.cannot-click {
+  pointer-events: none;
+}
 
 .hidden {
   display: none;

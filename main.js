@@ -39,9 +39,10 @@ var pastActivities = [];
 categoryBoxWrapper.addEventListener('click', activateCategory);
 startActivityButton.addEventListener('click', submitForm);
 startTimerButton.addEventListener('click', function() {
+  startTimerButton.classList.add('cannot-click');
   currentActivity.startTimer();
 });
-logActivityButton.addEventListener('click', logActivtyEvents);
+logActivityButton.addEventListener('click', logActivityEvents);
 
 //Add functions below
 function completeActivity() {
@@ -52,7 +53,7 @@ function completeActivity() {
   currentActivity.markComplete();
 }
 
-function logActivtyEvents() {
+function logActivityEvents() {
   hide(timerBoxWrapper);
   show(createNewActivityButton);
 }
