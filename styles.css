@@ -105,6 +105,10 @@ form {
   height: 100%;
 }
 
+.categories {
+  height: 20vh;
+}
+
 .form-label {
   font-size: 1.2rem;
   font-weight: 400;
@@ -182,10 +186,8 @@ form {
 /* --------------------ACCOMPLISH FORM-------------------- */
 
 .accomplish {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
   width: 45vw;
+  height: 15.3vh;
 }
 
 /* ----------------------TIMING FORM---------------------- */

@@ -48,14 +48,6 @@ function hide(element) {
   element.classList.add('hidden');
 }
 
-function reveal(element) {
-  element.classList.remove('invisible');
-}
-
-function cloak(element) {
-  element.classList.add('invisible');
-}
-
 function submitForm(event) {
   event.preventDefault();
   if (validateInput()) {
@@ -83,20 +75,20 @@ function validateInput() {
 function validateCategory() {
   var myChoice = document.querySelector('input[name="radioCategory"]:checked');
   if (!myChoice) {
-    reveal(warningCategory);
+    show(warningCategory);
     return false;
   } else {
-    cloak(warningCategory);
+    hide(warningCategory);
     return true;
   }
 }
 
 function validateDescription() {
   if (!accomplishInput.value) {
-    reveal(warningDescription);
+    show(warningDescription);
     return false;
   } else {
-    cloak(warningDescription);
+    hide(warningDescription);
     return true;
   }
 }
