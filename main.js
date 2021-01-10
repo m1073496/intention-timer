@@ -72,7 +72,8 @@ function validateInput() {
   validateDescription();
   validateMinutes();
   validateSeconds();
-  if (validateCategory() && validateDescription() && validateMinutes() && validateSeconds()) {
+  validateTime();
+  if (validateCategory() && validateDescription() && validateMinutes() && validateSeconds() && validateTime()) {
     return true;
   } else {
     return false;
@@ -134,6 +135,18 @@ function validateSeconds() {
     hide(warningSeconds);
     hide(secondsMissing);
     hide(secondsRange);
+    return true;
+  }
+}
+
+function validateTime() {
+  if (parseInt(minutesInput.value) == 0 && parseInt(secondsInput.value) == 0) {
+    show(warningMinutes);
+    show(minutesRange);
+    show(warningSeconds);
+    show(secondsRange);
+    return false;
+  } else {
     return true;
   }
 }
