@@ -19,6 +19,7 @@ var warningCategory = document.querySelector('.warning-category');
 var warningDescription = document.querySelector('.warning-description');
 var warningMinutes = document.querySelector('.warning-minutes');
 var warningSeconds = document.querySelector('.warning-seconds');
+var countdownClock = document.querySelector('.countdown-clock');
 var countdownMinutes = document.querySelector('.countdown-minutes');
 var countdownSeconds = document.querySelector('.countdown-seconds');
 var minutesMissing = document.querySelector('.minutes-missing');
@@ -26,6 +27,9 @@ var minutesRange = document.querySelector('.minutes-range');
 var secondsMissing = document.querySelector('.seconds-missing');
 var secondsRange = document.querySelector('.seconds-range');
 var startTimerButton = document.querySelector('.start-circle-text');
+var logActivityButton = document.querySelector('.log-button');
+var timerBoxHeader = document.querySelector('.timer-box-header');
+var createNewActivityButton = document.querySelector('.create-new-activity-button');
 
 var currentActivity;
 //currentActivity will get pushed to pastActivities array when property "completed" is marked true
@@ -34,10 +38,16 @@ var pastActivities = [];
 //Add event listeners below
 categoryBoxWrapper.addEventListener('click', activateCategory);
 startActivityButton.addEventListener('click', submitForm);
-
 startTimerButton.addEventListener('click', function() {
   currentActivity.startTimer();
 });
+logActivityButton.addEventListener('click', logActivity);
+
+function logActivity() {
+  console.log('yes');
+  hide(timerBoxWrapper);
+  show(createNewActivityButton);
+}
 
 //Add functions below
 function show(element) {
@@ -56,6 +66,7 @@ function submitForm(event) {
     show(timerBoxWrapper);
     countdownMinutes.innerText = formatNumber(currentActivity.minutes);
     countdownSeconds.innerText = formatNumber(currentActivity.seconds);
+    timerBoxHeader.innerText = currentActivity.description;
   }
 }
 

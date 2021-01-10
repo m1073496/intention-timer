@@ -45,7 +45,11 @@ body, html {
 
 .category-timer-wrapper {
   border-radius: 5px;
-  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 79vh;
   background-color: #46424D;
   box-shadow: 10px 10px 10px #26222D;
 }
@@ -54,6 +58,7 @@ body, html {
 timer-box-wrapper {
   display: flex;
   flex-direction: column;
+  height: 100%;
   margin: 0;
 }
 
@@ -68,6 +73,7 @@ timer-box-wrapper {
 }
 
 .countdown-clock {
+  /* border: 0.2em solid rgb(39, 39, 36); */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -82,7 +88,8 @@ timer-box-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 43vh;
+  height: 42vh;
+  margin: 0;
 }
 
 .start-circle-text {
@@ -93,7 +100,36 @@ timer-box-wrapper {
   align-items: center;
   height: 17vw;
   width: 17vw;
+  margin-top: 2.5em;
+  margin-bottom: 2em;
   font-size: 1.5em;
+}
+
+.log-button-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.log-button {
+  border: none;
+  border-radius: 5px;
+  height: 5.5vh;
+  width: 17vw;
+  padding: 10px 30px;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.create-new-activity-button {
+  border: none;
+  border-radius: 5px;
+  height: 5.5vh;
+  width: 25vw;
+  margin: 5em;
+  padding: 10px 30px;
+  font-size: 1rem;
+  font-weight: 300;
 }
 
 /*--------------------TBD--------------------------- */
