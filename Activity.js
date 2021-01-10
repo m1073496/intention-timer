@@ -9,11 +9,9 @@ class Activity {
   }
 
   startTimer() {
-    // useful constants
+    // useful constants to express normal time units as milliseconds
     var second = 1000;
     var minute = second * 60;
-    var hour = minute * 60;
-    var day = hour * 24;
 
     // new Date() returns current time as a date string
     // Date.parse(foo) forces foo to be expressed as a number of milliseconds
