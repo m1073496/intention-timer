@@ -44,14 +44,22 @@ function hide(element) {
   element.classList.add('hidden');
 }
 
+function reveal(element) {
+  element.classList.remove('invisible');
+}
+
+function cloak(element) {
+  element.classList.add('invisible');
+}
+
 function submitForm(event) {
   event.preventDefault();
   if (validateInput()) {
     createNewActivity();
     hide(activityInputForm);
     show(timerBoxWrapper);
-    countdownMinutes.innerText = currentActivity.minutes;
-    countdownSeconds.innerText = currentActivity.seconds;
+    countdownMinutes.innerText = formatNumber(currentActivity.minutes);
+    countdownSeconds.innerText = formatNumber(currentActivity.seconds);
   }
 }
 
@@ -66,26 +74,26 @@ function validateInput() {
 function validateCategory() {
   var myChoice = document.querySelector('input[name="radioCategory"]:checked');
   if (myChoice === null) {
-    show(warningCategory);
+    reveal(warningCategory);
     return false;
   } else {
-    hide(warningCategory);
+    cloak(warningCategory);
     return true;
   }
 }
 
 function validateDescription() {
   if (!accomplishInput.value) {
-    show(warningDescription);
+    reveal(warningDescription);
     return false;
   } else {
-    hide(warningDescription);
+    cloak(warningDescription);
     return true;
   }
 }
 
 function validateMinutes() {
-  if (!parseInt(minutesInput.value) || isNaN(minutesInput.value)) {
+  if (!minutesInput.value || isNaN(minutesInput.value)) {
     show(warningMinutes);
     show(minutesMissing);
     hide(minutesRange);
@@ -104,7 +112,7 @@ function validateMinutes() {
 }
 
 function validateSeconds() {
-  if (!parseInt(secondsInput.value) || isNaN(secondsInput.value)) {
+  if (!secondsInput.value || isNaN(secondsInput.value)) {
     show(warningSeconds);
     show(secondsMissing);
     hide(secondsRange);
@@ -119,6 +127,16 @@ function validateSeconds() {
     hide(secondsMissing);
     hide(secondsRange);
     return true;
+  }
+}
+
+function formatNumber(number) {
+  var parsedNumber = parseInt(number);
+  if (parsedNumber < 10) {
+    var stringNumber = `0` + parsedNumber;
+    return stringNumber;
+  } else {
+    return number;
   }
 }
 
