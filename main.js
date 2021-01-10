@@ -68,6 +68,10 @@ function submitForm(event) {
 }
 
 function validateInput() {
+  validateCategory();
+  validateDescription();
+  validateMinutes();
+  validateSeconds();
   if (validateCategory() && validateDescription() && validateMinutes() && validateSeconds()) {
     return true;
   } else {
