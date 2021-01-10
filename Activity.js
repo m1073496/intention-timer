@@ -17,22 +17,22 @@ class Activity {
     // Date.parse(foo) forces foo to be expressed as a number of milliseconds
     // we *need* timeAtButtonPress to be in milliseconds
     //   because timerLength below will be in milliseconds and we want to add them together (add apples to apples)
-    var timeAtButtonPress = Date.parse(new Date());
+    var timeAtButtonPress = Date.parse(new Date()); // example: 12:30
 
     // calculate # of milliseconds our user wants
-    var timerLength = parseInt(minutesInput.value)*minute + parseInt(secondsInput.value)*second;
+    var timerLength = (this.minutes * minute) + (this.seconds * second); // example: 5:00
 
     // could use Date.parse() here to force targetTime to be in milliseconds, but not required
     //  (see rightNow below, which will be expressed the same way as our targetTime here,
-    //    so when we do the calculation to calculate distance, we'll be subtracting oranges from oranges)
-    var targetTime = new Date(timeAtButtonPress + timerLength);
+    //    so when we do the calculation to calculate timeLeftOnClock, we'll be subtracting oranges from oranges)
+    var calculatedTargetTime = new Date(timeAtButtonPress + timerLength); // example: 12:35
 
     var timer;
 
     function determineRemaining() {
-      var rightNow = new Date();
-      var distance = targetTime - rightNow;
-      if (distance < 0) {
+      var rightNow = new Date(); //example: 12:32
+      var timeLeftOnClock = calculatedTargetTime - rightNow; // if function is run at 12:32, then 12:32 minus 12:30 equals 3:00 remaining
+      if (timeLeftOnClock < 0) {
         //KATIE PLEASE MOVE TO MAIN.JS FUNCTION FROM HERE TO....
         startTimerButton.innerText = "COMPLETE";
         show(logActivityButton);
@@ -46,18 +46,30 @@ class Activity {
         return;
       }
 
-      var minutes = Math.floor(distance / minute);
-      var seconds = Math.floor((distance % minute) / second);
+      var minutes = Math.floor(timeLeftOnClock / minute); // example: timeLeftOnClock is 3:45 (shitload of milliseconds); minutes left will be 3.75; 'minutes' variable will be 3
+      var seconds = Math.floor((timeLeftOnClock % minute) / second); // example: timeLeftOnClock is 3:45; seconds will be 45
+      // console.log(minutes);
+      // console.log(seconds);
 
       return {
         minutes, seconds
       }
+
+      //   var days = Math.floor(distance / day);
+      //   var hours = Math.floor((distance % day) / hour);
+      //   var minutes = Math.floor((distance % hour) / minute);
+      //   var seconds = Math.floor((distance % minute) / second);
+      //
+      //   return {
+      //     days, hours, minutes, seconds
+      //   }
     }
 
+    // TODO: move this DOM manipulation to the main.js file
     function showRemaining() {
       var remaining = determineRemaining();
-      document.querySelector('.countdown-minutes').innerHTML = formatNumber(remaining.minutes);
-      document.querySelector('.countdown-seconds').innerHTML = formatNumber(remaining.seconds);
+      countdownMinutes.innerHTML = formatNumber(remaining.minutes);
+      countdownSeconds.innerHTML = formatNumber(remaining.seconds);
     }
 
     showRemaining();
