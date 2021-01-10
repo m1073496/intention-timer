@@ -9,18 +9,31 @@ class Activity {
   }
 
   startTimer() {
-    var currentTime = Date.parse(new Date());
-    var targetTime = new Date(currentTime + parseInt(minutesInput.value)*60*1000 + parseInt(secondsInput.value)*1000);
-
+    // useful constants
     var second = 1000;
     var minute = second * 60;
     var hour = minute * 60;
     var day = hour * 24;
+
+    // new Date() returns current time as a date string
+    // Date.parse(foo) forces foo to be expressed as a number of milliseconds
+    // we *need* timeAtButtonPress to be in milliseconds
+    //   because timerLength below will be in milliseconds and we want to add them together (add apples to apples)
+    var timeAtButtonPress = Date.parse(new Date());
+
+    // calculate # of milliseconds our user wants
+    var timerLength = parseInt(minutesInput.value)*minute + parseInt(secondsInput.value)*second;
+
+    // could use Date.parse() here to force targetTime to be in milliseconds, but not required
+    //  (see rightNow below, which will be expressed the same way as our targetTime here,
+    //    so when we do the calculation to calculate distance, we'll be subtracting oranges from oranges)
+    var targetTime = new Date(timeAtButtonPress + timerLength);
+
     var timer;
 
     function determineRemaining() {
-      var today = new Date();
-      var distance = targetTime - today;
+      var rightNow = new Date();
+      var distance = targetTime - rightNow;
       if (distance < 0) {
         //KATIE PLEASE MOVE TO MAIN.JS FUNCTION FROM HERE TO....
         startTimerButton.innerText = "COMPLETE";
