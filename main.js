@@ -25,7 +25,7 @@ var minutesMissing = document.querySelector('.minutes-missing');
 var minutesRange = document.querySelector('.minutes-range');
 var secondsMissing = document.querySelector('.seconds-missing');
 var secondsRange = document.querySelector('.seconds-range');
-// var startCircle = document.querySelector('.start-circle-text');
+var startTimerButton = document.querySelector('.start-circle-text');
 
 var currentActivity;
 //currentActivity will get pushed to pastActivities array when property "completed" is marked true
@@ -34,6 +34,10 @@ var pastActivities = [];
 //Add event listeners below
 categoryBoxWrapper.addEventListener('click', activateCategory);
 startActivityButton.addEventListener('click', submitForm);
+
+startTimerButton.addEventListener('click', function() {
+  currentActivity.startTimer();
+});
 
 //Add functions below
 function show(element) {
