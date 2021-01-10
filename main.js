@@ -60,6 +60,7 @@ function submitForm(event) {
     show(timerBoxWrapper);
     countdownMinutes.innerText = formatNumber(currentActivity.minutes);
     countdownSeconds.innerText = formatNumber(currentActivity.seconds);
+    helpWithTime();
   }
 }
 
@@ -209,4 +210,51 @@ function selectExerciseBox() {
   deactivateMeditate();
   // startCircle.classList.add('exercise-circle');
   document.querySelector('.start-circle-text').style.borderColor = "#FD8078";
+}
+
+// var timeInMinutes = 10;
+// var timeInMinutes = parseInt(minutesInput.value);
+
+// const deadline = new Date(currentTime + timeInMinutes*60*1000);
+
+// var nye = new Date('01/09/2021 08:00 PM');
+// var nye = Date.parse(new Date());
+// var deadline = new Date(currentTime + timeInMinutes*60*1000);
+// var nye = new Date(currentTime + 10*60*1000);
+
+function helpWithTime() {
+  var currentTime = Date.parse(new Date());
+  var nye = new Date(currentTime + parseInt(minutesInput.value)*60*1000);
+  
+  var second = 1000;
+  var minute = second * 60;
+  var hour = minute * 60;
+  var day = hour * 24;
+  var timer;
+  
+  function determineRemaining() {
+    var today = new Date();
+    var distance = nye - today;
+    if (distance < 0) {
+      clearInterval(timer);
+      return;
+    }
+    
+    var days = Math.floor(distance / day);
+    var hours = Math.floor((distance % day) / hour);
+    var minutes = Math.floor((distance % hour) / minute);
+    var seconds = Math.floor((distance % minute) / second);
+    
+    return {
+      days, hours, minutes, seconds
+    }
+  }
+  
+  function showRemaining() {
+    var remaining = determineRemaining();
+    document.querySelector('.countdown-minutes').innerHTML = formatNumber(remaining.minutes);
+    document.querySelector('.countdown-seconds').innerHTML = formatNumber(remaining.seconds);
+  }
+  
+  timer = setInterval(showRemaining, 1000);
 }
