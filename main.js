@@ -44,6 +44,14 @@ function hide(element) {
   element.classList.add('hidden');
 }
 
+function reveal(element) {
+  element.classList.remove('invisible');
+}
+
+function cloak(element) {
+  element.classList.add('invisible');
+}
+
 function submitForm(event) {
   event.preventDefault();
   if (validateInput()) {
@@ -66,20 +74,20 @@ function validateInput() {
 function validateCategory() {
   var myChoice = document.querySelector('input[name="radioCategory"]:checked');
   if (myChoice === null) {
-    show(warningCategory);
+    reveal(warningCategory);
     return false;
   } else {
-    hide(warningCategory);
+    cloak(warningCategory);
     return true;
   }
 }
 
 function validateDescription() {
   if (!accomplishInput.value) {
-    show(warningDescription);
+    reveal(warningDescription);
     return false;
   } else {
-    hide(warningDescription);
+    cloak(warningDescription);
     return true;
   }
 }
@@ -127,6 +135,8 @@ function formatNumber(number) {
   if (parsedNumber < 10) {
     var stringNumber = `0` + parsedNumber;
     return stringNumber;
+  } else {
+    return number;
   }
 }
 

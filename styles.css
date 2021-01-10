@@ -191,6 +191,7 @@ form {
 /* ----------------------TIMING FORM---------------------- */
 .time {
   display: flex;
+  height: 15.3vh;
   width: 45vw;
   justify-content: space-between;
 }
@@ -265,6 +266,10 @@ form {
 
 .hidden {
   display: none;
+}
+
+.invisible {
+  visibility: hidden;
 }
 
 
