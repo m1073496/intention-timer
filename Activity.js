@@ -9,7 +9,10 @@ class Activity {
   }
 
   startTimer() {
-
+    //start time... based on button click
+    //use start circle
+    //add an eventlistner listener
+    helpWithTime();
   }
 
   markComplete() {

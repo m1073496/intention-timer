@@ -224,7 +224,7 @@ function selectExerciseBox() {
 
 function helpWithTime() {
   var currentTime = Date.parse(new Date());
-  var nye = new Date(currentTime + parseInt(minutesInput.value)*60*1000);
+  var nye = new Date(currentTime + parseInt(minutesInput.value)*60*1000 + parseInt(secondsInput.value)*1000);
   
   var second = 1000;
   var minute = second * 60;
@@ -235,10 +235,10 @@ function helpWithTime() {
   function determineRemaining() {
     var today = new Date();
     var distance = nye - today;
-    if (distance < 0) {
-      clearInterval(timer);
-      return;
-    }
+    // if (distance < 0) {
+    //   clearInterval(timer);
+    //   return;
+    // }
     
     var days = Math.floor(distance / day);
     var hours = Math.floor((distance % day) / hour);
@@ -256,5 +256,7 @@ function helpWithTime() {
     document.querySelector('.countdown-seconds').innerHTML = formatNumber(remaining.seconds);
   }
   
-  timer = setInterval(showRemaining, 1000);
+  // timer = setInterval(showRemaining, 1000);
+  setInterval(showRemaining, 1000);
+  
 }
