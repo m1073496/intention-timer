@@ -26,11 +26,10 @@ class Activity {
           startTimerButton.innerText = "COMPLETE";
           show(logActivityButton);
           countdownClock.innerText = "Congrats! Keep it up!!";
-          countdownClock.styles.fontSize = "3em";
           //NEED TO CHANGE FONT SIZE; COULDN'T GET BELOW TO WORK
-          document.querySelector('.countdown-clock').style.fontSize = "3em";
-          countdownClock.styles.fontSize = "3em";
-          document.querySelector('.countdown-clock').style.borderColor = "#C278FD";
+          // document.querySelector('.countdown-clock').style.fontSize = "3em";
+          // countdownClock.styles.fontSize = "3em";
+          // document.querySelector('.countdown-clock').style.borderColor = "#C278FD";
           //...... HERE
           clearInterval(timer);
           return;
