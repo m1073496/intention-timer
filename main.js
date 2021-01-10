@@ -19,6 +19,7 @@ var warningCategory = document.querySelector('.warning-category');
 var warningDescription = document.querySelector('.warning-description');
 var warningMinutes = document.querySelector('.warning-minutes');
 var warningSeconds = document.querySelector('.warning-seconds');
+var countdownClock = document.querySelector('.countdown-clock');
 var countdownMinutes = document.querySelector('.countdown-minutes');
 var countdownSeconds = document.querySelector('.countdown-seconds');
 var minutesMissing = document.querySelector('.minutes-missing');

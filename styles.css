@@ -73,6 +73,7 @@ timer-box-wrapper {
 }
 
 .countdown-clock {
+  /* border: 0.2em solid rgb(39, 39, 36); */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -115,7 +116,6 @@ timer-box-wrapper {
   border-radius: 5px;
   height: 5.5vh;
   width: 17vw;
-  /* margin-top: 1em; */
   padding: 10px 30px;
   font-size: 1rem;
   font-weight: 300;

@@ -22,8 +22,16 @@ class Activity {
         var today = new Date();
         var distance = nye - today;
         if (distance < 0) {
-          document.querySelector('.start-circle-text').innerText = "COMPLETE";
+          //KATIE PLEASE MOVE TO MAIN.JS FUNCTION FROM HERE TO....
+          startTimerButton.innerText = "COMPLETE";
           show(logButton);
+          countdownClock.innerText = "Congrats! Keep it up!!";
+          countdownClock.styles.fontSize = "3em";
+          //NEED TO CHANGE FONT SIZE; COULDN'T GET BELOW TO WORK
+          document.querySelector('.countdown-clock').style.fontSize = "3em";
+          countdownClock.styles.fontSize = "3em";
+          document.querySelector('.countdown-clock').style.borderColor = "#C278FD";
+          //...... HERE
           clearInterval(timer);
           return;
         }
@@ -50,13 +58,11 @@ class Activity {
   }
 
   markComplete() {
-    //
     //mark activity as completed
-
   }
 
   saveToStorage() {
-
+    //save to pastActivities array
   }
 
 };
