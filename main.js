@@ -49,6 +49,7 @@ function completeActivity() {
   countdownClock.style.fontSize = "3em";
   startTimerButton.innerText = "COMPLETE";
   show(logActivityButton);
+  currentActivity.markComplete();
 }
 
 function logActivtyEvents() {

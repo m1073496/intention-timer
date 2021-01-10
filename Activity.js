@@ -21,7 +21,6 @@ class Activity {
       var timeLeftOnClock = calculatedTargetTime - rightNow;
       if (timeLeftOnClock < 0) {
         completeActivity();
-        //...... HERE
         clearInterval(timer);
         return;
       }
@@ -47,6 +46,12 @@ class Activity {
 
   markComplete() {
     //mark activity as completed
+    //if countdown is done
+    //this.completed = true
+    //push in pastActivity array
+    this.completed = true;
+    pastActivities.push(this);
+    console.log(pastActivities);
   }
 
   saveToStorage() {
