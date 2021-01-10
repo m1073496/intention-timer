@@ -81,7 +81,7 @@ function validateInput() {
 
 function validateCategory() {
   var myChoice = document.querySelector('input[name="radioCategory"]:checked');
-  if (myChoice === null) {
+  if (!myChoice) {
     reveal(warningCategory);
     return false;
   } else {
