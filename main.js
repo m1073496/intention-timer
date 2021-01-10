@@ -27,6 +27,7 @@ var secondsMissing = document.querySelector('.seconds-missing');
 var secondsRange = document.querySelector('.seconds-range');
 var startTimerButton = document.querySelector('.start-circle-text');
 var logButton = document.querySelector('.log-button');
+var timerBoxHeader = document.querySelector('.timer-box-header');
 
 var currentActivity;
 //currentActivity will get pushed to pastActivities array when property "completed" is marked true
@@ -65,6 +66,7 @@ function submitForm(event) {
     show(timerBoxWrapper);
     countdownMinutes.innerText = formatNumber(currentActivity.minutes);
     countdownSeconds.innerText = formatNumber(currentActivity.seconds);
+    timerBoxHeader.innerText = currentActivity.description;
   }
 }
 
