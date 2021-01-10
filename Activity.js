@@ -22,6 +22,7 @@ class Activity {
         var today = new Date();
         var distance = nye - today;
         if (distance < 0) {
+          alert('Activity complete. What\'s next?')
           clearInterval(timer);
           return;
         }
@@ -46,6 +47,8 @@ class Activity {
   }
 
   markComplete() {
+    alert()
+    //mark activity as completed
 
   }
 
