@@ -26,6 +26,7 @@ var minutesRange = document.querySelector('.minutes-range');
 var secondsMissing = document.querySelector('.seconds-missing');
 var secondsRange = document.querySelector('.seconds-range');
 var startTimerButton = document.querySelector('.start-circle-text');
+var logButton = document.querySelector('.log-button');
 
 var currentActivity;
 //currentActivity will get pushed to pastActivities array when property "completed" is marked true

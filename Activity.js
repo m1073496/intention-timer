@@ -23,6 +23,7 @@ class Activity {
         var distance = nye - today;
         if (distance < 0) {
           document.querySelector('.start-circle-text').innerText = "COMPLETE";
+          show(logButton);
           clearInterval(timer);
           return;
         }
