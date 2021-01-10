@@ -24,7 +24,7 @@ class Activity {
         if (distance < 0) {
           //KATIE PLEASE MOVE TO MAIN.JS FUNCTION FROM HERE TO....
           startTimerButton.innerText = "COMPLETE";
-          show(logButton);
+          show(logActivityButton);
           countdownClock.innerText = "Congrats! Keep it up!!";
           countdownClock.styles.fontSize = "3em";
           //NEED TO CHANGE FONT SIZE; COULDN'T GET BELOW TO WORK

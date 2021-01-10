@@ -27,8 +27,9 @@ var minutesRange = document.querySelector('.minutes-range');
 var secondsMissing = document.querySelector('.seconds-missing');
 var secondsRange = document.querySelector('.seconds-range');
 var startTimerButton = document.querySelector('.start-circle-text');
-var logButton = document.querySelector('.log-button');
+var logActivityButton = document.querySelector('.log-button');
 var timerBoxHeader = document.querySelector('.timer-box-header');
+var createNewActivityButton = document.querySelector('.create-new-activity-button');
 
 var currentActivity;
 //currentActivity will get pushed to pastActivities array when property "completed" is marked true
@@ -37,10 +38,16 @@ var pastActivities = [];
 //Add event listeners below
 categoryBoxWrapper.addEventListener('click', activateCategory);
 startActivityButton.addEventListener('click', submitForm);
-
 startTimerButton.addEventListener('click', function() {
   currentActivity.startTimer();
 });
+logActivityButton.addEventListener('click', logActivity);
+
+function logActivity() {
+  console.log('yes');
+  hide(timerBoxWrapper);
+  show(createNewActivityButton);
+}
 
 //Add functions below
 function show(element) {

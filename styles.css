@@ -121,6 +121,17 @@ timer-box-wrapper {
   font-weight: 300;
 }
 
+.create-new-activity-button {
+  border: none;
+  border-radius: 5px;
+  height: 5.5vh;
+  width: 25vw;
+  margin: 5em;
+  padding: 10px 30px;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
 /*--------------------TBD--------------------------- */
 form {
   display: flex;
