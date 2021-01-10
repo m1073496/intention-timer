@@ -43,11 +43,13 @@ class Activity {
         document.querySelector('.countdown-seconds').innerHTML = formatNumber(remaining.seconds);
       }
       
+      showRemaining();
       timer = setInterval(showRemaining, 1000);
+      // timer = setInterval(showRemaining, 100);
   }
 
   markComplete() {
-    alert()
+    //
     //mark activity as completed
 
   }
