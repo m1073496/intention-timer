@@ -40,19 +40,19 @@
               <article class="categories">
                 <h3 class="form-label">Select a category:</h3>
                 <section class="category-box-wrapper">
-                  <input type="radio" class="radio-study" id="radioStudy" name="radioCategory" value="study">
+                  <input type="radio" class="radio-study" id="radioStudy" name="radioCategory" value="Study">
                   <label for="radioStudy" class="study-box category-inactive">
                     <img class="category-image study-image" src="./assets/study.svg" alt="option 1: select study activity">
                     <img class="category-image study-image-active hidden" src="./assets/study-active.svg" alt="study activity selected">
                     <p class="category-text">Study</p>
                   </label>
-                  <input type="radio" class="radio-meditate" id="radioMeditate" name="radioCategory" value="meditate">
+                  <input type="radio" class="radio-meditate" id="radioMeditate" name="radioCategory" value="Meditate">
                   <label for="radioMeditate" class="meditate-box category-inactive">
                     <img class="category-image meditate-image" src="./assets/meditate.svg" alt="option 2: select meditate activity">
                     <img class="category-image meditate-image-active hidden" src="./assets/meditate-active.svg" alt="meditate activity selected">
                     <p class="category-text">Meditate</p>
                   </label>
-                  <input type="radio" class="radio-exercise" id="radioExercise" name="radioCategory" value="exercise">
+                  <input type="radio" class="radio-exercise" id="radioExercise" name="radioCategory" value="Exercise">
                   <label for="radioExercise" class="exercise-box category-inactive">
                     <img class="category-image exercise-image" src="./assets/exercise.svg" alt="option 3: select exercise activity">
                     <img class="category-image exercise-image-active hidden" src="./assets/exercise-active.svg" alt="exercise activity selected">
@@ -104,6 +104,13 @@
           <p class="activity-message">You haven't logged any activities yet.</p>
           <p class="activity-message">Complete the form to the left to get started!</p>
         </section>
+          <div class="past-activity-card">
+            <div class="activity-color-indicator">
+              <p class="past-activity-text">Placeholder Activity</p>
+              <p><span class="past-activity-minutes">5</span> MIN<span class="past-activity-seconds"> 0</span> SECONDS</p>
+            </div>
+            <P class="past-activity-description">Placeholder Description</P>
+          </div>
       </section>
     </main>
     <script src="./Activity.js"></script>
