@@ -71,11 +71,20 @@ function logActivityEvents() {
   countdownSeconds.innerText = formatNumber(currentActivity.seconds);
   timerBoxHeader.innerText = currentActivity.description || "hello1";
   pastActivityText.innerText = pastActivities[0].category;
-  pastActivityMinutes.innerText = pastActivities[0]["minutes"];
-  pastActivitySeconds.innerText = pastActivities[0]["seconds"];
-  pastActivityDescription.innerText = pastActivities[0]["description"];
+  pastActivityMinutes.innerText = pastActivities[0].minutes;
+  pastActivitySeconds.innerText = pastActivities[0].seconds;
+  pastActivityDescription.innerText = pastActivities[0].description;
   pageHeader.innerText = "Completed Activity";
+  // createPastActivityCard();
 }
+
+//START FOR CREATION OF NEW CARDS
+// function createPastActivityCard() {
+//   var newButton = document.createElement('button');
+//   newButton.className = 'click-me';
+//   newButton.innerText = "New click me button!";
+//   parent.appendChild(newButton);
+// }
 
 function returnToActivityForm() {
   show(activityInputForm);
