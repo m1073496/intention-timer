@@ -317,6 +317,10 @@ form {
   pointer-events: none;
 }
 
+/* .can-click {
+  pointer-events: auto;
+} */
+
 .hidden {
   display: none;
 }

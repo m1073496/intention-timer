@@ -44,6 +44,7 @@ startTimerButton.addEventListener('click', function() {
   currentActivity.startTimer();
 });
 logActivityButton.addEventListener('click', logActivityEvents);
+createNewActivityButton.addEventListener('click', returnToActivityForm);
 
 //Add functions below
 function completeActivity() {
@@ -57,6 +58,21 @@ function completeActivity() {
 function logActivityEvents() {
   hide(timerBoxWrapper);
   show(createNewActivityButton);
+}
+
+function returnToActivityForm() {
+  show(activityInputForm);
+  hide(createNewActivityButton);
+  clearActivityForm();
+}
+
+function clearActivityForm() {
+  studyBox.checked = false;
+  meditateBox.checked = false;
+  exerciseBox.checked = false;
+  accomplishInput.value = "";
+  minutesInput.value = "";
+  secondsInput.value = "";
 }
 
 function show(element) {
@@ -76,6 +92,7 @@ function submitForm(event) {
     countdownMinutes.innerText = formatNumber(currentActivity.minutes);
     countdownSeconds.innerText = formatNumber(currentActivity.seconds);
     timerBoxHeader.innerText = currentActivity.description;
+    startTimerButton.classList.remove('cannot-click');
   }
 }
 
