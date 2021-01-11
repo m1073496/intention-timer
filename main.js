@@ -31,6 +31,10 @@ var startCircleText = document.querySelector('.start-circle-text');
 var logActivityButton = document.querySelector('.log-button');
 var timerBoxHeader = document.querySelector('.timer-box-header');
 var createNewActivityButton = document.querySelector('.create-new-activity-button');
+var pastActivityText = document.querySelector('.past-activity-text');
+var pastActivityMinutes = document.querySelector('.past-activity-minutes');
+var pastActivitySeconds = document.querySelector('.past-activity-seconds');
+var pastActivityDescription = document.querySelector('.past-activity-description');
 
 var currentActivity;
 //currentActivity will get pushed to pastActivities array when property "completed" is marked true
@@ -58,6 +62,13 @@ function completeActivity() {
 function logActivityEvents() {
   hide(timerBoxWrapper);
   show(createNewActivityButton);
+  countdownMinutes.innerText = formatNumber(currentActivity.minutes);
+  countdownSeconds.innerText = formatNumber(currentActivity.seconds);
+  timerBoxHeader.innerText = currentActivity.description || "hello1";
+  pastActivityText.innerText = pastActivities[0].category;
+  pastActivityMinutes.innerText = pastActivities[0]["minutes"];
+  pastActivitySeconds.innerText = pastActivities[0]["seconds"];
+  pastActivityDescription.innerText = pastActivities[0]["description"];
 }
 
 function returnToActivityForm() {

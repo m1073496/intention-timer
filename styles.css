@@ -320,8 +320,9 @@ form {
 }
 
 .past-activity-text,
-.past-activity-minuteseconds,
-.past-activity-desription {
+.past-activity-minutes,
+.past-activity-seconds,
+.past-activity-description {
   margin: 0;
   padding-left: 0.75em;
   padding-right: 2em;
@@ -339,19 +340,15 @@ form {
   font-weight: bolder;
 }
 
-.past-activity-minuteseconds {
+.past-activity-minutes,
+.past-activity-seconds {
   color: #CBC9CF;
 }
 
-.past-activity-desription {
+.past-activity-description {
   /* padding-top: 0.2em; */
   padding-bottom: 0.4em;
   color: #CBC9CF;
-}
-
-span {
-  text-align-last: right;
-  color: red;
 }
 
 /* -----------------HIDE THINGS------------------ */
