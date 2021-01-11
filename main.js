@@ -248,8 +248,7 @@ function selectStudyBox() {
   studyBox.classList.toggle('study-active');
   deactivateMeditate();
   deactivateExercise();
-  // startCircle.classList.add('study-circle');
-  document.querySelector('.start-circle-text').style.borderColor = "#B3FD78";
+  startTimerButton.style.borderColor = "#B3FD78";
 }
 
 function selectMeditateBox() {
@@ -258,8 +257,7 @@ function selectMeditateBox() {
   meditateBox.classList.toggle('meditate-active');
   deactivateStudy();
   deactivateExercise();
-  // startCircle.classList.add('meditate-circle');
-  document.querySelector('.start-circle-text').style.borderColor = "#C278FD";
+  startTimerButton.style.borderColor = "#C278FD";
 }
 
 function selectExerciseBox() {
@@ -268,6 +266,5 @@ function selectExerciseBox() {
   exerciseBox.classList.toggle('exercise-active');
   deactivateStudy();
   deactivateMeditate();
-  // startCircle.classList.add('exercise-circle');
-  document.querySelector('.start-circle-text').style.borderColor = "#FD8078";
+  startTimerButton.style.borderColor = "#FD8078";
 }
