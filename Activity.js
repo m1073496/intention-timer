@@ -27,7 +27,6 @@ class Activity {
 
       var minutes = Math.floor(timeLeftOnClock / minute);
       var seconds = Math.floor((timeLeftOnClock % minute) / second);
-
       return {
         minutes, seconds
       }
