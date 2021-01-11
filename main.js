@@ -81,6 +81,8 @@ function logActivityEvents() {
   pastActivityDescription.innerText = pastActivities[0].description;
   pageHeader.innerText = "Completed Activity";
   startCircleText.innerText = "START";
+  currentActivity.saveToStorage();
+  // console.log(currentActivity.getFromStorage());
   // createPastActivityCard();
 }
 
