@@ -35,6 +35,8 @@ var pastActivityText = document.querySelector('.past-activity-text');
 var pastActivityMinutes = document.querySelector('.past-activity-minutes');
 var pastActivitySeconds = document.querySelector('.past-activity-seconds');
 var pastActivityDescription = document.querySelector('.past-activity-description');
+var pastActivityMessage = document.querySelector('.message-container')
+var pastActivityCard = document.querySelector('.past-activity-card');
 
 var currentActivity;
 //currentActivity will get pushed to pastActivities array when property "completed" is marked true
@@ -62,6 +64,8 @@ function completeActivity() {
 function logActivityEvents() {
   hide(timerBoxWrapper);
   show(createNewActivityButton);
+  hide(pastActivityMessage);
+  show(pastActivityCard);
   countdownMinutes.innerText = formatNumber(currentActivity.minutes);
   countdownSeconds.innerText = formatNumber(currentActivity.seconds);
   timerBoxHeader.innerText = currentActivity.description || "hello1";
