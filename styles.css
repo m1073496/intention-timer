@@ -359,12 +359,12 @@ form {
 }
 
 .vertical-line {
-  border: 6px solid;
+  border: 0.13rem solid;
   border-radius: 5px;
-  height: 1em;
-  position: absolute;
-  left: 96.1%;
+  height: 1.5em;
   margin-left: -3px;
+  position: absolute;
+  left: 97.5%;
 }
 
 .past-activity-description {
@@ -375,14 +375,17 @@ form {
 
 .vertical-line-study {
   border-color: #B3FD78;
+  background-color: #B3FD78;
 }
 
 .vertical-line-meditate {
   border-color: #C278FD;
+  background-color: #C278FD;
 }
 
 .vertical-line-exercise {
   border-color: #FD8078;
+  background-color: #FD8078;
 }
 
 /* -----------------HIDE THINGS------------------ */
