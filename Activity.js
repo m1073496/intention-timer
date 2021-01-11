@@ -44,10 +44,6 @@ class Activity {
   }
 
   markComplete() {
-    //mark activity as completed
-    //if countdown is done
-    //this.completed = true
-    //push in pastActivity array
     this.completed = true;
     pastActivities.push(this);
     console.log(pastActivities);
@@ -55,6 +51,14 @@ class Activity {
 
   saveToStorage() {
     //save to pastActivities array
+    // var abc = JSON.stringify(pastActivities);
+    // localStorage.setItem('a', abc);
+    localStorage.setItem('abc', JSON.stringify(pastActivities));
+    localStorage.getItem('abc', JSON.parse('abc'))
   }
 
+  // getFromStorage() {
+  //   var retrievedObject = localStorage.getItem('abc');
+  //   var parsedObject = JSON.parse(retrievedObject);
+  // }
 };
