@@ -320,8 +320,6 @@ form {
 }
 
 .past-activity-text,
-.past-activity-minutes,
-.past-activity-seconds,
 .past-activity-description {
   margin: 0;
   padding-left: 0.75em;
@@ -340,10 +338,20 @@ form {
   font-weight: bolder;
 }
 
-.past-activity-minutes,
-.past-activity-seconds {
+.min-sec-row {
+  padding-left: 0.75em;
+  margin: 0;
   color: #CBC9CF;
+  color: red;
 }
+
+.min-sec-ptag {
+  margin: 0;
+}
+
+/* span {
+  padding-left: -10px;
+} */
 
 .past-activity-description {
   /* padding-top: 0.2em; */
