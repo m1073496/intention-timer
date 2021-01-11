@@ -73,15 +73,13 @@ timer-box-wrapper {
 }
 
 .countdown-clock {
-  /* border: 0.2em solid rgb(39, 39, 36); */
   display: flex;
   justify-content: center;
   align-items: center;
   height: 10vh;
   margin: 0.3vh;
   font-family: "Montserrat400", sans-serif;
-  font-size: 5em;
-  font-size: 5.7vw;
+  font-size: 5.2em;
 }
 
 .congrats-msg {
@@ -92,7 +90,6 @@ timer-box-wrapper {
   margin: 0.3vh;
   font-family: "Montserrat400", sans-serif;
   font-size: 3em;
-  font-size: 5.7vw;
 }
 
 .start-circle-wrapper {
@@ -114,16 +111,7 @@ timer-box-wrapper {
 }
 
 .start-circle-text {
-  /* border: 0.15em solid #FFF;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center; */
   text-align: center;
-  /* height: 17vw; */
-  /* width: 17vw; */
-  /* margin-top: 2.5em;
-  margin-bottom: 2em; */
   font-size: 1.5rem;
   pointer-events: none;
 }
@@ -292,19 +280,8 @@ form {
   font-weight: 300;
 }
 
-/* TODO: try reinstating */
-/* .study-circle {
-  border-color: #B3FD78;
-}
-.meditate-circle {
-  border-color: #C278FD;
-}
-.exercise-circle {
-  border-color: #FD8078;
-} */
-
 /* -----------------RIGHT-HAND CONTAINER------------------ */
-.past-activity {
+.past-activity-section {
   width: 33%;
   padding: 0 25px 25px 25px;
   background-color:#2B2733;
@@ -327,6 +304,7 @@ form {
   display: flex;
   flex-direction: column;
   margin: 0;
+  margin-bottom: 1.3rem;
   background-color: #46424D;
 }
 
@@ -339,8 +317,6 @@ form {
 }
 
 .activity-color-indicator {
-  /* border-radius: 5px; */
-  border-right: 0.3em solid red;
   margin-top: 0.7em;
   margin-bottom: 0.3em;
   width: 96.5%;
@@ -359,24 +335,39 @@ form {
   margin: 0;
 }
 
-/* span {
-  padding-left: -10px;
-} */
+.vertical-line {
+  border: 0.13rem solid;
+  border-radius: 5px;
+  height: 1.5em;
+  margin-left: -3px;
+  position: absolute;
+  left: 97.5%;
+}
 
 .past-activity-description {
-  /* padding-top: 0.2em; */
   padding-bottom: 0.4em;
   color: #CBC9CF;
+}
+
+.vertical-line-study {
+  border-color: #B3FD78;
+  background-color: #B3FD78;
+}
+
+.vertical-line-meditate {
+  border-color: #C278FD;
+  background-color: #C278FD;
+}
+
+.vertical-line-exercise {
+  border-color: #FD8078;
+  background-color: #FD8078;
 }
 
 /* -----------------HIDE THINGS------------------ */
 .cannot-click {
   pointer-events: none;
 }
-
-/* .can-click {
-  pointer-events: auto;
-} */
 
 .hidden {
   display: none;
