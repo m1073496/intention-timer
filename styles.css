@@ -373,6 +373,18 @@ form {
   color: #CBC9CF;
 }
 
+.vertical-line-study {
+  border-color: #B3FD78;
+}
+
+.vertical-line-meditate {
+  border-color: #C278FD;
+}
+
+.vertical-line-exercise {
+  border-color: #FD8078;
+}
+
 /* -----------------HIDE THINGS------------------ */
 .cannot-click {
   pointer-events: none;

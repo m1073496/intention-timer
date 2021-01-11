@@ -79,47 +79,19 @@ function logActivityEvents() {
   countdownSeconds.innerText = formatNumber(currentActivity.seconds);
   timerBoxHeader.innerText = currentActivity.description || "hello1";
   addCard();
-  // pastActivityText.innerText = pastActivities[0].category;
-  // pastActivityMinutes.innerText = pastActivities[0].minutes;
-  // pastActivitySeconds.innerText = pastActivities[0].seconds;
-  // pastActivityDescription.innerText = pastActivities[0].description;
   pageHeader.innerText = "Completed Activity";
   startCircleText.innerText = "START";
-  if (radioButtonStudy.checked === true) {
-    document.querySelector('.vertical-line').style.borderColor = "#B3FD78"; //study
-  } else if (radioButtonMeditate.checked === true) {
-    document.querySelector('.vertical-line').style.borderColor = "#C278FD"; //meditate
-  } else if (radioButtonExercise.checked === true) {
-    document.querySelector('.vertical-line').style.borderColor = "#FD8078"; //exercise
-  }
+
+
 }
-  // if (pastActivities[0].category === "Study") {
-  //   document.querySelector('.vertical-line').style.borderColor = "#B3FD78"; //study
-  // } else if (pastActivities[1].category === "Meditate") {
-  //   document.querySelector('.vertical-line').style.borderColor = "#C278FD"; //meditate
-  // } else {
-  //   document.querySelector('.vertical-line').style.borderColor = "#FD8078"; //exercise
-  // }
-  // createPastActivityCard();
-// }
 
-//START FOR CREATION OF NEW CARDS
-// function createPastActivityCard() {
-//   var newButton = document.createElement('button');
-//   newButton.className = 'click-me';
-//   newButton.innerText = "New click me button!";
-//   parent.appendChild(newButton);
-// }
-
-//need a target variable for the cardContainer name)
-//need to populate with the array information
 function addCard() {
   pastActivityCardHolder.innerHTML = ``;
   for (var i = 0; i < pastActivities.length; i++) {
     pastActivityCardHolder.innerHTML +=
       `<div class="past-activity-card"> 
         <div class="activity-color-indicator">
-          <div class="vertical-line"></div>
+          <div class="vertical-line vertical-line-${pastActivities[i].category.toLowerCase()}"></div>
           <p class="past-activity-text">${pastActivities[i].category}</p>
           <div class="min-sec-row">
             <p class="min-sec-ptag"><span class="past-activity-minutes">${pastActivities[i].minutes}</span> MIN <span class="past-activity-seconds"> ${pastActivities[i].seconds}</span> SECONDS</p>
@@ -128,6 +100,7 @@ function addCard() {
         <p class="past-activity-description">${pastActivities[i].description}</p>
       </div>`;
   }
+
 };
 
 // pastActivityText.innerText = pastActivities[0].category;
