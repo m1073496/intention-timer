@@ -300,7 +300,7 @@ form {
 }
 
 .message-container {
-  padding: 25px 0;
+  padding: 5px 0;
 }
 
 .activity-message {
@@ -311,6 +311,48 @@ form {
   color: #CBC9CF;
 }
 
+.past-activity-card { 
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  background-color: #46424D;
+}
+
+.past-activity-text,
+.past-activity-minuteseconds,
+.past-activity-desription {
+  margin: 0;
+  padding-left: 0.75em;
+  padding-right: 2em;
+  color: #FFF;
+}
+
+.activity-color-indicator {
+  /* border-radius: 5px; */
+  border-right: 0.3em solid red;
+  margin-top: 0.7em;
+  margin-bottom: 0.3em;
+  width: 96.5%;
+}
+.past-activity-text {
+  font-weight: bolder;
+}
+
+.past-activity-minuteseconds {
+  color: #CBC9CF;
+}
+
+.past-activity-desription {
+  /* padding-top: 0.2em; */
+  padding-bottom: 0.4em;
+  color: #CBC9CF;
+}
+
+span {
+  text-align-last: right;
+  color: red;
+}
 
 /* -----------------HIDE THINGS------------------ */
 .cannot-click {
