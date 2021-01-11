@@ -338,7 +338,7 @@ form {
 
 .activity-color-indicator {
   /* border-radius: 5px; */
-  border-right: 0.3em solid red;
+  /* border-right: 0.3em solid red; */
   margin-top: 0.7em;
   margin-bottom: 0.3em;
   width: 96.5%;
@@ -357,9 +357,14 @@ form {
   margin: 0;
 }
 
-/* span {
-  padding-left: -10px;
-} */
+.vl {
+  border: 6px solid green;
+  border-radius: 5px;
+  height: 1em;
+  position: absolute;
+  left: 96.1%;
+  margin-left: -3px;
+}
 
 .past-activity-description {
   /* padding-top: 0.2em; */
