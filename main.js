@@ -37,6 +37,10 @@ var congratsMsg = document.querySelector('.congrats-msg');
 var radioButtonStudy = document.querySelector('#radioStudy');
 var radioButtonMeditate = document.querySelector('#radioMeditate');
 var radioButtonExercise = document.querySelector('#radioExercise');
+var pastActivityText = document.querySelector('.past-activity-text');
+var pastActivityMinutes = document.querySelector('.past-activity-minutes');
+var pastActivitySeconds = document.querySelector('.past-activity-seconds');
+var pastActivityDescription = document.querySelector('.past-activity-description');
 
 var currentActivity;
 var pastActivities = [];
@@ -63,6 +67,13 @@ function completeActivity() {
 function logActivityEvents() {
   hide(timerBoxWrapper);
   show(createNewActivityButton);
+  countdownMinutes.innerText = formatNumber(currentActivity.minutes);
+  countdownSeconds.innerText = formatNumber(currentActivity.seconds);
+  timerBoxHeader.innerText = currentActivity.description || "hello1";
+  pastActivityText.innerText = pastActivities[0].category;
+  pastActivityMinutes.innerText = pastActivities[0]["minutes"];
+  pastActivitySeconds.innerText = pastActivities[0]["seconds"];
+  pastActivityDescription.innerText = pastActivities[0]["description"];
   startCircleText.innerText = "START";
 }
 
