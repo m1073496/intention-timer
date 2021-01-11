@@ -84,6 +84,17 @@ timer-box-wrapper {
   font-size: 5.7vw;
 }
 
+.congrats-msg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  margin: 0.3vh;
+  font-family: "Montserrat400", sans-serif;
+  font-size: 3em;
+  font-size: 5.7vw;
+}
+
 .start-circle-wrapper {
   display: flex;
   justify-content: center;

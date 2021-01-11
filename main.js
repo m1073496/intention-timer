@@ -32,7 +32,7 @@ var startCircleText = document.querySelector('.start-circle-text');
 var logActivityButton = document.querySelector('.log-button');
 var timerBoxHeader = document.querySelector('.timer-box-header');
 var createNewActivityButton = document.querySelector('.create-new-activity-button');
-
+var congratsMsg = document.querySelector('.congrats-msg');
 
 var radioButtonStudy = document.querySelector('#radioStudy');
 var radioButtonMeditate = document.querySelector('#radioMeditate');
@@ -53,8 +53,8 @@ createNewActivityButton.addEventListener('click', returnToActivityForm);
 
 //Add functions below
 function completeActivity() {
-  countdownClock.innerText = "Congrats! Keep it up!!";
-  countdownClock.style.fontSize = "3em";
+  document.querySelector('.congrats-msg').classList.remove('hidden');
+  document.querySelector('.countdown-clock').classList.add('hidden');
   startCircleText.innerText = "COMPLETE";
   show(logActivityButton);
   currentActivity.markComplete();
@@ -63,12 +63,15 @@ function completeActivity() {
 function logActivityEvents() {
   hide(timerBoxWrapper);
   show(createNewActivityButton);
+  startCircleText.innerText = "START";
 }
 
 function returnToActivityForm() {
   show(activityInputForm);
   hide(createNewActivityButton);
   clearActivityForm();
+  document.querySelector('.congrats-msg').classList.add('hidden');
+  document.querySelector('.countdown-clock').classList.remove('hidden');
 }
 
 function clearActivityForm() {
@@ -84,6 +87,10 @@ function clearActivityForm() {
   accomplishInput.value = "";
   minutesInput.value = "";
   secondsInput.value = "";
+}
+
+function clearTimerPage() {
+
 }
 
 function show(element) {
@@ -104,6 +111,8 @@ function submitForm(event) {
     countdownSeconds.innerText = formatNumber(currentActivity.seconds);
     timerBoxHeader.innerText = currentActivity.description;
     startTimerButton.classList.remove('cannot-click');
+
+    hide(logActivityButton);
   }
 }
 
