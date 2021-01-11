@@ -73,17 +73,16 @@ function logActivityEvents() {
   hide(timerBoxWrapper);
   show(createNewActivityButton);
   hide(pastActivityMessage);
-  // show(pastActivityCard);
   show(pastActivityCardHolder);
   countdownMinutes.innerText = formatNumber(currentActivity.minutes);
   countdownSeconds.innerText = formatNumber(currentActivity.seconds);
   timerBoxHeader.innerText = currentActivity.description || "hello1";
-  addCard();
+  addPlaceholderCard();
   pageHeader.innerText = "Completed Activity";
   startCircleText.innerText = "START";
 }
 
-function addCard() {
+function addPlaceholderCard() {
   pastActivityCardHolder.innerHTML = ``;
   for (var i = 0; i < pastActivities.length; i++) {
     pastActivityCardHolder.innerHTML +=
@@ -98,8 +97,7 @@ function addCard() {
         <p class="past-activity-description">${pastActivities[i].description}</p>
       </div>`;
   }
-
-};
+}
 
 function returnToActivityForm() {
   show(activityInputForm);

@@ -73,7 +73,6 @@ timer-box-wrapper {
 }
 
 .countdown-clock {
-  /* border: 0.2em solid rgb(39, 39, 36); */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -112,16 +111,7 @@ timer-box-wrapper {
 }
 
 .start-circle-text {
-  /* border: 0.15em solid #FFF;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center; */
   text-align: center;
-  /* height: 17vw; */
-  /* width: 17vw; */
-  /* margin-top: 2.5em;
-  margin-bottom: 2em; */
   font-size: 1.5rem;
   pointer-events: none;
 }
@@ -290,17 +280,6 @@ form {
   font-weight: 300;
 }
 
-/* TODO: try reinstating */
-/* .study-circle {
-  border-color: #B3FD78;
-}
-.meditate-circle {
-  border-color: #C278FD;
-}
-.exercise-circle {
-  border-color: #FD8078;
-} */
-
 /* -----------------RIGHT-HAND CONTAINER------------------ */
 .past-activity-section {
   width: 33%;
@@ -338,8 +317,6 @@ form {
 }
 
 .activity-color-indicator {
-  /* border-radius: 5px; */
-  /* border-right: 0.3em solid red; */
   margin-top: 0.7em;
   margin-bottom: 0.3em;
   width: 96.5%;
@@ -368,7 +345,6 @@ form {
 }
 
 .past-activity-description {
-  /* padding-top: 0.2em; */
   padding-bottom: 0.4em;
   color: #CBC9CF;
 }
@@ -392,10 +368,6 @@ form {
 .cannot-click {
   pointer-events: none;
 }
-
-/* .can-click {
-  pointer-events: auto;
-} */
 
 .hidden {
   display: none;
