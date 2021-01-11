@@ -84,6 +84,17 @@ timer-box-wrapper {
   font-size: 5.7vw;
 }
 
+.congrats-msg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  margin: 0.3vh;
+  font-family: "Montserrat400", sans-serif;
+  font-size: 3em;
+  font-size: 5.7vw;
+}
+
 .start-circle-wrapper {
   display: flex;
   justify-content: center;
@@ -199,6 +210,21 @@ form {
   text-align: center;
 }
 
+.category-box-wrapper input[id="radioStudy"]:checked + label {
+  color: #B3FD78;
+  border-color: #B3FD78;
+}
+
+.category-box-wrapper input[id="radioMeditate"]:checked + label {
+  color: #C278FD;
+  border-color: #C278FD;
+}
+
+.category-box-wrapper input[id="radioExercise"]:checked + label {
+  color: #FD8078;
+  border-color: #FD8078;
+}
+
 .category-image {
   width: 1.5em;
   margin-top: 10px;
@@ -214,21 +240,6 @@ form {
 .category-inactive {
   border: 0.15em solid#FFF;
   border-radius: 5px;
-}
-
-.study-active {
-  color: #B3FD78;
-  border-color: #B3FD78;
-}
-
-.meditate-active {
-  color: #C278FD;
-  border-color: #C278FD;
-}
-
-.exercise-active {
-  color: #FD8078;
-  border-color: #FD8078;
 }
 
 /* --------------------ACCOMPLISH FORM-------------------- */

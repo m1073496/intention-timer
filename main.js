@@ -26,11 +26,17 @@ var minutesMissing = document.querySelector('.minutes-missing');
 var minutesRange = document.querySelector('.minutes-range');
 var secondsMissing = document.querySelector('.seconds-missing');
 var secondsRange = document.querySelector('.seconds-range');
+var timeMissing = document.querySelector('.time-missing');
 var startTimerButton = document.querySelector('.circle-outline');
 var startCircleText = document.querySelector('.start-circle-text');
 var logActivityButton = document.querySelector('.log-button');
 var timerBoxHeader = document.querySelector('.timer-box-header');
 var createNewActivityButton = document.querySelector('.create-new-activity-button');
+var congratsMsg = document.querySelector('.congrats-msg');
+
+var radioButtonStudy = document.querySelector('#radioStudy');
+var radioButtonMeditate = document.querySelector('#radioMeditate');
+var radioButtonExercise = document.querySelector('#radioExercise');
 var pastActivityText = document.querySelector('.past-activity-text');
 var pastActivityMinutes = document.querySelector('.past-activity-minutes');
 var pastActivitySeconds = document.querySelector('.past-activity-seconds');
@@ -40,11 +46,10 @@ var pastActivityCard = document.querySelector('.past-activity-card');
 var pageHeader = document.querySelector('.subhead');
 
 var currentActivity;
-//currentActivity will get pushed to pastActivities array when property "completed" is marked true
 var pastActivities = [];
 
 //Add event listeners below
-categoryBoxWrapper.addEventListener('click', activateCategory);
+categoryBoxWrapper.addEventListener('click', findCategory);
 startActivityButton.addEventListener('click', submitForm);
 startTimerButton.addEventListener('click', function() {
   startTimerButton.classList.add('cannot-click');
@@ -55,8 +60,8 @@ createNewActivityButton.addEventListener('click', returnToActivityForm);
 
 //Add functions below
 function completeActivity() {
-  countdownClock.innerText = "Congrats! Keep it up!!";
-  countdownClock.style.fontSize = "3em";
+  document.querySelector('.congrats-msg').classList.remove('hidden');
+  document.querySelector('.countdown-clock').classList.add('hidden');
   startCircleText.innerText = "COMPLETE";
   show(logActivityButton);
   currentActivity.markComplete();
@@ -75,6 +80,7 @@ function logActivityEvents() {
   pastActivitySeconds.innerText = pastActivities[0].seconds;
   pastActivityDescription.innerText = pastActivities[0].description;
   pageHeader.innerText = "Completed Activity";
+  startCircleText.innerText = "START";
   // createPastActivityCard();
 }
 
@@ -90,15 +96,27 @@ function returnToActivityForm() {
   show(activityInputForm);
   hide(createNewActivityButton);
   clearActivityForm();
+  document.querySelector('.congrats-msg').classList.add('hidden');
+  document.querySelector('.countdown-clock').classList.remove('hidden');
 }
 
 function clearActivityForm() {
-  studyBox.checked = false;
-  meditateBox.checked = false;
-  exerciseBox.checked = false;
+  radioButtonStudy.checked = false;
+  radioButtonExercise.checked = false;
+  radioButtonMeditate.checked = false;
+  hide(studyImageActive);
+  hide(meditateImageActive);
+  hide(exerciseImageActive);
+  show(studyImage);
+  show(meditateImage);
+  show(exerciseImage);
   accomplishInput.value = "";
   minutesInput.value = "";
   secondsInput.value = "";
+}
+
+function clearTimerPage() {
+
 }
 
 function show(element) {
@@ -120,6 +138,7 @@ function submitForm(event) {
     timerBoxHeader.innerText = currentActivity.description;
     startTimerButton.classList.remove('cannot-click');
     pageHeader.innerText = "Current Activity";
+    hide(logActivityButton);
   }
 }
 
@@ -198,9 +217,7 @@ function validateSeconds() {
 function validateTime() {
   if (parseInt(minutesInput.value) == 0 && parseInt(secondsInput.value) == 0) {
     show(warningMinutes);
-    show(minutesRange);
-    show(warningSeconds);
-    show(secondsRange);
+    show(timeMissing);
     return false;
   } else {
     return true;
@@ -227,60 +244,103 @@ function findCategoryChoice() {
   return myChoice;
 }
 
-function activateCategory(event) {
-  if (event.target.classList.contains('study-box') ||
-    event.target.classList.contains('study-image')) {
-    selectStudyBox();
-  } else if (event.target.classList.contains('meditate-box')||
-    event.target.classList.contains('meditate-image')) {
-    selectMeditateBox();
-  } else if (event.target.classList.contains('exercise-box')||
-    event.target.classList.contains('exercise-image')) {
-    selectExerciseBox();
+function findCategory(event) {
+  if (event.target.classList.contains("radio-study")) {
+    hide(meditateImageActive);
+    hide(exerciseImageActive);
+    hide(studyImage);
+    show(studyImageActive);
+    show(meditateImage);
+    show(exerciseImage);
+  } else if (event.target.classList.contains("radio-meditate")) {
+    hide(studyImageActive);
+    hide(exerciseImageActive);
+    hide(meditateImage);
+    show(meditateImageActive);
+    show(studyImage);
+    show(exerciseImage);
+  } else if (event.target.classList.contains("radio-exercise")) {
+    hide(meditateImageActive);
+    hide(studyImageActive);
+    hide(exerciseImage);
+    show(exerciseImageActive);
+    show(meditateImage);
+    show(studyImage);
   }
 }
 
-function deactivateExercise() {
-  show(exerciseImage);
-  hide(exerciseImageActive);
-  exerciseBox.classList.remove('exercise-active');
-}
+//   var radioChoice = document.querySelector('input[name="radioCategory"]:checked').value;
+//   console.log(radioChoice);
+//   if (radioChoice === "Study") {
+//     hide(studyImage);
+//     show(studyImageActive);
+//     // studyImage.classList.toggle('hidden');
+//     // studyImageActive.classList.toggle('hidden');
+//     // studyBox.classList.add('study-active');
+//   } else if (radioChoice === "Meditate") {
+//     meditateBox.classList.add('meditate-active');
+//   } else if (radioChoice === "Exercise") {
+//     exerciseBox.classList.add('exercise-active');
+//   }
+// }
 
-function deactivateMeditate() {
-  show(meditateImage);
-  hide(meditateImageActive);
-  meditateBox.classList.remove('meditate-active');
-}
+// (event) {
+//   if (event.target.classList.contains('study-box') ||
+//     event.target.classList.contains('study-image')) {
+//     selectStudyBox();
+//   } else if (event.target.classList.contains('meditate-box')||
+//     event.target.classList.contains('meditate-image')) {
+//     selectMeditateBox();
+//   } else if (event.target.classList.contains('exercise-box')||
+//     event.target.classList.contains('exercise-image')) {
+//     selectExerciseBox();
+//   }
+// }
 
-function deactivateStudy() {
-  show(studyImage);
-  hide(studyImageActive);
-  studyBox.classList.remove('study-active');
-}
+// function deactivateExercise() {
+//   show(exerciseImage);
+//   hide(exerciseImageActive);
+  // exerciseBox.classList.remove('exercise-active');
+// }
+//
+// function deactivateMeditate() {
+//   show(meditateImage);
+//   hide(meditateImageActive);
+//   // meditateBox.classList.remove('meditate-active');
+// }
 
-function selectStudyBox() {
-  studyImage.classList.toggle('hidden');
-  studyImageActive.classList.toggle('hidden');
-  studyBox.classList.toggle('study-active');
-  deactivateMeditate();
-  deactivateExercise();
-  startTimerButton.style.borderColor = "#B3FD78";
-}
+// function deactivateStudy() {
+//   show(studyImage);
+//   hide(studyImageActive);
+//   // studyBox.classList.remove('study-active');
+// }
 
-function selectMeditateBox() {
-  meditateImage.classList.toggle('hidden');
-  meditateImageActive.classList.toggle('hidden');
-  meditateBox.classList.toggle('meditate-active');
-  deactivateStudy();
-  deactivateExercise();
-  startTimerButton.style.borderColor = "#C278FD";
-}
+// function selectStudyBox() {
+//   studyImage.classList.toggle('hidden');
+  // studyImageActive.classList.add('hidden');
+//   studyBox.classList.toggle('study-active');
+//   deactivateMeditate();
+//   deactivateExercise();
+  // startCircle.classList.add('study-circle');
+  // document.querySelector('.start-circle-text').style.borderColor = "#B3FD78";
+// }
 
-function selectExerciseBox() {
-  exerciseImage.classList.toggle('hidden');
-  exerciseImageActive.classList.toggle('hidden');
-  exerciseBox.classList.toggle('exercise-active');
-  deactivateStudy();
-  deactivateMeditate();
-  startTimerButton.style.borderColor = "#FD8078";
-}
+// function selectMeditateBox() {
+//   meditateImage.classList.toggle('hidden');
+//   meditateImageActive.classList.toggle('hidden');
+//   meditateBox.classList.toggle('meditate-active');
+//   deactivateStudy();
+//   deactivateExercise();
+//   // startCircle.classList.add('meditate-circle');
+//   document.querySelector('.start-circle-text').style.borderColor = "#C278FD";
+// }
+//
+// function selectExerciseBox() {
+//   exerciseImage.classList.toggle('hidden');
+//   exerciseImageActive.classList.toggle('hidden');
+//   exerciseBox.classList.toggle('exercise-active');
+//   deactivateStudy();
+//   deactivateMeditate();
+//   // startCircle.classList.add('exercise-circle');
+//   document.querySelector('.start-circle-text').style.borderColor = "#FD8078";
+// }
