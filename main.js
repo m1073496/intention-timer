@@ -34,7 +34,9 @@ var timerBoxHeader = document.querySelector('.timer-box-header');
 var createNewActivityButton = document.querySelector('.create-new-activity-button');
 
 
-// var radioButtonStudy = document.querySelector('#radioStudy');
+var radioButtonStudy = document.querySelector('#radioStudy');
+var radioButtonMeditate = document.querySelector('#radioMeditate');
+var radioButtonExercise = document.querySelector('#radioExercise');
 
 var currentActivity;
 var pastActivities = [];
@@ -70,12 +72,15 @@ function returnToActivityForm() {
 }
 
 function clearActivityForm() {
-  studyBox.checked = false;
-  meditateBox.checked = false;
-  exerciseBox.checked = false;
-  deactivateStudy();
-  deactivateMeditate();
-  deactivateExercise();
+  radioButtonStudy.checked = false;
+  radioButtonExercise.checked = false;
+  radioButtonMeditate.checked = false;
+  hide(studyImageActive);
+  hide(meditateImageActive);
+  hide(exerciseImageActive);
+  show(studyImage);
+  show(meditateImage);
+  show(exerciseImage);
   accomplishInput.value = "";
   minutesInput.value = "";
   secondsInput.value = "";
