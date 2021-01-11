@@ -80,6 +80,7 @@ function logActivityEvents() {
   addPlaceholderCard();
   pageHeader.innerText = "Completed Activity";
   startCircleText.innerText = "START";
+  currentActivity.saveToStorage();
 }
 
 function addPlaceholderCard() {
@@ -279,79 +280,3 @@ function findCategory(event) {
     document.querySelector('.circle-outline').style.borderColor = "#FD8078";
   }
 }
-
-//   var radioChoice = document.querySelector('input[name="radioCategory"]:checked').value;
-//   console.log(radioChoice);
-//   if (radioChoice === "Study") {
-//     hide(studyImage);
-//     show(studyImageActive);
-//     // studyImage.classList.toggle('hidden');
-//     // studyImageActive.classList.toggle('hidden');
-//     // studyBox.classList.add('study-active');
-//   } else if (radioChoice === "Meditate") {
-//     meditateBox.classList.add('meditate-active');
-//   } else if (radioChoice === "Exercise") {
-//     exerciseBox.classList.add('exercise-active');
-//   }
-// }
-
-// (event) {
-//   if (event.target.classList.contains('study-box') ||
-//     event.target.classList.contains('study-image')) {
-//     selectStudyBox();
-//   } else if (event.target.classList.contains('meditate-box')||
-//     event.target.classList.contains('meditate-image')) {
-//     selectMeditateBox();
-//   } else if (event.target.classList.contains('exercise-box')||
-//     event.target.classList.contains('exercise-image')) {
-//     selectExerciseBox();
-//   }
-// }
-
-// function deactivateExercise() {
-//   show(exerciseImage);
-//   hide(exerciseImageActive);
-  // exerciseBox.classList.remove('exercise-active');
-// }
-//
-// function deactivateMeditate() {
-//   show(meditateImage);
-//   hide(meditateImageActive);
-//   // meditateBox.classList.remove('meditate-active');
-// }
-
-// function deactivateStudy() {
-//   show(studyImage);
-//   hide(studyImageActive);
-//   // studyBox.classList.remove('study-active');
-// }
-
-// function selectStudyBox() {
-//   studyImage.classList.toggle('hidden');
-  // studyImageActive.classList.add('hidden');
-//   studyBox.classList.toggle('study-active');
-//   deactivateMeditate();
-//   deactivateExercise();
-  // startCircle.classList.add('study-circle');
-  // document.querySelector('.start-circle-text').style.borderColor = "#B3FD78";
-// }
-
-// function selectMeditateBox() {
-//   meditateImage.classList.toggle('hidden');
-//   meditateImageActive.classList.toggle('hidden');
-//   meditateBox.classList.toggle('meditate-active');
-//   deactivateStudy();
-//   deactivateExercise();
-//   // startCircle.classList.add('meditate-circle');
-//   document.querySelector('.start-circle-text').style.borderColor = "#C278FD";
-// }
-//
-// function selectExerciseBox() {
-//   exerciseImage.classList.toggle('hidden');
-//   exerciseImageActive.classList.toggle('hidden');
-//   exerciseBox.classList.toggle('exercise-active');
-//   deactivateStudy();
-//   deactivateMeditate();
-//   // startCircle.classList.add('exercise-circle');
-//   document.querySelector('.start-circle-text').style.borderColor = "#FD8078";
-// }

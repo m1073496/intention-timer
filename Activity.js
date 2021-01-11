@@ -51,6 +51,14 @@ class Activity {
 
   saveToStorage() {
     //save to pastActivities array
+    // var abc = JSON.stringify(pastActivities);
+    // localStorage.setItem('a', abc);
+    localStorage.setItem('abc', JSON.stringify(pastActivities));
+    // localStorage.getItem('abc', JSON.parse('abc'))
   }
 
+  // getFromStorage() {
+  //   var retrievedObject = localStorage.getItem('abc');
+  //   var parsedObject = JSON.parse(retrievedObject);
+  // }
 };
