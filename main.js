@@ -34,7 +34,6 @@ var timerBoxHeader = document.querySelector('.timer-box-header');
 var createNewActivityButton = document.querySelector('.create-new-activity-button');
 
 var currentActivity;
-//currentActivity will get pushed to pastActivities array when property "completed" is marked true
 var pastActivities = [];
 
 //Add event listeners below
@@ -71,6 +70,9 @@ function clearActivityForm() {
   studyBox.checked = false;
   meditateBox.checked = false;
   exerciseBox.checked = false;
+  deactivateStudy();
+  deactivateMeditate();
+  deactivateExercise();
   accomplishInput.value = "";
   minutesInput.value = "";
   secondsInput.value = "";
