@@ -252,6 +252,7 @@ function findCategory(event) {
     show(studyImageActive);
     show(meditateImage);
     show(exerciseImage);
+    document.querySelector('.circle-outline').style.borderColor = "#B3FD78";
   } else if (event.target.classList.contains("radio-meditate")) {
     hide(studyImageActive);
     hide(exerciseImageActive);
@@ -259,6 +260,7 @@ function findCategory(event) {
     show(meditateImageActive);
     show(studyImage);
     show(exerciseImage);
+    document.querySelector('.circle-outline').style.borderColor = "#C278FD";
   } else if (event.target.classList.contains("radio-exercise")) {
     hide(meditateImageActive);
     hide(studyImageActive);
@@ -266,6 +268,7 @@ function findCategory(event) {
     show(exerciseImageActive);
     show(meditateImage);
     show(studyImage);
+    document.querySelector('.circle-outline').style.borderColor = "#FD8078";
   }
 }
 
