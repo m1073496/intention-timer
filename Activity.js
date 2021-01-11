@@ -20,15 +20,7 @@ class Activity {
       var rightNow = new Date();
       var timeLeftOnClock = calculatedTargetTime - rightNow;
       if (timeLeftOnClock < 0) {
-        //KATIE PLEASE MOVE TO MAIN.JS FUNCTION FROM HERE TO....
-        startTimerButton.innerText = "COMPLETE";
-        show(logActivityButton);
-        countdownClock.innerText = "Congrats! Keep it up!!";
-        //NEED TO CHANGE FONT SIZE; COULDN'T GET BELOW TO WORK
-        // document.querySelector('.countdown-clock').style.fontSize = "3em";
-        // countdownClock.styles.fontSize = "3em";
-        // document.querySelector('.countdown-clock').style.borderColor = "#C278FD";
-        //...... HERE
+        completeActivity();
         clearInterval(timer);
         return;
       }
@@ -54,6 +46,12 @@ class Activity {
 
   markComplete() {
     //mark activity as completed
+    //if countdown is done
+    //this.completed = true
+    //push in pastActivity array
+    this.completed = true;
+    pastActivities.push(this);
+    console.log(pastActivities);
   }
 
   saveToStorage() {
