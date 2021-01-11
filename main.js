@@ -26,7 +26,8 @@ var minutesMissing = document.querySelector('.minutes-missing');
 var minutesRange = document.querySelector('.minutes-range');
 var secondsMissing = document.querySelector('.seconds-missing');
 var secondsRange = document.querySelector('.seconds-range');
-var startTimerButton = document.querySelector('.start-circle-text');
+var startTimerButton = document.querySelector('.circle-outline');
+var startCircleText = document.querySelector('.start-circle-text');
 var logActivityButton = document.querySelector('.log-button');
 var timerBoxHeader = document.querySelector('.timer-box-header');
 var createNewActivityButton = document.querySelector('.create-new-activity-button');
@@ -48,7 +49,7 @@ logActivityButton.addEventListener('click', logActivityEvents);
 function completeActivity() {
   countdownClock.innerText = "Congrats! Keep it up!!";
   countdownClock.style.fontSize = "3em";
-  startTimerButton.innerText = "COMPLETE";
+  startCircleText.innerText = "COMPLETE";
   show(logActivityButton);
   currentActivity.markComplete();
 }
