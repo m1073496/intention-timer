@@ -27,7 +27,8 @@ var minutesRange = document.querySelector('.minutes-range');
 var secondsMissing = document.querySelector('.seconds-missing');
 var secondsRange = document.querySelector('.seconds-range');
 var timeMissing = document.querySelector('.time-missing');
-var startTimerButton = document.querySelector('.start-circle-text');
+var startTimerButton = document.querySelector('.circle-outline');
+var startCircleText = document.querySelector('.start-circle-text');
 var logActivityButton = document.querySelector('.log-button');
 var timerBoxHeader = document.querySelector('.timer-box-header');
 var createNewActivityButton = document.querySelector('.create-new-activity-button');
@@ -40,22 +41,39 @@ var pastActivities = [];
 categoryBoxWrapper.addEventListener('click', activateCategory);
 startActivityButton.addEventListener('click', submitForm);
 startTimerButton.addEventListener('click', function() {
+  startTimerButton.classList.add('cannot-click');
   currentActivity.startTimer();
 });
-logActivityButton.addEventListener('click', logActivtyEvents);
+logActivityButton.addEventListener('click', logActivityEvents);
+createNewActivityButton.addEventListener('click', returnToActivityForm);
 
 //Add functions below
 function completeActivity() {
   countdownClock.innerText = "Congrats! Keep it up!!";
   countdownClock.style.fontSize = "3em";
-  startTimerButton.innerText = "COMPLETE";
+  startCircleText.innerText = "COMPLETE";
   show(logActivityButton);
   currentActivity.markComplete();
 }
 
-function logActivtyEvents() {
+function logActivityEvents() {
   hide(timerBoxWrapper);
   show(createNewActivityButton);
+}
+
+function returnToActivityForm() {
+  show(activityInputForm);
+  hide(createNewActivityButton);
+  clearActivityForm();
+}
+
+function clearActivityForm() {
+  studyBox.checked = false;
+  meditateBox.checked = false;
+  exerciseBox.checked = false;
+  accomplishInput.value = "";
+  minutesInput.value = "";
+  secondsInput.value = "";
 }
 
 function show(element) {
@@ -75,6 +93,7 @@ function submitForm(event) {
     countdownMinutes.innerText = formatNumber(currentActivity.minutes);
     countdownSeconds.innerText = formatNumber(currentActivity.seconds);
     timerBoxHeader.innerText = currentActivity.description;
+    startTimerButton.classList.remove('cannot-click');
   }
 }
 
