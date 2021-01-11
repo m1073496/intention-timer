@@ -85,15 +85,23 @@ function logActivityEvents() {
   // pastActivityDescription.innerText = pastActivities[0].description;
   pageHeader.innerText = "Completed Activity";
   startCircleText.innerText = "START";
-  if (pastActivities[0].category = "Study") {
+  if (radioButtonStudy.checked === true) {
     document.querySelector('.vertical-line').style.borderColor = "#B3FD78"; //study
-  } else if (pastActivities[0].category = "Meditate") {
+  } else if (radioButtonMeditate.checked === true) {
     document.querySelector('.vertical-line').style.borderColor = "#C278FD"; //meditate
-  } else {
+  } else if (radioButtonExercise.checked === true) {
     document.querySelector('.vertical-line').style.borderColor = "#FD8078"; //exercise
   }
-  // createPastActivityCard();
 }
+  // if (pastActivities[0].category === "Study") {
+  //   document.querySelector('.vertical-line').style.borderColor = "#B3FD78"; //study
+  // } else if (pastActivities[1].category === "Meditate") {
+  //   document.querySelector('.vertical-line').style.borderColor = "#C278FD"; //meditate
+  // } else {
+  //   document.querySelector('.vertical-line').style.borderColor = "#FD8078"; //exercise
+  // }
+  // createPastActivityCard();
+// }
 
 //START FOR CREATION OF NEW CARDS
 // function createPastActivityCard() {
@@ -106,17 +114,20 @@ function logActivityEvents() {
 //need a target variable for the cardContainer name)
 //need to populate with the array information
 function addCard() {
-  pastActivitySection.innerHTML +=
-    `<div class="past-activity-card"> 
+  pastActivityCardHolder.innerHTML = ``;
+  for (var i = 0; i < pastActivities.length; i++) {
+    pastActivityCardHolder.innerHTML +=
+      `<div class="past-activity-card"> 
         <div class="activity-color-indicator">
-        <div class="vertical-line"></div>
-          <p class="past-activity-text">${pastActivities[0].category}</p>
-        <div class="min-sec-row">
-        <p class="min-sec-ptag"><span class="past-activity-minutes">${pastActivities[0].minutes}</span> MIN <span class="past-activity-seconds"> ${pastActivities[0].seconds}</span> SECONDS</p>
+          <div class="vertical-line"></div>
+          <p class="past-activity-text">${pastActivities[i].category}</p>
+          <div class="min-sec-row">
+            <p class="min-sec-ptag"><span class="past-activity-minutes">${pastActivities[i].minutes}</span> MIN <span class="past-activity-seconds"> ${pastActivities[i].seconds}</span> SECONDS</p>
+          </div>
         </div>
-      </div>
-      <p class="past-activity-description">${pastActivities[0].description}</p>
+        <p class="past-activity-description">${pastActivities[i].description}</p>
       </div>`;
+  }
 };
 
 // pastActivityText.innerText = pastActivities[0].category;

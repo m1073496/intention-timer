@@ -359,7 +359,7 @@ form {
 }
 
 .vertical-line {
-  border: 6px solid yellow;
+  border: 6px solid;
   border-radius: 5px;
   height: 1em;
   position: absolute;
