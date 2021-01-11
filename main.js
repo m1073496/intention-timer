@@ -37,6 +37,7 @@ var pastActivitySeconds = document.querySelector('.past-activity-seconds');
 var pastActivityDescription = document.querySelector('.past-activity-description');
 var pastActivityMessage = document.querySelector('.message-container')
 var pastActivityCard = document.querySelector('.past-activity-card');
+var pageHeader = document.querySelector('.subhead');
 
 var currentActivity;
 //currentActivity will get pushed to pastActivities array when property "completed" is marked true
@@ -73,6 +74,7 @@ function logActivityEvents() {
   pastActivityMinutes.innerText = pastActivities[0]["minutes"];
   pastActivitySeconds.innerText = pastActivities[0]["seconds"];
   pastActivityDescription.innerText = pastActivities[0]["description"];
+  pageHeader.innerText = "Completed Activity";
 }
 
 function returnToActivityForm() {
@@ -108,6 +110,7 @@ function submitForm(event) {
     countdownSeconds.innerText = formatNumber(currentActivity.seconds);
     timerBoxHeader.innerText = currentActivity.description;
     startTimerButton.classList.remove('cannot-click');
+    pageHeader.innerText = "Current Activity";
   }
 }
 
