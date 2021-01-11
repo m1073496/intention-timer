@@ -80,8 +80,7 @@ timer-box-wrapper {
   height: 10vh;
   margin: 0.3vh;
   font-family: "Montserrat400", sans-serif;
-  font-size: 5em;
-  font-size: 5.7vw;
+  font-size: 5.2em;
 }
 
 .congrats-msg {
@@ -92,7 +91,6 @@ timer-box-wrapper {
   margin: 0.3vh;
   font-family: "Montserrat400", sans-serif;
   font-size: 3em;
-  font-size: 5.7vw;
 }
 
 .start-circle-wrapper {
