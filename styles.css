@@ -357,7 +357,7 @@ form {
   margin: 0;
 }
 
-.vl {
+.vertical-line {
   border: 6px solid green;
   border-radius: 5px;
   height: 1em;

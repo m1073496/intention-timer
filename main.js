@@ -81,6 +81,13 @@ function logActivityEvents() {
   pastActivityDescription.innerText = pastActivities[0].description;
   pageHeader.innerText = "Completed Activity";
   startCircleText.innerText = "START";
+  if (pastActivities[0].category = "Study") {
+    document.querySelector('.vertical-line').style.borderColor = "#B3FD78"; //study
+  } else if (pastActivities[0].category = "Meditate") {
+    document.querySelector('.vertical-line').style.borderColor = "#C278FD"; //meditate
+  } else {
+    document.querySelector('.vertical-line').style.borderColor = "#FD8078"; //exercise
+  }
   // createPastActivityCard();
 }
 
