@@ -60,7 +60,18 @@ startTimerButton.addEventListener('click', function() {
 logActivityButton.addEventListener('click', logActivityEvents);
 createNewActivityButton.addEventListener('click', returnToActivityForm);
 
-//Add functions below
+// Add functions below
+(function populatePastActivities() {
+  var keys = Object.keys(localStorage);
+  for (var i = 0; i < keys.length; i++) {
+        pastActivities.push(localStorage.getItem(keys[i]));
+  }
+  // if (pastActivities === []) {
+  //   pastActivities.push(localStorage.getItem());
+  // }
+})();
+
+
 function completeActivity() {
   document.querySelector('.congrats-msg').classList.remove('hidden');
   document.querySelector('.countdown-clock').classList.add('hidden');
@@ -81,6 +92,7 @@ function logActivityEvents() {
   pageHeader.innerText = "Completed Activity";
   startCircleText.innerText = "START";
   currentActivity.saveToStorage();
+  currentActivity.getFromStorage();
   // console.log(currentActivity.getFromStorage());
   // createPastActivityCard();
 }
@@ -89,7 +101,7 @@ function addPlaceholderCard() {
   pastActivityCardHolder.innerHTML = ``;
   for (var i = 0; i < pastActivities.length; i++) {
     pastActivityCardHolder.innerHTML +=
-      `<div class="past-activity-card"> 
+      `<div class="past-activity-card">
         <div class="activity-color-indicator">
           <div class="vertical-line vertical-line-${pastActivities[i].category.toLowerCase()}"></div>
           <p class="past-activity-text">${pastActivities[i].category}</p>

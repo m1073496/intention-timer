@@ -45,20 +45,21 @@ class Activity {
 
   markComplete() {
     this.completed = true;
-    pastActivities.push(this);
-    console.log(pastActivities);
+    // pastActivities.push(this);
+    // console.log(pastActivities);
   }
 
   saveToStorage() {
     //save to pastActivities array
     // var abc = JSON.stringify(pastActivities);
     // localStorage.setItem('a', abc);
-    localStorage.setItem('abc', JSON.stringify(pastActivities));
-    localStorage.getItem('abc', JSON.parse('abc'))
+    localStorage.setItem(`${this.id}`, JSON.stringify(this));
+    // localStorage.getItem('abc', JSON.parse('abc'))
   }
 
-  // getFromStorage() {
-  //   var retrievedObject = localStorage.getItem('abc');
-  //   var parsedObject = JSON.parse(retrievedObject);
-  // }
+  getFromStorage() {
+    var retrievedObject = localStorage.getItem(`${this.id}`);
+    var parsedObject = JSON.parse(retrievedObject);
+    pastActivities.push(parsedObject);
+  }
 };
