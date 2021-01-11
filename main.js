@@ -45,6 +45,7 @@ var pastActivityMessage = document.querySelector('.message-container')
 var pastActivityCard = document.querySelector('.past-activity-card');
 var pageHeader = document.querySelector('.subhead');
 var pastActivitySection = document.querySelector('.past-activity-section');
+var pastActivityCardHolder = document.querySelector('.past-activity-cardholder');
 
 var currentActivity;
 var pastActivities = [];
@@ -72,14 +73,16 @@ function logActivityEvents() {
   hide(timerBoxWrapper);
   show(createNewActivityButton);
   hide(pastActivityMessage);
-  show(pastActivityCard);
+  // show(pastActivityCard);
+  show(pastActivityCardHolder);
   countdownMinutes.innerText = formatNumber(currentActivity.minutes);
   countdownSeconds.innerText = formatNumber(currentActivity.seconds);
   timerBoxHeader.innerText = currentActivity.description || "hello1";
-  pastActivityText.innerText = pastActivities[0].category;
-  pastActivityMinutes.innerText = pastActivities[0].minutes;
-  pastActivitySeconds.innerText = pastActivities[0].seconds;
-  pastActivityDescription.innerText = pastActivities[0].description;
+  addCard();
+  // pastActivityText.innerText = pastActivities[0].category;
+  // pastActivityMinutes.innerText = pastActivities[0].minutes;
+  // pastActivitySeconds.innerText = pastActivities[0].seconds;
+  // pastActivityDescription.innerText = pastActivities[0].description;
   pageHeader.innerText = "Completed Activity";
   startCircleText.innerText = "START";
   if (pastActivities[0].category = "Study") {
@@ -100,43 +103,26 @@ function logActivityEvents() {
 //   parent.appendChild(newButton);
 // }
 
-function addCard(winner) {
-  cardContainer.innerHTML +=
-    `<section class="card">
-      <div class="card-header">
-        <p class="player1-name">${player1NameInput.value}</p>
-        <p> VS </p>
-        <p class="player2-name">${player2NameInput.value}</p>
-      </div>
-      <div class="card-main">
-        <div class="card-line"></div>
-        <p class="winner-name game1-winner">${winner}</p>
-        <p class="card-winner-label">WINNER</p>
-        <div class="card-line"></div>
-      </div>
-      <div class="card-footer">
-        <p><span class="guess-count" id="number-of-guesses">${guessCount}</span> GUESSES</p>
-        <button class="close-button">X</button>
-      </div>
-    </section>`;
-};
-
 //need a target variable for the cardContainer name)
 //need to populate with the array information
-
-(function addCard() {
+function addCard() {
   pastActivitySection.innerHTML +=
-    `<div class="past-activity-card">
-      <div class="activity-color-indicator">
+    `<div class="past-activity-card"> 
+        <div class="activity-color-indicator">
         <div class="vertical-line"></div>
-          <p class="past-activity-text">Placeholder Activity</p>
+          <p class="past-activity-text">${pastActivities[0].category}</p>
         <div class="min-sec-row">
-        <p class="min-sec-ptag"><span class="past-activity-minutes">5</span> MIN <span class="past-activity-seconds"> 0</span> SECONDS</p>
+        <p class="min-sec-ptag"><span class="past-activity-minutes">${pastActivities[0].minutes}</span> MIN <span class="past-activity-seconds"> ${pastActivities[0].seconds}</span> SECONDS</p>
         </div>
       </div>
-      <p class="past-activity-description">Placeholder Description</p>
-    </div>`;
-})()
+      <p class="past-activity-description">${pastActivities[0].description}</p>
+      </div>`;
+};
+
+// pastActivityText.innerText = pastActivities[0].category;
+// pastActivityMinutes.innerText = pastActivities[0].minutes;
+// pastActivitySeconds.innerText = pastActivities[0].seconds;
+// pastActivityDescription.innerText = pastActivities[0].description;
 
 
 function returnToActivityForm() {

@@ -325,6 +325,7 @@ form {
   display: flex;
   flex-direction: column;
   margin: 0;
+  margin-bottom: 1.3rem;
   background-color: #46424D;
 }
 
