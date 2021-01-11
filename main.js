@@ -44,6 +44,7 @@ var pastActivityDescription = document.querySelector('.past-activity-description
 var pastActivityMessage = document.querySelector('.message-container')
 var pastActivityCard = document.querySelector('.past-activity-card');
 var pageHeader = document.querySelector('.subhead');
+var pastActivitySection = document.querySelector('.past-activity-section');
 
 var currentActivity;
 var pastActivities = [];
@@ -98,6 +99,45 @@ function logActivityEvents() {
 //   newButton.innerText = "New click me button!";
 //   parent.appendChild(newButton);
 // }
+
+function addCard(winner) {
+  cardContainer.innerHTML +=
+    `<section class="card">
+      <div class="card-header">
+        <p class="player1-name">${player1NameInput.value}</p>
+        <p> VS </p>
+        <p class="player2-name">${player2NameInput.value}</p>
+      </div>
+      <div class="card-main">
+        <div class="card-line"></div>
+        <p class="winner-name game1-winner">${winner}</p>
+        <p class="card-winner-label">WINNER</p>
+        <div class="card-line"></div>
+      </div>
+      <div class="card-footer">
+        <p><span class="guess-count" id="number-of-guesses">${guessCount}</span> GUESSES</p>
+        <button class="close-button">X</button>
+      </div>
+    </section>`;
+};
+
+//need a target variable for the cardContainer name)
+//need to populate with the array information
+
+(function addCard() {
+  pastActivitySection.innerHTML +=
+    `<div class="past-activity-card">
+      <div class="activity-color-indicator">
+        <div class="vertical-line"></div>
+          <p class="past-activity-text">Placeholder Activity</p>
+        <div class="min-sec-row">
+        <p class="min-sec-ptag"><span class="past-activity-minutes">5</span> MIN <span class="past-activity-seconds"> 0</span> SECONDS</p>
+        </div>
+      </div>
+      <p class="past-activity-description">Placeholder Description</p>
+    </div>`;
+})()
+
 
 function returnToActivityForm() {
   show(activityInputForm);

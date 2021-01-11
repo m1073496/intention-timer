@@ -302,7 +302,7 @@ form {
 } */
 
 /* -----------------RIGHT-HAND CONTAINER------------------ */
-.past-activity {
+.past-activity-section {
   width: 33%;
   padding: 0 25px 25px 25px;
   background-color:#2B2733;
@@ -358,7 +358,7 @@ form {
 }
 
 .vertical-line {
-  border: 6px solid green;
+  border: 6px solid yellow;
   border-radius: 5px;
   height: 1em;
   position: absolute;
