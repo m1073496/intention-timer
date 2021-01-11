@@ -26,6 +26,7 @@ var minutesMissing = document.querySelector('.minutes-missing');
 var minutesRange = document.querySelector('.minutes-range');
 var secondsMissing = document.querySelector('.seconds-missing');
 var secondsRange = document.querySelector('.seconds-range');
+var timeMissing = document.querySelector('.time-missing');
 var startTimerButton = document.querySelector('.start-circle-text');
 var logActivityButton = document.querySelector('.log-button');
 var timerBoxHeader = document.querySelector('.timer-box-header');
@@ -145,9 +146,7 @@ function validateSeconds() {
 function validateTime() {
   if (parseInt(minutesInput.value) == 0 && parseInt(secondsInput.value) == 0) {
     show(warningMinutes);
-    show(minutesRange);
-    show(warningSeconds);
-    show(secondsRange);
+    show(timeMissing);
     return false;
   } else {
     return true;
