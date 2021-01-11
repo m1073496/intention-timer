@@ -81,8 +81,6 @@ function logActivityEvents() {
   addCard();
   pageHeader.innerText = "Completed Activity";
   startCircleText.innerText = "START";
-
-
 }
 
 function addCard() {
@@ -103,18 +101,13 @@ function addCard() {
 
 };
 
-// pastActivityText.innerText = pastActivities[0].category;
-// pastActivityMinutes.innerText = pastActivities[0].minutes;
-// pastActivitySeconds.innerText = pastActivities[0].seconds;
-// pastActivityDescription.innerText = pastActivities[0].description;
-
-
 function returnToActivityForm() {
   show(activityInputForm);
   hide(createNewActivityButton);
   clearActivityForm();
   document.querySelector('.congrats-msg').classList.add('hidden');
   document.querySelector('.countdown-clock').classList.remove('hidden');
+  pageHeader.innerText = "New Activity";
 }
 
 function clearActivityForm() {
