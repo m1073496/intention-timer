@@ -142,6 +142,30 @@ function displayPastActivities() {
           </div>
           <p class="past-activity-description">${pastActivities[i].description}</p>
         </div>`;
+    } else if (pastActivities[i].seconds === 1) {
+      pastActivityCardHolder.innerHTML +=
+        `<div class="past-activity-card">
+          <div class="activity-color-indicator">
+            <div class="vertical-line vertical-line-${pastActivities[i].category.toLowerCase()}"></div>
+            <p class="past-activity-text">${pastActivities[i].category}</p>
+            <div class="min-sec-row">
+              <p class="min-sec-ptag"><span class="past-activity-minutes">${pastActivities[i].minutes}</span> MIN<span class="past-activity-seconds"> ${pastActivities[i].seconds}</span> SECOND</p>
+            </div>
+          </div>
+          <p class="past-activity-description">${pastActivities[i].description}</p>
+        </div>`;
+    } else if (pastActivities[i].seconds === 0) {
+      pastActivityCardHolder.innerHTML +=
+        `<div class="past-activity-card">
+          <div class="activity-color-indicator">
+            <div class="vertical-line vertical-line-${pastActivities[i].category.toLowerCase()}"></div>
+            <p class="past-activity-text">${pastActivities[i].category}</p>
+            <div class="min-sec-row">
+              <p class="min-sec-ptag"><span class="past-activity-minutes">${pastActivities[i].minutes}</span> MIN <span class="past-activity-seconds"></span></p>
+            </div>
+          </div>
+          <p class="past-activity-description">${pastActivities[i].description}</p>
+        </div>`;
     } else if (pastActivities[i].minutes === 0) {
         pastActivityCardHolder.innerHTML +=
           `<div class="past-activity-card">
