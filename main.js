@@ -65,14 +65,6 @@ logActivityButton.addEventListener('click', logActivityEvents);
 createNewActivityButton.addEventListener('click', returnToActivityForm);
 
 // *** Functions ***
-function show(element) {
-  element.classList.remove('hidden');
-}
-
-function hide(element) {
-  element.classList.add('hidden');
-}
-
 window.onload = function() {
   var pastActivites = [];
   populatePastActivities();
@@ -86,6 +78,14 @@ window.onload = function() {
   displayPastActivities();
   hide(pastActivityMessage);
 };
+
+function show(element) {
+  element.classList.remove('hidden');
+}
+
+function hide(element) {
+  element.classList.add('hidden');
+}
 
 function populatePastActivities() {
   pastActivities = [];
@@ -155,6 +155,46 @@ function determineSecondsWord(seconds) {
   return secondsWord;
 }
 
+function findCategory(event) {
+  if (event.target.classList.contains("radio-study")) {
+    activateStudyImage();
+    startTimerButton.className = 'circle-outline circle-outline-study';
+  } else if (event.target.classList.contains("radio-meditate")) {
+    activateMeditateImage();
+    startTimerButton.className = 'circle-outline circle-outline-meditate';
+  } else if (event.target.classList.contains("radio-exercise")) {
+    activateExerciseImage();
+    startTimerButton.className = 'circle-outline circle-outline-exercise';
+  }
+}
+
+function activateStudyImage() {
+  hide(meditateImageActive);
+  hide(exerciseImageActive);
+  hide(studyImage);
+  show(studyImageActive);
+  show(meditateImage);
+  show(exerciseImage);
+}
+
+function activateMeditateImage() {
+  hide(studyImageActive);
+  hide(exerciseImageActive);
+  hide(meditateImage);
+  show(meditateImageActive);
+  show(studyImage);
+  show(exerciseImage);
+}
+
+function activateExerciseImage() {
+  hide(meditateImageActive);
+  hide(studyImageActive);
+  hide(exerciseImage);
+  show(exerciseImageActive);
+  show(meditateImage);
+  show(studyImage);
+}
+
 function submitForm(event) {
   event.preventDefault();
   if (validateInput()) {
@@ -168,72 +208,6 @@ function submitForm(event) {
     pageHeader.innerText = "Current Activity";
     hide(logActivityButton);
   }
-}
-
-function formatNumber(number) {
-  var parsedNumber = parseInt(number);
-  if (parsedNumber < 10) {
-    var stringNumber = `0` + parsedNumber;
-    return stringNumber;
-  } else {
-    return number;
-  }
-}
-
-function createNewActivity() {
-  currentActivity = new Activity(findCategoryChoice(), accomplishInput.value, parseInt(minutesInput.value), parseInt(secondsInput.value));
-}
-
-function findCategoryChoice() {
-  var myChoice = document.querySelector('input[name="radioCategory"]:checked').value;
-  return myChoice;
-}
-
-function completeActivity() {
-  document.querySelector('.congrats-msg').classList.remove('hidden');
-  document.querySelector('.countdown-clock').classList.add('hidden');
-  startCircleText.innerText = "COMPLETE";
-  show(logActivityButton);
-  currentActivity.markComplete();
-}
-
-function logActivityEvents() {
-  hide(timerBoxWrapper);
-  show(createNewActivityButton);
-  hide(pastActivityMessage);
-  show(pastActivityCardHolder);
-  countdownMinutes.innerText = formatNumber(currentActivity.minutes);
-  countdownSeconds.innerText = formatNumber(currentActivity.seconds);
-  timerBoxHeader.innerText = currentActivity.description || "Placeholder";
-  pageHeader.innerText = "Completed Activity";
-  startCircleText.innerText = "START";
-  currentActivity.saveToStorage();
-  populatePastActivities();
-  displayPastActivities();
-}
-
-function returnToActivityForm() {
-  show(activityInputForm);
-  hide(createNewActivityButton);
-  clearActivityForm();
-  document.querySelector('.congrats-msg').classList.add('hidden');
-  document.querySelector('.countdown-clock').classList.remove('hidden');
-  pageHeader.innerText = "New Activity";
-}
-
-function clearActivityForm() {
-  radioButtonStudy.checked = false;
-  radioButtonExercise.checked = false;
-  radioButtonMeditate.checked = false;
-  hide(studyImageActive);
-  hide(meditateImageActive);
-  hide(exerciseImageActive);
-  show(studyImage);
-  show(meditateImage);
-  show(exerciseImage);
-  accomplishInput.value = "";
-  minutesInput.value = "";
-  secondsInput.value = "";
 }
 
 function validateInput() {
@@ -318,42 +292,68 @@ function validateTime() {
   }
 }
 
-function findCategory(event) {
-  if (event.target.classList.contains("radio-study")) {
-    activateStudyImage();
-    startTimerButton.className = 'circle-outline circle-outline-study';
-  } else if (event.target.classList.contains("radio-meditate")) {
-    activateMeditateImage();
-    startTimerButton.className = 'circle-outline circle-outline-meditate';
-  } else if (event.target.classList.contains("radio-exercise")) {
-    activateExerciseImage();
-    startTimerButton.className = 'circle-outline circle-outline-exercise';
+function createNewActivity() {
+  currentActivity = new Activity(findCategoryChoice(), accomplishInput.value, parseInt(minutesInput.value), parseInt(secondsInput.value));
+}
+
+function findCategoryChoice() {
+  var myChoice = document.querySelector('input[name="radioCategory"]:checked').value;
+  return myChoice;
+}
+
+function formatNumber(number) {
+  var parsedNumber = parseInt(number);
+  if (parsedNumber < 10) {
+    var stringNumber = `0` + parsedNumber;
+    return stringNumber;
+  } else {
+    return number;
   }
 }
 
-function activateStudyImage() {
-  hide(meditateImageActive);
-  hide(exerciseImageActive);
-  hide(studyImage);
-  show(studyImageActive);
-  show(meditateImage);
-  show(exerciseImage);
+function completeActivity() {
+  document.querySelector('.congrats-msg').classList.remove('hidden');
+  document.querySelector('.countdown-clock').classList.add('hidden');
+  startCircleText.innerText = "COMPLETE";
+  show(logActivityButton);
+  currentActivity.markComplete();
 }
 
-function activateMeditateImage() {
-  hide(studyImageActive);
-  hide(exerciseImageActive);
-  hide(meditateImage);
-  show(meditateImageActive);
-  show(studyImage);
-  show(exerciseImage);
+function logActivityEvents() {
+  hide(timerBoxWrapper);
+  show(createNewActivityButton);
+  hide(pastActivityMessage);
+  show(pastActivityCardHolder);
+  countdownMinutes.innerText = formatNumber(currentActivity.minutes);
+  countdownSeconds.innerText = formatNumber(currentActivity.seconds);
+  timerBoxHeader.innerText = currentActivity.description || "Placeholder";
+  pageHeader.innerText = "Completed Activity";
+  startCircleText.innerText = "START";
+  currentActivity.saveToStorage();
+  populatePastActivities();
+  displayPastActivities();
 }
 
-function activateExerciseImage() {
-  hide(meditateImageActive);
+function returnToActivityForm() {
+  show(activityInputForm);
+  hide(createNewActivityButton);
+  clearActivityForm();
+  document.querySelector('.congrats-msg').classList.add('hidden');
+  document.querySelector('.countdown-clock').classList.remove('hidden');
+  pageHeader.innerText = "New Activity";
+}
+
+function clearActivityForm() {
+  radioButtonStudy.checked = false;
+  radioButtonExercise.checked = false;
+  radioButtonMeditate.checked = false;
   hide(studyImageActive);
-  hide(exerciseImage);
-  show(exerciseImageActive);
-  show(meditateImage);
+  hide(meditateImageActive);
+  hide(exerciseImageActive);
   show(studyImage);
+  show(meditateImage);
+  show(exerciseImage);
+  accomplishInput.value = "";
+  minutesInput.value = "";
+  secondsInput.value = "";
 }
