@@ -51,26 +51,30 @@ var currentActivity;
 var pastActivities = [];
 
 //Add event listeners below
+window.addEventListener(“load”, function() {
+  populatePastActivities();
+});
+
 categoryBoxWrapper.addEventListener('click', findCategory);
+
 startActivityButton.addEventListener('click', submitForm);
+
 startTimerButton.addEventListener('click', function() {
   startTimerButton.classList.add('cannot-click');
   currentActivity.startTimer();
 });
+
 logActivityButton.addEventListener('click', logActivityEvents);
+
 createNewActivityButton.addEventListener('click', returnToActivityForm);
 
-//Add functions below
-(function populatePastActivities() {
+// Add functions below
+function populatePastActivities() {
   var keys = Object.keys(localStorage);
   for (var i = 0; i < keys.length; i++) {
-        pastActivities.push(localStorage.getItem(keys[i]));
+    pastActivities.push(localStorage.getItem(keys[i]));
   }
-  // if (pastActivities === []) {
-  //   pastActivities.push(localStorage.getItem());
-  // }
-})();
-
+};
 
 function completeActivity() {
   document.querySelector('.congrats-msg').classList.remove('hidden');
