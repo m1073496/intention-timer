@@ -75,6 +75,7 @@ window.onload = function() {
 function populatePastActivities() {
   pastActivities = [];
   var keys = Object.keys(localStorage);
+  sortDescending(keys);
   for (var i = 0; i < keys.length; i++) {
     var retrievedObject = localStorage.getItem(keys[i]);
     var parsedObject = JSON.parse(retrievedObject);
@@ -82,6 +83,12 @@ function populatePastActivities() {
     pastActivities.push(revivedPastActivity);
     // pastActivities.push(localStorage.getItem(keys[i]));
   }
+}
+
+function sortDescending(array) {
+  array.sort(function(a, b) {
+    return b - a;
+  });
 }
 
 // function populatePastActivities() {
