@@ -76,13 +76,7 @@ function populatePastActivities() {
   pastActivities = [];
   var keys = Object.keys(localStorage);
   sortDescending(keys);
-  for (var i = 0; i < keys.length; i++) {
-    var retrievedObject = localStorage.getItem(keys[i]);
-    var parsedObject = JSON.parse(retrievedObject);
-    var revivedPastActivity = new Activity(parsedObject.category, parsedObject.description, parsedObject.minutes, parsedObject.seconds);
-    pastActivities.push(revivedPastActivity);
-    // pastActivities.push(localStorage.getItem(keys[i]));
-  }
+  reviveActivitiesFromStorage(keys);
 }
 
 function sortDescending(array) {
@@ -91,14 +85,14 @@ function sortDescending(array) {
   });
 }
 
-// function populatePastActivities() {
-//   var keys = Object.keys(localStorage);
-//   for (var i = 0; i < keys.length; i++) {
-//     pastActivities.push(localStorage.getItem(keys[i]));
-//   }
-//   // console.log(localStorage);
-//   // console.log(pastActivities);
-// };
+function reviveActivitiesFromStorage(storedActivities) {
+  for (var i = 0; i < storedActivities.length; i++) {
+    var retrievedObject = localStorage.getItem(storedActivities[i]);
+    var parsedObject = JSON.parse(retrievedObject);
+    var revivedPastActivity = new Activity(parsedObject.category, parsedObject.description, parsedObject.minutes, parsedObject.seconds);
+    pastActivities.push(revivedPastActivity);
+  }
+}
 
 function completeActivity() {
   document.querySelector('.congrats-msg').classList.remove('hidden');
