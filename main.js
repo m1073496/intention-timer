@@ -127,72 +127,49 @@ function createNewActivity() {
 }
 
 function displayPastActivities() {
-
-
   pastActivityCardHolder.innerHTML = "";
+
   for (var i = 0; i < pastActivities.length; i++) {
-    if (pastActivities[i].minutes === 0 && pastActivities[i].seconds === 1) {
-      pastActivityCardHolder.innerHTML +=
-        `<div class="past-activity-card">
-          <div class="activity-color-indicator">
-            <div class="vertical-line vertical-line-${pastActivities[i].category.toLowerCase()}"></div>
-            <p class="past-activity-text">${pastActivities[i].category}</p>
-            <div class="min-sec-row">
-              <p class="min-sec-ptag"><span class="past-activity-minutes"></span><span class="past-activity-seconds"> ${pastActivities[i].seconds}</span> SECOND</p>
-            </div>
-          </div>
-          <p class="past-activity-description">${pastActivities[i].description}</p>
-        </div>`;
-    } else if (pastActivities[i].seconds === 1) {
-      pastActivityCardHolder.innerHTML +=
-        `<div class="past-activity-card">
-          <div class="activity-color-indicator">
-            <div class="vertical-line vertical-line-${pastActivities[i].category.toLowerCase()}"></div>
-            <p class="past-activity-text">${pastActivities[i].category}</p>
-            <div class="min-sec-row">
-              <p class="min-sec-ptag"><span class="past-activity-minutes">${pastActivities[i].minutes}</span> MIN<span class="past-activity-seconds"> ${pastActivities[i].seconds}</span> SECOND</p>
-            </div>
-          </div>
-          <p class="past-activity-description">${pastActivities[i].description}</p>
-        </div>`;
-    } else if (pastActivities[i].seconds === 0) {
-      pastActivityCardHolder.innerHTML +=
-        `<div class="past-activity-card">
-          <div class="activity-color-indicator">
-            <div class="vertical-line vertical-line-${pastActivities[i].category.toLowerCase()}"></div>
-            <p class="past-activity-text">${pastActivities[i].category}</p>
-            <div class="min-sec-row">
-              <p class="min-sec-ptag"><span class="past-activity-minutes">${pastActivities[i].minutes}</span> MIN <span class="past-activity-seconds"></span></p>
-            </div>
-          </div>
-          <p class="past-activity-description">${pastActivities[i].description}</p>
-        </div>`;
-    } else if (pastActivities[i].minutes === 0) {
-        pastActivityCardHolder.innerHTML +=
-          `<div class="past-activity-card">
-            <div class="activity-color-indicator">
-              <div class="vertical-line vertical-line-${pastActivities[i].category.toLowerCase()}"></div>
-              <p class="past-activity-text">${pastActivities[i].category}</p>
-              <div class="min-sec-row">
-                <p class="min-sec-ptag"><span class="past-activity-minutes"></span><span class="past-activity-seconds"> ${pastActivities[i].seconds}</span> SECONDS</p>
-              </div>
-            </div>
-            <p class="past-activity-description">${pastActivities[i].description}</p>
-          </div>`;
-    } else {
+    var minutes = pastActivities[i].minutes;
+    var seconds = pastActivities[i].seconds;
+    var secondsWord = determineSecondsWord(seconds);
+    var secondsNumber = determineSecondsNumber(seconds);
+
     pastActivityCardHolder.innerHTML +=
       `<div class="past-activity-card">
         <div class="activity-color-indicator">
           <div class="vertical-line vertical-line-${pastActivities[i].category.toLowerCase()}"></div>
           <p class="past-activity-text">${pastActivities[i].category}</p>
           <div class="min-sec-row">
-            <p class="min-sec-ptag"><span class="past-activity-minutes">${pastActivities[i].minutes}</span> MIN <span class="past-activity-seconds"> ${pastActivities[i].seconds}</span> SECONDS</p>
+            <p class="min-sec-ptag"><span class="past-activity-minutes">${minutes}</span> MIN <span class="past-activity-seconds"> ${secondsNumber}</span> ${secondsWord}</p>
           </div>
         </div>
         <p class="past-activity-description">${pastActivities[i].description}</p>
       </div>`;
-    }
   }
+}
+
+function determineSecondsNumber(seconds) {
+  var secondsNumber = seconds;
+
+  if (seconds === 0) {
+    secondsNumber = '';
+  }
+
+  return secondsNumber;
+}
+
+function determineSecondsWord(seconds) {
+  var secondsWord = 'SECONDS';
+
+  if (seconds === 0) {
+    secondsWord = '';
+  }
+  if (seconds === 1) {
+    secondsWord = 'SECOND';
+  }
+
+  return secondsWord;
 }
 
 function returnToActivityForm() {
