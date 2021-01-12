@@ -66,14 +66,15 @@ createNewActivityButton.addEventListener('click', returnToActivityForm);
 
 // Add functions below
 window.onload = function() {
-  alert('Page Loaded');
-  console.log(pastActivities);
-  console.log(localStorage);
+  var pastActivites = [];
   populatePastActivities();
+  if(pastActivites === []) {
+    show(pastActivityMessage);
+  } else {
+    hide(pastActivityMessage);
+  };
   displayPastActivities();
   hide(pastActivityMessage);
-  console.log(pastActivities);
-  console.log(localStorage);
 };
 
 function populatePastActivities() {
