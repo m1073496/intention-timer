@@ -52,29 +52,51 @@ var pastActivities = [];
 
 //Add event listeners below
 categoryBoxWrapper.addEventListener('click', findCategory);
+
 startActivityButton.addEventListener('click', submitForm);
+
 startTimerButton.addEventListener('click', function() {
   startTimerButton.classList.add('cannot-click');
   currentActivity.startTimer();
 });
+
 logActivityButton.addEventListener('click', logActivityEvents);
+
 createNewActivityButton.addEventListener('click', returnToActivityForm);
 
+// Add functions below
 window.onload = function() {
   alert('Page Loaded');
   console.log(pastActivities);
   console.log(localStorage);
+  populatePastActivities();
+  displayPastActivities();
+  hide(pastActivityMessage);
+  console.log(pastActivities);
+  console.log(localStorage);
 };
 
-// Add functions below
 function populatePastActivities() {
+  pastActivities = [];
   var keys = Object.keys(localStorage);
-  for (var i = 0; i < keys.length; i++) {
-    pastActivities.push(localStorage.getItem(keys[i]));
+  sortDescending(keys);
+  reviveActivitiesFromStorage(keys);
+}
+
+function sortDescending(array) {
+  array.sort(function(a, b) {
+    return b - a;
+  });
+}
+
+function reviveActivitiesFromStorage(storedActivities) {
+  for (var i = 0; i < storedActivities.length; i++) {
+    var retrievedObject = localStorage.getItem(storedActivities[i]);
+    var parsedObject = JSON.parse(retrievedObject);
+    var revivedPastActivity = new Activity(parsedObject.category, parsedObject.description, parsedObject.minutes, parsedObject.seconds);
+    pastActivities.push(revivedPastActivity);
   }
-  // console.log(localStorage);
-  // console.log(pastActivities);
-};
+}
 
 function completeActivity() {
   document.querySelector('.congrats-msg').classList.remove('hidden');
@@ -95,17 +117,16 @@ function logActivityEvents() {
   pageHeader.innerText = "Completed Activity";
   startCircleText.innerText = "START";
   currentActivity.saveToStorage();
-  currentActivity.getFromStorage();
-  addPlaceholderCard();
+  populatePastActivities();
+  displayPastActivities();
 }
 
 function createNewActivity() {
   currentActivity = new Activity(findCategoryChoice(), accomplishInput.value, parseInt(minutesInput.value), parseInt(secondsInput.value));
-  //save activities in localStorage or array??
 }
 
-function addPlaceholderCard() {
-  pastActivityCardHolder.innerHTML = ``;
+function displayPastActivities() {
+  pastActivityCardHolder.innerHTML = "";
   for (var i = 0; i < pastActivities.length; i++) {
     pastActivityCardHolder.innerHTML +=
       `<div class="past-activity-card">
@@ -276,7 +297,7 @@ function findCategory(event) {
     show(studyImageActive);
     show(meditateImage);
     show(exerciseImage);
-    document.querySelector('.circle-outline').style.borderColor = "#B3FD78";
+    startTimerButton.className = 'circle-outline circle-outline-study';
   } else if (event.target.classList.contains("radio-meditate")) {
     hide(studyImageActive);
     hide(exerciseImageActive);
@@ -284,7 +305,7 @@ function findCategory(event) {
     show(meditateImageActive);
     show(studyImage);
     show(exerciseImage);
-    document.querySelector('.circle-outline').style.borderColor = "#C278FD";
+    startTimerButton.className = 'circle-outline circle-outline-meditate';
   } else if (event.target.classList.contains("radio-exercise")) {
     hide(meditateImageActive);
     hide(studyImageActive);
@@ -292,6 +313,6 @@ function findCategory(event) {
     show(exerciseImageActive);
     show(meditateImage);
     show(studyImage);
-    document.querySelector('.circle-outline').style.borderColor = "#FD8078";
+    startTimerButton.className = 'circle-outline circle-outline-exercise';
   }
 }
