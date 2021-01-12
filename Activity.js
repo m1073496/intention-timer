@@ -53,8 +53,8 @@ class Activity {
     //save to pastActivities array
     // var abc = JSON.stringify(pastActivities);
     // localStorage.setItem('a', abc);
-    localStorage.setItem('abc', JSON.stringify(pastActivities));
-    localStorage.getItem('abc', JSON.parse('abc'))
+    localStorage.setItem('abc', JSON.stringify(this));
+    // localStorage.getItem('abc', JSON.parse('abc'))
   }
 
   // getFromStorage() {
