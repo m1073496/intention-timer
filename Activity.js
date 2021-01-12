@@ -48,6 +48,6 @@ class Activity {
   }
 
   saveToStorage() {
-    localStorage.setItem(`${this.id}`, JSON.stringify(this));
+    localStorage.setItem(this.id.toString(), JSON.stringify(this));
   }
 };

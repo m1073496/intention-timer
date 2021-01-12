@@ -1,4 +1,4 @@
-//Add targeting variables below
+// *** Targeting Variables ***
 var activityInputForm = document.querySelector('form');
 var timerBoxWrapper = document.querySelector('.timer-box-wrapper');
 var categoryBoxWrapper = document.querySelector('.category-box-wrapper');
@@ -33,7 +33,6 @@ var logActivityButton = document.querySelector('.log-button');
 var timerBoxHeader = document.querySelector('.timer-box-header');
 var createNewActivityButton = document.querySelector('.create-new-activity-button');
 var congratsMsg = document.querySelector('.congrats-msg');
-
 var radioButtonStudy = document.querySelector('#radioStudy');
 var radioButtonMeditate = document.querySelector('#radioMeditate');
 var radioButtonExercise = document.querySelector('#radioExercise');
@@ -47,10 +46,11 @@ var pageHeader = document.querySelector('.subhead');
 var pastActivitySection = document.querySelector('.past-activity-section');
 var pastActivityCardHolder = document.querySelector('.past-activity-cardholder');
 
+// *** Global Variables ***
 var currentActivity;
 var pastActivities = [];
 
-//Add event listeners below
+// *** Event Listeners ***
 categoryBoxWrapper.addEventListener('click', findCategory);
 
 startActivityButton.addEventListener('click', submitForm);
@@ -64,15 +64,17 @@ logActivityButton.addEventListener('click', logActivityEvents);
 
 createNewActivityButton.addEventListener('click', returnToActivityForm);
 
-// Add functions below
+// *** Functions ***
 window.onload = function() {
   var pastActivites = [];
   populatePastActivities();
-  if(pastActivites === []) {
+
+  if (pastActivites === []) {
     show(pastActivityMessage);
   } else {
     hide(pastActivityMessage);
   };
+
   displayPastActivities();
   hide(pastActivityMessage);
 };
@@ -194,9 +196,6 @@ function clearActivityForm() {
   accomplishInput.value = "";
   minutesInput.value = "";
   secondsInput.value = "";
-}
-
-function clearTimerPage() {
 }
 
 function show(element) {
