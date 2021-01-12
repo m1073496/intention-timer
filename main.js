@@ -60,7 +60,22 @@ startTimerButton.addEventListener('click', function() {
 logActivityButton.addEventListener('click', logActivityEvents);
 createNewActivityButton.addEventListener('click', returnToActivityForm);
 
-//Add functions below
+window.onload = function() {
+  alert('Page Loaded');
+  console.log(pastActivities);
+  console.log(localStorage);
+};
+
+// Add functions below
+function populatePastActivities() {
+  var keys = Object.keys(localStorage);
+  for (var i = 0; i < keys.length; i++) {
+    pastActivities.push(localStorage.getItem(keys[i]));
+  }
+  // console.log(localStorage);
+  // console.log(pastActivities);
+};
+
 function completeActivity() {
   document.querySelector('.congrats-msg').classList.remove('hidden');
   document.querySelector('.countdown-clock').classList.add('hidden');
@@ -76,20 +91,24 @@ function logActivityEvents() {
   show(pastActivityCardHolder);
   countdownMinutes.innerText = formatNumber(currentActivity.minutes);
   countdownSeconds.innerText = formatNumber(currentActivity.seconds);
-  timerBoxHeader.innerText = currentActivity.description || "hello1";
-  addPlaceholderCard();
+  timerBoxHeader.innerText = currentActivity.description || "Placeholder";
   pageHeader.innerText = "Completed Activity";
   startCircleText.innerText = "START";
   currentActivity.saveToStorage();
-  // console.log(currentActivity.getFromStorage());
-  // createPastActivityCard();
+  currentActivity.getFromStorage();
+  addPlaceholderCard();
+}
+
+function createNewActivity() {
+  currentActivity = new Activity(findCategoryChoice(), accomplishInput.value, parseInt(minutesInput.value), parseInt(secondsInput.value));
+  //save activities in localStorage or array??
 }
 
 function addPlaceholderCard() {
   pastActivityCardHolder.innerHTML = ``;
   for (var i = 0; i < pastActivities.length; i++) {
     pastActivityCardHolder.innerHTML +=
-      `<div class="past-activity-card"> 
+      `<div class="past-activity-card">
         <div class="activity-color-indicator">
           <div class="vertical-line vertical-line-${pastActivities[i].category.toLowerCase()}"></div>
           <p class="past-activity-text">${pastActivities[i].category}</p>
@@ -127,7 +146,6 @@ function clearActivityForm() {
 }
 
 function clearTimerPage() {
-
 }
 
 function show(element) {
@@ -243,11 +261,6 @@ function formatNumber(number) {
   } else {
     return number;
   }
-}
-
-function createNewActivity() {
-  currentActivity = new Activity(findCategoryChoice(), accomplishInput.value, parseInt(minutesInput.value), parseInt(secondsInput.value));
-  //save activities in localStorage or array??
 }
 
 function findCategoryChoice() {
