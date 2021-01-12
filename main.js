@@ -320,28 +320,40 @@ function findCategoryChoice() {
 
 function findCategory(event) {
   if (event.target.classList.contains("radio-study")) {
-    hide(meditateImageActive);
-    hide(exerciseImageActive);
-    hide(studyImage);
-    show(studyImageActive);
-    show(meditateImage);
-    show(exerciseImage);
+    activateStudyImage();
     startTimerButton.className = 'circle-outline circle-outline-study';
   } else if (event.target.classList.contains("radio-meditate")) {
-    hide(studyImageActive);
-    hide(exerciseImageActive);
-    hide(meditateImage);
-    show(meditateImageActive);
-    show(studyImage);
-    show(exerciseImage);
+    activateMeditateImage();
     startTimerButton.className = 'circle-outline circle-outline-meditate';
   } else if (event.target.classList.contains("radio-exercise")) {
-    hide(meditateImageActive);
-    hide(studyImageActive);
-    hide(exerciseImage);
-    show(exerciseImageActive);
-    show(meditateImage);
-    show(studyImage);
+    activateExerciseImage();
     startTimerButton.className = 'circle-outline circle-outline-exercise';
   }
+}
+
+function activateStudyImage() {
+  hide(meditateImageActive);
+  hide(exerciseImageActive);
+  hide(studyImage);
+  show(studyImageActive);
+  show(meditateImage);
+  show(exerciseImage);
+}
+
+function activateMeditateImage() {
+  hide(studyImageActive);
+  hide(exerciseImageActive);
+  hide(meditateImage);
+  show(meditateImageActive);
+  show(studyImage);
+  show(exerciseImage);
+}
+
+function activateExerciseImage() {
+  hide(meditateImageActive);
+  hide(studyImageActive);
+  hide(exerciseImage);
+  show(exerciseImageActive);
+  show(meditateImage);
+  show(studyImage);
 }
