@@ -60,6 +60,7 @@ class Activity {
   getFromStorage() {
     var retrievedObject = localStorage.getItem(`${this.id}`);
     var parsedObject = JSON.parse(retrievedObject);
-    pastActivities.push(parsedObject);
+    var createPastActivity = new Activity(parsedObject.category, parsedObject.description, parsedObject.minutes, parsedObject.seconds)
+    pastActivities.push(createPastActivity);
   }
 };
