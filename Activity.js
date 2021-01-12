@@ -57,10 +57,10 @@ class Activity {
     // localStorage.getItem('abc', JSON.parse('abc'))
   }
 
-  getFromStorage() {
-    var retrievedObject = localStorage.getItem(`${this.id}`);
-    var parsedObject = JSON.parse(retrievedObject);
-    var createPastActivity = new Activity(parsedObject.category, parsedObject.description, parsedObject.minutes, parsedObject.seconds)
-    pastActivities.push(createPastActivity);
-  }
+  // getFromStorage() {
+  //   var retrievedObject = localStorage.getItem(`${this.id}`);
+  //   var parsedObject = JSON.parse(retrievedObject);
+  //   var createPastActivity = new Activity(parsedObject.category, parsedObject.description, parsedObject.minutes, parsedObject.seconds)
+  //   pastActivities.push(createPastActivity);
+  // }
 };

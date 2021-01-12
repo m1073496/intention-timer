@@ -64,17 +64,34 @@ window.onload = function() {
   alert('Page Loaded');
   console.log(pastActivities);
   console.log(localStorage);
+  populatePastActivities();
+  displayPastActivities(); // new name of addPlaceHolderCard
+  hide(pastActivityMessage);
+  console.log(pastActivities);
+  console.log(localStorage);
 };
 
 // Add functions below
 function populatePastActivities() {
+  pastActivities = [];
   var keys = Object.keys(localStorage);
   for (var i = 0; i < keys.length; i++) {
-    pastActivities.push(localStorage.getItem(keys[i]));
+    var retrievedObject = localStorage.getItem(keys[i]);
+    var parsedObject = JSON.parse(retrievedObject);
+    var revivedPastActivity = new Activity(parsedObject.category, parsedObject.description, parsedObject.minutes, parsedObject.seconds);
+    pastActivities.push(revivedPastActivity);
+    // pastActivities.push(localStorage.getItem(keys[i]));
   }
-  // console.log(localStorage);
-  // console.log(pastActivities);
-};
+}
+
+// function populatePastActivities() {
+//   var keys = Object.keys(localStorage);
+//   for (var i = 0; i < keys.length; i++) {
+//     pastActivities.push(localStorage.getItem(keys[i]));
+//   }
+//   // console.log(localStorage);
+//   // console.log(pastActivities);
+// };
 
 function completeActivity() {
   document.querySelector('.congrats-msg').classList.remove('hidden');
@@ -95,17 +112,17 @@ function logActivityEvents() {
   pageHeader.innerText = "Completed Activity";
   startCircleText.innerText = "START";
   currentActivity.saveToStorage();
-  currentActivity.getFromStorage();
-  addPlaceholderCard();
+  // currentActivity.getFromStorage();
+  populatePastActivities();
+  displayPastActivities();
 }
 
 function createNewActivity() {
   currentActivity = new Activity(findCategoryChoice(), accomplishInput.value, parseInt(minutesInput.value), parseInt(secondsInput.value));
-  //save activities in localStorage or array??
 }
 
-function addPlaceholderCard() {
-  pastActivityCardHolder.innerHTML = ``;
+function displayPastActivities() {
+  pastActivityCardHolder.innerHTML = "";
   for (var i = 0; i < pastActivities.length; i++) {
     pastActivityCardHolder.innerHTML +=
       `<div class="past-activity-card">
