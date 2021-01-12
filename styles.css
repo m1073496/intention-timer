@@ -383,7 +383,3 @@ timer-box-wrapper {
 .hidden {
   display: none;
 }
-
-.invisible {
-  visibility: hidden;
-}
