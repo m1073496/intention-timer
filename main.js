@@ -65,6 +65,14 @@ logActivityButton.addEventListener('click', logActivityEvents);
 createNewActivityButton.addEventListener('click', returnToActivityForm);
 
 // *** Functions ***
+function show(element) {
+  element.classList.remove('hidden');
+}
+
+function hide(element) {
+  element.classList.add('hidden');
+}
+
 window.onload = function() {
   var pastActivites = [];
   populatePastActivities();
@@ -101,41 +109,14 @@ function reviveActivitiesFromStorage(storedActivities) {
   }
 }
 
-function completeActivity() {
-  document.querySelector('.congrats-msg').classList.remove('hidden');
-  document.querySelector('.countdown-clock').classList.add('hidden');
-  startCircleText.innerText = "COMPLETE";
-  show(logActivityButton);
-  currentActivity.markComplete();
-}
-
-function logActivityEvents() {
-  hide(timerBoxWrapper);
-  show(createNewActivityButton);
-  hide(pastActivityMessage);
-  show(pastActivityCardHolder);
-  countdownMinutes.innerText = formatNumber(currentActivity.minutes);
-  countdownSeconds.innerText = formatNumber(currentActivity.seconds);
-  timerBoxHeader.innerText = currentActivity.description || "Placeholder";
-  pageHeader.innerText = "Completed Activity";
-  startCircleText.innerText = "START";
-  currentActivity.saveToStorage();
-  populatePastActivities();
-  displayPastActivities();
-}
-
-function createNewActivity() {
-  currentActivity = new Activity(findCategoryChoice(), accomplishInput.value, parseInt(minutesInput.value), parseInt(secondsInput.value));
-}
-
 function displayPastActivities() {
   pastActivityCardHolder.innerHTML = "";
 
   for (var i = 0; i < pastActivities.length; i++) {
     var minutes = pastActivities[i].minutes;
     var seconds = pastActivities[i].seconds;
-    var secondsWord = determineSecondsWord(seconds);
     var secondsNumber = determineSecondsNumber(seconds);
+    var secondsWord = determineSecondsWord(seconds);
 
     pastActivityCardHolder.innerHTML +=
       `<div class="past-activity-card">
@@ -174,6 +155,63 @@ function determineSecondsWord(seconds) {
   return secondsWord;
 }
 
+function submitForm(event) {
+  event.preventDefault();
+  if (validateInput()) {
+    createNewActivity();
+    hide(activityInputForm);
+    show(timerBoxWrapper);
+    countdownMinutes.innerText = formatNumber(currentActivity.minutes);
+    countdownSeconds.innerText = formatNumber(currentActivity.seconds);
+    timerBoxHeader.innerText = currentActivity.description;
+    startTimerButton.classList.remove('cannot-click');
+    pageHeader.innerText = "Current Activity";
+    hide(logActivityButton);
+  }
+}
+
+function formatNumber(number) {
+  var parsedNumber = parseInt(number);
+  if (parsedNumber < 10) {
+    var stringNumber = `0` + parsedNumber;
+    return stringNumber;
+  } else {
+    return number;
+  }
+}
+
+function createNewActivity() {
+  currentActivity = new Activity(findCategoryChoice(), accomplishInput.value, parseInt(minutesInput.value), parseInt(secondsInput.value));
+}
+
+function findCategoryChoice() {
+  var myChoice = document.querySelector('input[name="radioCategory"]:checked').value;
+  return myChoice;
+}
+
+function completeActivity() {
+  document.querySelector('.congrats-msg').classList.remove('hidden');
+  document.querySelector('.countdown-clock').classList.add('hidden');
+  startCircleText.innerText = "COMPLETE";
+  show(logActivityButton);
+  currentActivity.markComplete();
+}
+
+function logActivityEvents() {
+  hide(timerBoxWrapper);
+  show(createNewActivityButton);
+  hide(pastActivityMessage);
+  show(pastActivityCardHolder);
+  countdownMinutes.innerText = formatNumber(currentActivity.minutes);
+  countdownSeconds.innerText = formatNumber(currentActivity.seconds);
+  timerBoxHeader.innerText = currentActivity.description || "Placeholder";
+  pageHeader.innerText = "Completed Activity";
+  startCircleText.innerText = "START";
+  currentActivity.saveToStorage();
+  populatePastActivities();
+  displayPastActivities();
+}
+
 function returnToActivityForm() {
   show(activityInputForm);
   hide(createNewActivityButton);
@@ -196,29 +234,6 @@ function clearActivityForm() {
   accomplishInput.value = "";
   minutesInput.value = "";
   secondsInput.value = "";
-}
-
-function show(element) {
-  element.classList.remove('hidden');
-}
-
-function hide(element) {
-  element.classList.add('hidden');
-}
-
-function submitForm(event) {
-  event.preventDefault();
-  if (validateInput()) {
-    createNewActivity();
-    hide(activityInputForm);
-    show(timerBoxWrapper);
-    countdownMinutes.innerText = formatNumber(currentActivity.minutes);
-    countdownSeconds.innerText = formatNumber(currentActivity.seconds);
-    timerBoxHeader.innerText = currentActivity.description;
-    startTimerButton.classList.remove('cannot-click');
-    pageHeader.innerText = "Current Activity";
-    hide(logActivityButton);
-  }
 }
 
 function validateInput() {
@@ -301,21 +316,6 @@ function validateTime() {
   } else {
     return true;
   }
-}
-
-function formatNumber(number) {
-  var parsedNumber = parseInt(number);
-  if (parsedNumber < 10) {
-    var stringNumber = `0` + parsedNumber;
-    return stringNumber;
-  } else {
-    return number;
-  }
-}
-
-function findCategoryChoice() {
-  var myChoice = document.querySelector('input[name="radioCategory"]:checked').value;
-  return myChoice;
 }
 
 function findCategory(event) {
