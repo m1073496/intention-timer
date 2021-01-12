@@ -110,6 +110,18 @@ timer-box-wrapper {
   width: 17vw;
 }
 
+.circle-outline-study {
+  border-color: #B3FD78;
+}
+
+.circle-outline-meditate {
+  border-color: #C278FD;
+}
+
+.circle-outline-exercise {
+  border-color: #FD8078;
+}
+
 .start-circle-text {
   text-align: center;
   font-size: 1.5rem;
@@ -299,7 +311,7 @@ form {
   color: #CBC9CF;
 }
 
-.past-activity-card { 
+.past-activity-card {
   border-radius: 5px;
   display: flex;
   flex-direction: column;

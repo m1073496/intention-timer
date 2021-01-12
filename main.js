@@ -52,26 +52,30 @@ var pastActivities = [];
 
 //Add event listeners below
 categoryBoxWrapper.addEventListener('click', findCategory);
+
 startActivityButton.addEventListener('click', submitForm);
+
 startTimerButton.addEventListener('click', function() {
   startTimerButton.classList.add('cannot-click');
   currentActivity.startTimer();
 });
+
 logActivityButton.addEventListener('click', logActivityEvents);
+
 createNewActivityButton.addEventListener('click', returnToActivityForm);
 
+// Add functions below
 window.onload = function() {
   alert('Page Loaded');
   console.log(pastActivities);
   console.log(localStorage);
   populatePastActivities();
-  displayPastActivities(); // new name of addPlaceHolderCard
+  displayPastActivities();
   hide(pastActivityMessage);
   console.log(pastActivities);
   console.log(localStorage);
 };
 
-// Add functions below
 function populatePastActivities() {
   pastActivities = [];
   var keys = Object.keys(localStorage);
@@ -113,7 +117,6 @@ function logActivityEvents() {
   pageHeader.innerText = "Completed Activity";
   startCircleText.innerText = "START";
   currentActivity.saveToStorage();
-  // currentActivity.getFromStorage();
   populatePastActivities();
   displayPastActivities();
 }
@@ -294,7 +297,7 @@ function findCategory(event) {
     show(studyImageActive);
     show(meditateImage);
     show(exerciseImage);
-    document.querySelector('.circle-outline').style.borderColor = "#B3FD78";
+    startTimerButton.className = 'circle-outline circle-outline-study';
   } else if (event.target.classList.contains("radio-meditate")) {
     hide(studyImageActive);
     hide(exerciseImageActive);
@@ -302,7 +305,7 @@ function findCategory(event) {
     show(meditateImageActive);
     show(studyImage);
     show(exerciseImage);
-    document.querySelector('.circle-outline').style.borderColor = "#C278FD";
+    startTimerButton.className = 'circle-outline circle-outline-meditate';
   } else if (event.target.classList.contains("radio-exercise")) {
     hide(meditateImageActive);
     hide(studyImageActive);
@@ -310,6 +313,6 @@ function findCategory(event) {
     show(exerciseImageActive);
     show(meditateImage);
     show(studyImage);
-    document.querySelector('.circle-outline').style.borderColor = "#FD8078";
+    startTimerButton.className = 'circle-outline circle-outline-exercise';
   }
 }
