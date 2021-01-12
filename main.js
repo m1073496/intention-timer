@@ -60,7 +60,7 @@ startTimerButton.addEventListener('click', function() {
 logActivityButton.addEventListener('click', logActivityEvents);
 createNewActivityButton.addEventListener('click', returnToActivityForm);
 
-// Add functions below
+//Add functions below
 (function populatePastActivities() {
   var keys = Object.keys(localStorage);
   for (var i = 0; i < keys.length; i++) {
@@ -136,10 +136,6 @@ function clearActivityForm() {
   accomplishInput.value = "";
   minutesInput.value = "";
   secondsInput.value = "";
-}
-
-function clearTimerPage() {
-
 }
 
 function show(element) {
