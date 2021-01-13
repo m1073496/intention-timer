@@ -47,7 +47,7 @@ var pastActivitySection = document.querySelector('.past-activity-section');
 var pastActivityCardHolder = document.querySelector('.past-activity-cardholder');
 
 // *** Global Variables ***
-// Eliminated by using them in line 68 and 69
+// Eliminated by using them in line
 
 // *** Event Listeners ***
 categoryBoxWrapper.addEventListener('click', findCategory);
@@ -310,8 +310,8 @@ function formatNumber(number) {
 }
 
 function completeActivity() {
-  document.querySelector('.congrats-msg').classList.remove('hidden');
-  document.querySelector('.countdown-clock').classList.add('hidden');
+  congratsMsg.classList.remove('hidden');
+  countdownClock.classList.add('hidden');
   startCircleText.innerText = "COMPLETE";
   show(logActivityButton);
   currentActivity.markComplete();
@@ -324,7 +324,7 @@ function logActivityEvents() {
   show(pastActivityCardHolder);
   countdownMinutes.innerText = formatNumber(currentActivity.minutes);
   countdownSeconds.innerText = formatNumber(currentActivity.seconds);
-  timerBoxHeader.innerText = currentActivity.description || "Placeholder";
+  timerBoxHeader.innerText = currentActivity.description;
   pageHeader.innerText = "Completed Activity";
   startCircleText.innerText = "START";
   pastActivities = [];
@@ -337,8 +337,8 @@ function returnToActivityForm() {
   show(activityInputForm);
   hide(createNewActivityButton);
   clearActivityForm();
-  document.querySelector('.congrats-msg').classList.add('hidden');
-  document.querySelector('.countdown-clock').classList.remove('hidden');
+  congratsMsg.classList.add('hidden');
+  countdownClock.classList.remove('hidden');
   pageHeader.innerText = "New Activity";
 }
 
