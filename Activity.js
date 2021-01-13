@@ -25,18 +25,18 @@ class Activity {
         return;
       }
 
-      var minutes = Math.floor(timeLeftOnClock / minute);
-      var seconds = Math.floor((timeLeftOnClock % minute) / second);
+      var minutes = formatNumber(Math.floor(timeLeftOnClock / minute));
+      var seconds = formatNumber(Math.floor((timeLeftOnClock % minute) / second));
+
       return {
         minutes, seconds
       }
     }
 
-    // TODO: move this DOM manipulation to the main.js file
     function showRemaining() {
       var remaining = determineRemaining();
-      countdownMinutes.innerHTML = formatNumber(remaining.minutes);
-      countdownSeconds.innerHTML = formatNumber(remaining.seconds);
+      countdownMinutes.innerHTML = remaining.minutes;
+      countdownSeconds.innerHTML = remaining.seconds;
     }
 
     showRemaining();
