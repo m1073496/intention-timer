@@ -1,6 +1,6 @@
 body, html {
   margin: 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   background-color: #46424D;
 }
 
@@ -98,7 +98,7 @@ form {
   width: 45vw;
 }
 
-.category-box-wrapper input[type="radio"] {
+.category-box-wrapper input[type='radio'] {
   opacity: 0;
   position: fixed;
   width: 0;
@@ -110,17 +110,17 @@ form {
   text-align: center;
 }
 
-.category-box-wrapper input[id="radioStudy"]:checked + label {
+.category-box-wrapper input[id='radioStudy']:checked + label {
   color: #B3FD78;
   border-color: #B3FD78;
 }
 
-.category-box-wrapper input[id="radioMeditate"]:checked + label {
+.category-box-wrapper input[id='radioMeditate']:checked + label {
   color: #C278FD;
   border-color: #C278FD;
 }
 
-.category-box-wrapper input[id="radioExercise"]:checked + label {
+.category-box-wrapper input[id='radioExercise']:checked + label {
   color: #FD8078;
   border-color: #FD8078;
 }
@@ -215,7 +215,7 @@ timer-box-wrapper {
   align-items: center;
   height: 10vh;
   margin: 0.3vh;
-  font-family: "Montserrat400", sans-serif;
+  font-family: 'Montserrat400', sans-serif;
   font-size: 5.2em;
 }
 
@@ -225,7 +225,7 @@ timer-box-wrapper {
   align-items: center;
   height: 10vh;
   margin: 0.3vh;
-  font-family: "Montserrat400", sans-serif;
+  font-family: 'Montserrat400', sans-serif;
   font-size: 3em;
 }
 
