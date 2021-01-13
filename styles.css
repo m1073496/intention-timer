@@ -23,7 +23,8 @@ body, html {
   display: flex;
   flex-direction: row;
   justify-content:space-between;
-  height: 91.5vh;
+  /* height: 91.5vh; */
+  height: auto;
   color: #FFF;
   background-color: #46424D;
 }
@@ -296,6 +297,7 @@ timer-box-wrapper {
   width: 33%;
   padding: 0 25px 25px 25px;
   background-color:#2B2733;
+  height: auto;
 }
 
 .message-container {
