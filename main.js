@@ -66,18 +66,42 @@ createNewActivityButton.addEventListener('click', returnToActivityForm);
 
 // *** Functions ***
 window.onload = function() {
-  var pastActivites = [];
+  // var pastActivites = [];
+
   populatePastActivities();
 
-  if (pastActivites === []) {
-    show(pastActivityMessage);
-  } else {
+  if (pastActivites !== undefined || pastActivities.length !== 0) {
     hide(pastActivityMessage);
+  } else {
+    show(pastActivityMessage);
   };
 
-  displayPastActivities();
-  hide(pastActivityMessage);
-};
+  // if (pastActivites !== null) {
+  //   populatePastActivities();
+  //   hide(pastActivityMessage);
+  // }
+  //
+  // if (pastActivites.length === 0) {
+  //   show(pastActivityMessage);
+  // }
+
+  // show(pastActivityMessage);
+
+  // if (!pastActivites) {
+  //   show(pastActivityMessage);
+  // } else {
+  //   hide(pastActivityMessage);
+  // };
+
+  // if (pastActivites !== undefined || pastActivities.length !== 0) {
+  //   hide(pastActivityMessage);
+  // } else {
+  //   show(pastActivityMessage);
+  // };
+
+  renderPastActivities();
+  // hide(pastActivityMessage);
+}
 
 function show(element) {
   element.classList.remove('hidden');
@@ -88,14 +112,14 @@ function hide(element) {
 }
 
 function populatePastActivities() {
-  pastActivities = [];
+  var pastActivities = [];
   var keys = Object.keys(localStorage);
   sortDescending(keys);
   reviveActivitiesFromStorage(keys);
 }
 
-function sortDescending(array) {
-  array.sort(function(a, b) {
+function sortDescending(activities) {
+  activities.sort(function(a, b) {
     return b - a;
   });
 }
@@ -109,7 +133,7 @@ function reviveActivitiesFromStorage(storedActivities) {
   }
 }
 
-function displayPastActivities() {
+function renderPastActivities() {
   pastActivityCardHolder.innerHTML = "";
 
   for (var i = 0; i < pastActivities.length; i++) {
@@ -331,7 +355,7 @@ function logActivityEvents() {
   startCircleText.innerText = "START";
   currentActivity.saveToStorage();
   populatePastActivities();
-  displayPastActivities();
+  renderPastActivities();
 }
 
 function returnToActivityForm() {
