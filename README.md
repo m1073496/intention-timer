@@ -65,12 +65,12 @@ Project requirements can be found [here](https://frontend.turing.io/projects/mod
 
   ![](https://media.giphy.com/media/CLpJhQYXfTPsLAUiOE/giphy.gif)
 
-### Iteration 3 - Build an MVP
+### Iteration 3: Build an MVP
   * The user can start the time by clicking Start.
   * While timer is running, the user should see it count down by second.
   * When the timer completes, an alert should appear in the browser, letting the user know that the time is up and the activity has been completed.
 
-### Iteration 4 - Logging Past Activities
+### Iteration 4: Logging Past Activities
   * When the timer completes, the alert no longer appears.
   * Instead, a motivational or congratulatory message appears on the left side of the page, replacing the timer.
   * When the user acknowledges the message and completion of the activity by clicking Log Activity, a card with the category, time, and the users input for What would you like to accomplish during this time? should appear on the card. The card should also have a small color-coded visual indicator of the category. Color, size, and spacing of that visual indicator are provided in comp.
