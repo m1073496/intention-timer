@@ -47,8 +47,7 @@ var pastActivitySection = document.querySelector('.past-activity-section');
 var pastActivityCardHolder = document.querySelector('.past-activity-cardholder');
 
 // *** Global Variables ***
-var currentActivity;
-var pastActivities = [];
+// Eliminated by using them in line 68 and 69
 
 // *** Event Listeners ***
 categoryBoxWrapper.addEventListener('click', findCategory);
@@ -66,24 +65,16 @@ createNewActivityButton.addEventListener('click', returnToActivityForm);
 
 // *** Functions ***
 window.onload = function() {
-  var pastActivites = [];
-
-  // show(pastActivityMessage);
+  var currentActivity;
+  pastActivities = [];
   populatePastActivities();
 
-  // if (pastActivites !== []) {
-  //   console.log("made it inside the if block");
-  //   hide(pastActivityMessage);
-  // };
-
-  if (pastActivites === []) {
+  if (pastActivities.length === 0) {
     show(pastActivityMessage);
   } else {
     hide(pastActivityMessage);
+    renderPastActivities();
   };
-
-  renderPastActivities();
-  // hide(pastActivityMessage);
 }
 
 function show(element) {
@@ -336,6 +327,7 @@ function logActivityEvents() {
   timerBoxHeader.innerText = currentActivity.description || "Placeholder";
   pageHeader.innerText = "Completed Activity";
   startCircleText.innerText = "START";
+  pastActivities = [];
   currentActivity.saveToStorage();
   populatePastActivities();
   renderPastActivities();
