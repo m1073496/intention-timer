@@ -1,6 +1,7 @@
 body, html {
   margin: 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #46424D;
 }
 
 /* ---------------------HEADER SECTION--------------- */
@@ -22,8 +23,8 @@ body, html {
 .main-container {
   display: flex;
   flex-direction: row;
-  justify-content:space-between;
-  height: 91.5vh;
+  justify-content: space-between;
+  min-height: 91.5vh;
   color: #FFF;
   background-color: #46424D;
 }
@@ -97,7 +98,7 @@ form {
   width: 45vw;
 }
 
-.category-box-wrapper input[type="radio"] {
+.category-box-wrapper input[type='radio'] {
   opacity: 0;
   position: fixed;
   width: 0;
@@ -109,17 +110,17 @@ form {
   text-align: center;
 }
 
-.category-box-wrapper input[id="radioStudy"]:checked + label {
+.category-box-wrapper input[id='radioStudy']:checked + label {
   color: #B3FD78;
   border-color: #B3FD78;
 }
 
-.category-box-wrapper input[id="radioMeditate"]:checked + label {
+.category-box-wrapper input[id='radioMeditate']:checked + label {
   color: #C278FD;
   border-color: #C278FD;
 }
 
-.category-box-wrapper input[id="radioExercise"]:checked + label {
+.category-box-wrapper input[id='radioExercise']:checked + label {
   color: #FD8078;
   border-color: #FD8078;
 }
@@ -214,7 +215,7 @@ timer-box-wrapper {
   align-items: center;
   height: 10vh;
   margin: 0.3vh;
-  font-family: "Montserrat400", sans-serif;
+  font-family: 'Montserrat400', sans-serif;
   font-size: 5.2em;
 }
 
@@ -224,7 +225,7 @@ timer-box-wrapper {
   align-items: center;
   height: 10vh;
   margin: 0.3vh;
-  font-family: "Montserrat400", sans-serif;
+  font-family: 'Montserrat400', sans-serif;
   font-size: 3em;
 }
 
@@ -294,6 +295,7 @@ timer-box-wrapper {
   width: 33%;
   padding: 0 25px 25px 25px;
   background-color:#2B2733;
+  height: auto;
 }
 
 .message-container {
@@ -330,6 +332,7 @@ timer-box-wrapper {
   margin-bottom: 0.3em;
   width: 96.5%;
 }
+
 .past-activity-text {
   font-weight: bolder;
 }
@@ -350,7 +353,7 @@ timer-box-wrapper {
   height: 1.5em;
   margin-left: -3px;
   position: absolute;
-  left: 97.5%;
+  left: 96.5%;
 }
 
 .past-activity-description {
@@ -380,4 +383,17 @@ timer-box-wrapper {
 
 .hidden {
   display: none;
+}
+
+/* ------------------MEDIA QUERIES-------------------- */
+@media only screen and (max-width: 900px) {
+  .vertical-line {
+    left: 95%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .vertical-line {
+    left: 94%;
+  }
 }
