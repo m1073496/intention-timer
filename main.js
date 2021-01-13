@@ -1,4 +1,4 @@
-//Add targeting variables below
+// *** Targeting Variables ***
 var activityInputForm = document.querySelector('form');
 var timerBoxWrapper = document.querySelector('.timer-box-wrapper');
 var categoryBoxWrapper = document.querySelector('.category-box-wrapper');
@@ -33,7 +33,6 @@ var logActivityButton = document.querySelector('.log-button');
 var timerBoxHeader = document.querySelector('.timer-box-header');
 var createNewActivityButton = document.querySelector('.create-new-activity-button');
 var congratsMsg = document.querySelector('.congrats-msg');
-
 var radioButtonStudy = document.querySelector('#radioStudy');
 var radioButtonMeditate = document.querySelector('#radioMeditate');
 var radioButtonExercise = document.querySelector('#radioExercise');
@@ -47,10 +46,11 @@ var pageHeader = document.querySelector('.subhead');
 var pastActivitySection = document.querySelector('.past-activity-section');
 var pastActivityCardHolder = document.querySelector('.past-activity-cardholder');
 
+// *** Global Variables ***
 var currentActivity;
 var pastActivities = [];
 
-//Add event listeners below
+// *** Event Listeners ***
 categoryBoxWrapper.addEventListener('click', findCategory);
 
 startActivityButton.addEventListener('click', submitForm);
@@ -64,27 +64,45 @@ logActivityButton.addEventListener('click', logActivityEvents);
 
 createNewActivityButton.addEventListener('click', returnToActivityForm);
 
-// Add functions below
+// *** Functions ***
 window.onload = function() {
-  alert('Page Loaded');
-  console.log(pastActivities);
-  console.log(localStorage);
+  var pastActivites = [];
+
+  // show(pastActivityMessage);
   populatePastActivities();
-  displayPastActivities();
-  hide(pastActivityMessage);
-  console.log(pastActivities);
-  console.log(localStorage);
-};
+
+  // if (pastActivites !== []) {
+  //   console.log("made it inside the if block");
+  //   hide(pastActivityMessage);
+  // };
+
+  if (pastActivites === []) {
+    show(pastActivityMessage);
+  } else {
+    hide(pastActivityMessage);
+  };
+
+  renderPastActivities();
+  // hide(pastActivityMessage);
+}
+
+function show(element) {
+  element.classList.remove('hidden');
+}
+
+function hide(element) {
+  element.classList.add('hidden');
+}
 
 function populatePastActivities() {
-  pastActivities = [];
+  var pastActivities = [];
   var keys = Object.keys(localStorage);
   sortDescending(keys);
   reviveActivitiesFromStorage(keys);
 }
 
-function sortDescending(array) {
-  array.sort(function(a, b) {
+function sortDescending(activities) {
+  activities.sort(function(a, b) {
     return b - a;
   });
 }
@@ -98,135 +116,90 @@ function reviveActivitiesFromStorage(storedActivities) {
   }
 }
 
-function completeActivity() {
-  document.querySelector('.congrats-msg').classList.remove('hidden');
-  document.querySelector('.countdown-clock').classList.add('hidden');
-  startCircleText.innerText = "COMPLETE";
-  show(logActivityButton);
-  currentActivity.markComplete();
-}
-
-function logActivityEvents() {
-  hide(timerBoxWrapper);
-  show(createNewActivityButton);
-  hide(pastActivityMessage);
-  show(pastActivityCardHolder);
-  countdownMinutes.innerText = formatNumber(currentActivity.minutes);
-  countdownSeconds.innerText = formatNumber(currentActivity.seconds);
-  timerBoxHeader.innerText = currentActivity.description || "Placeholder";
-  pageHeader.innerText = "Completed Activity";
-  startCircleText.innerText = "START";
-  currentActivity.saveToStorage();
-  populatePastActivities();
-  displayPastActivities();
-}
-
-function createNewActivity() {
-  currentActivity = new Activity(findCategoryChoice(), accomplishInput.value, parseInt(minutesInput.value), parseInt(secondsInput.value));
-}
-
-function displayPastActivities() {
-
-
+function renderPastActivities() {
   pastActivityCardHolder.innerHTML = "";
+
   for (var i = 0; i < pastActivities.length; i++) {
-    if (pastActivities[i].minutes === 0 && pastActivities[i].seconds === 1) {
-      pastActivityCardHolder.innerHTML +=
-        `<div class="past-activity-card">
-          <div class="activity-color-indicator">
-            <div class="vertical-line vertical-line-${pastActivities[i].category.toLowerCase()}"></div>
-            <p class="past-activity-text">${pastActivities[i].category}</p>
-            <div class="min-sec-row">
-              <p class="min-sec-ptag"><span class="past-activity-minutes"></span><span class="past-activity-seconds"> ${pastActivities[i].seconds}</span> SECOND</p>
-            </div>
-          </div>
-          <p class="past-activity-description">${pastActivities[i].description}</p>
-        </div>`;
-    } else if (pastActivities[i].seconds === 1) {
-      pastActivityCardHolder.innerHTML +=
-        `<div class="past-activity-card">
-          <div class="activity-color-indicator">
-            <div class="vertical-line vertical-line-${pastActivities[i].category.toLowerCase()}"></div>
-            <p class="past-activity-text">${pastActivities[i].category}</p>
-            <div class="min-sec-row">
-              <p class="min-sec-ptag"><span class="past-activity-minutes">${pastActivities[i].minutes}</span> MIN<span class="past-activity-seconds"> ${pastActivities[i].seconds}</span> SECOND</p>
-            </div>
-          </div>
-          <p class="past-activity-description">${pastActivities[i].description}</p>
-        </div>`;
-    } else if (pastActivities[i].seconds === 0) {
-      pastActivityCardHolder.innerHTML +=
-        `<div class="past-activity-card">
-          <div class="activity-color-indicator">
-            <div class="vertical-line vertical-line-${pastActivities[i].category.toLowerCase()}"></div>
-            <p class="past-activity-text">${pastActivities[i].category}</p>
-            <div class="min-sec-row">
-              <p class="min-sec-ptag"><span class="past-activity-minutes">${pastActivities[i].minutes}</span> MIN <span class="past-activity-seconds"></span></p>
-            </div>
-          </div>
-          <p class="past-activity-description">${pastActivities[i].description}</p>
-        </div>`;
-    } else if (pastActivities[i].minutes === 0) {
-        pastActivityCardHolder.innerHTML +=
-          `<div class="past-activity-card">
-            <div class="activity-color-indicator">
-              <div class="vertical-line vertical-line-${pastActivities[i].category.toLowerCase()}"></div>
-              <p class="past-activity-text">${pastActivities[i].category}</p>
-              <div class="min-sec-row">
-                <p class="min-sec-ptag"><span class="past-activity-minutes"></span><span class="past-activity-seconds"> ${pastActivities[i].seconds}</span> SECONDS</p>
-              </div>
-            </div>
-            <p class="past-activity-description">${pastActivities[i].description}</p>
-          </div>`;
-    } else {
+    var minutes = pastActivities[i].minutes;
+    var seconds = pastActivities[i].seconds;
+    var secondsNumber = determineSecondsNumber(seconds);
+    var secondsWord = determineSecondsWord(seconds);
+
     pastActivityCardHolder.innerHTML +=
       `<div class="past-activity-card">
         <div class="activity-color-indicator">
           <div class="vertical-line vertical-line-${pastActivities[i].category.toLowerCase()}"></div>
           <p class="past-activity-text">${pastActivities[i].category}</p>
           <div class="min-sec-row">
-            <p class="min-sec-ptag"><span class="past-activity-minutes">${pastActivities[i].minutes}</span> MIN <span class="past-activity-seconds"> ${pastActivities[i].seconds}</span> SECONDS</p>
+            <p class="min-sec-ptag"><span class="past-activity-minutes">${minutes}</span> MIN <span class="past-activity-seconds"> ${secondsNumber}</span> ${secondsWord}</p>
           </div>
         </div>
         <p class="past-activity-description">${pastActivities[i].description}</p>
       </div>`;
-    }
   }
 }
 
-function returnToActivityForm() {
-  show(activityInputForm);
-  hide(createNewActivityButton);
-  clearActivityForm();
-  document.querySelector('.congrats-msg').classList.add('hidden');
-  document.querySelector('.countdown-clock').classList.remove('hidden');
-  pageHeader.innerText = "New Activity";
+function determineSecondsNumber(seconds) {
+  var secondsNumber = seconds;
+
+  if (seconds === 0) {
+    secondsNumber = '';
+  }
+
+  return secondsNumber;
 }
 
-function clearActivityForm() {
-  radioButtonStudy.checked = false;
-  radioButtonExercise.checked = false;
-  radioButtonMeditate.checked = false;
-  hide(studyImageActive);
+function determineSecondsWord(seconds) {
+  var secondsWord = 'SECONDS';
+
+  if (seconds === 0) {
+    secondsWord = '';
+  }
+  if (seconds === 1) {
+    secondsWord = 'SECOND';
+  }
+
+  return secondsWord;
+}
+
+function findCategory(event) {
+  if (event.target.classList.contains("radio-study")) {
+    activateStudyImage();
+    startTimerButton.className = 'circle-outline circle-outline-study';
+  } else if (event.target.classList.contains("radio-meditate")) {
+    activateMeditateImage();
+    startTimerButton.className = 'circle-outline circle-outline-meditate';
+  } else if (event.target.classList.contains("radio-exercise")) {
+    activateExerciseImage();
+    startTimerButton.className = 'circle-outline circle-outline-exercise';
+  }
+}
+
+function activateStudyImage() {
   hide(meditateImageActive);
   hide(exerciseImageActive);
-  show(studyImage);
+  hide(studyImage);
+  show(studyImageActive);
   show(meditateImage);
   show(exerciseImage);
-  accomplishInput.value = "";
-  minutesInput.value = "";
-  secondsInput.value = "";
 }
 
-function clearTimerPage() {
+function activateMeditateImage() {
+  hide(studyImageActive);
+  hide(exerciseImageActive);
+  hide(meditateImage);
+  show(meditateImageActive);
+  show(studyImage);
+  show(exerciseImage);
 }
 
-function show(element) {
-  element.classList.remove('hidden');
-}
-
-function hide(element) {
-  element.classList.add('hidden');
+function activateExerciseImage() {
+  hide(meditateImageActive);
+  hide(studyImageActive);
+  hide(exerciseImage);
+  show(exerciseImageActive);
+  show(meditateImage);
+  show(studyImage);
 }
 
 function submitForm(event) {
@@ -326,6 +299,15 @@ function validateTime() {
   }
 }
 
+function createNewActivity() {
+  currentActivity = new Activity(findCategoryChoice(), accomplishInput.value, parseInt(minutesInput.value), parseInt(secondsInput.value));
+}
+
+function findCategoryChoice() {
+  var myChoice = document.querySelector('input[name="radioCategory"]:checked').value;
+  return myChoice;
+}
+
 function formatNumber(number) {
   var parsedNumber = parseInt(number);
   if (parsedNumber < 10) {
@@ -336,35 +318,49 @@ function formatNumber(number) {
   }
 }
 
-function findCategoryChoice() {
-  var myChoice = document.querySelector('input[name="radioCategory"]:checked').value;
-  return myChoice;
+function completeActivity() {
+  document.querySelector('.congrats-msg').classList.remove('hidden');
+  document.querySelector('.countdown-clock').classList.add('hidden');
+  startCircleText.innerText = "COMPLETE";
+  show(logActivityButton);
+  currentActivity.markComplete();
 }
 
-function findCategory(event) {
-  if (event.target.classList.contains("radio-study")) {
-    hide(meditateImageActive);
-    hide(exerciseImageActive);
-    hide(studyImage);
-    show(studyImageActive);
-    show(meditateImage);
-    show(exerciseImage);
-    startTimerButton.className = 'circle-outline circle-outline-study';
-  } else if (event.target.classList.contains("radio-meditate")) {
-    hide(studyImageActive);
-    hide(exerciseImageActive);
-    hide(meditateImage);
-    show(meditateImageActive);
-    show(studyImage);
-    show(exerciseImage);
-    startTimerButton.className = 'circle-outline circle-outline-meditate';
-  } else if (event.target.classList.contains("radio-exercise")) {
-    hide(meditateImageActive);
-    hide(studyImageActive);
-    hide(exerciseImage);
-    show(exerciseImageActive);
-    show(meditateImage);
-    show(studyImage);
-    startTimerButton.className = 'circle-outline circle-outline-exercise';
-  }
+function logActivityEvents() {
+  hide(timerBoxWrapper);
+  show(createNewActivityButton);
+  hide(pastActivityMessage);
+  show(pastActivityCardHolder);
+  countdownMinutes.innerText = formatNumber(currentActivity.minutes);
+  countdownSeconds.innerText = formatNumber(currentActivity.seconds);
+  timerBoxHeader.innerText = currentActivity.description || "Placeholder";
+  pageHeader.innerText = "Completed Activity";
+  startCircleText.innerText = "START";
+  currentActivity.saveToStorage();
+  populatePastActivities();
+  renderPastActivities();
+}
+
+function returnToActivityForm() {
+  show(activityInputForm);
+  hide(createNewActivityButton);
+  clearActivityForm();
+  document.querySelector('.congrats-msg').classList.add('hidden');
+  document.querySelector('.countdown-clock').classList.remove('hidden');
+  pageHeader.innerText = "New Activity";
+}
+
+function clearActivityForm() {
+  radioButtonStudy.checked = false;
+  radioButtonExercise.checked = false;
+  radioButtonMeditate.checked = false;
+  hide(studyImageActive);
+  hide(meditateImageActive);
+  hide(exerciseImageActive);
+  show(studyImage);
+  show(meditateImage);
+  show(exerciseImage);
+  accomplishInput.value = "";
+  minutesInput.value = "";
+  secondsInput.value = "";
 }

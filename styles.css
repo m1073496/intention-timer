@@ -18,7 +18,7 @@ body, html {
   font-weight: 300;
 }
 
-/* ---------------------LEFT-HAND CONTAINER--------------- */
+/* ---------------------MAIN BODY--------------- */
 .main-container {
   display: flex;
   flex-direction: row;
@@ -36,7 +36,7 @@ body, html {
 }
 
 /* ---------------------NEW ACTIVITY SECTION--------------- */
-.new-activity {
+.new-activity-section {
   border-right: 0.25em solid #46424D;
   width: 67%;
   padding: 0 25px 25px 25px;
@@ -52,6 +52,142 @@ body, html {
   height: 79vh;
   background-color: #46424D;
   box-shadow: 10px 10px 10px #26222D;
+}
+
+/*--------------------NEW ACTIVITY FORM--------------------------- */
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+}
+
+.categories {
+  height: 20vh;
+}
+
+.form-label {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+/* --------------------CATEGORY FORM---------------------- */
+.category-warning {
+  display: flex;
+  align-items: baseline;
+}
+
+.error-icon {
+  width: 1rem;
+  margin-right: .5em;
+  margin-top: 10px;
+  pointer-events: none;
+}
+
+.error-text {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #EFB7EC;
+}
+
+.category-box-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 45vw;
+}
+
+.category-box-wrapper input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.category-box-wrapper label {
+  width: 10em;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.category-box-wrapper input[id="radioStudy"]:checked + label {
+  color: #B3FD78;
+  border-color: #B3FD78;
+}
+
+.category-box-wrapper input[id="radioMeditate"]:checked + label {
+  color: #C278FD;
+  border-color: #C278FD;
+}
+
+.category-box-wrapper input[id="radioExercise"]:checked + label {
+  color: #FD8078;
+  border-color: #FD8078;
+}
+
+.category-image {
+  width: 1.5em;
+  margin-top: 10px;
+  pointer-events: none;
+}
+
+.category-text {
+  margin: 0 0 10px 0;
+  font-size: 1.1rem;
+  pointer-events: none;
+}
+
+.category-inactive {
+  border: 0.15em solid#FFF;
+  border-radius: 5px;
+}
+
+/* --------------------ACCOMPLISH FORM-------------------- */
+.accomplish {
+  width: 45vw;
+  height: 15.3vh;
+}
+
+.accomplish-input {
+  width: 99.3%;
+}
+
+/* ----------------------TIMING FORM---------------------- */
+.time {
+  display: flex;
+  height: 15.3vh;
+  width: 45vw;
+  justify-content: space-between;
+}
+
+.time-container {
+  flex-basis: 40%;
+}
+
+.minutes-input,
+.seconds-input,
+.accomplish-input {
+  border: none;
+  border-bottom: 0.15em solid #CBC9CF;
+  width: 98.3%;
+  font-size: 1.25rem;
+  color: #FFF;
+  background-color: #46424D;
+}
+
+/* -----------------START ACTIVITY BUTTON----------------- */
+.start-button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  width: 45vw;
+}
+
+.start-button {
+  border: none;
+  border-radius: 5px;
+  height: 5vh;
+  padding: 10px 30px;
+  font-size: 1rem;
+  font-weight: 300;
 }
 
 /*---------------------TIMER BOX-------------------- */
@@ -155,144 +291,7 @@ timer-box-wrapper {
   font-weight: 300;
 }
 
-/*--------------------TBD--------------------------- */
-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  height: 100%;
-}
-
-.categories {
-  height: 20vh;
-}
-
-.form-label {
-  font-size: 1.2rem;
-  font-weight: 400;
-}
-
-/* --------------------CATEGORY FORM---------------------- */
-.category-warning {
-  display: flex;
-  align-items: baseline;
-}
-
-.error-icon {
-  width: 1rem;
-  margin-right: .5em;
-  margin-top: 10px;
-  pointer-events: none;
-}
-
-.error-text {
-  font-size: 0.9rem;
-  font-weight: 300;
-  color: #EFB7EC;
-}
-
-.category-box-wrapper {
-  display: flex;
-  justify-content: space-between;
-  width: 45vw;
-}
-
-.category-box-wrapper input[type="radio"] {
-  opacity: 0;
-  position: fixed;
-  width: 0;
-}
-
-.category-box-wrapper label {
-  width: 10em;
-  font-size: 1.1rem;
-  text-align: center;
-}
-
-.category-box-wrapper input[id="radioStudy"]:checked + label {
-  color: #B3FD78;
-  border-color: #B3FD78;
-}
-
-.category-box-wrapper input[id="radioMeditate"]:checked + label {
-  color: #C278FD;
-  border-color: #C278FD;
-}
-
-.category-box-wrapper input[id="radioExercise"]:checked + label {
-  color: #FD8078;
-  border-color: #FD8078;
-}
-
-.category-image {
-  width: 1.5em;
-  margin-top: 10px;
-  pointer-events: none;
-}
-
-.category-text {
-  margin: 0 0 10px 0;
-  font-size: 1.1rem;
-  pointer-events: none;
-}
-
-.category-inactive {
-  border: 0.15em solid#FFF;
-  border-radius: 5px;
-}
-
-/* --------------------ACCOMPLISH FORM-------------------- */
-
-.accomplish {
-  width: 45vw;
-  height: 15.3vh;
-}
-
-/* ----------------------TIMING FORM---------------------- */
-.time {
-  display: flex;
-  height: 15.3vh;
-  width: 45vw;
-  justify-content: space-between;
-}
-
-.time-container {
-  flex-basis: 40%;
-}
-
-.minutes-input,
-.seconds-input,
-.accomplish-input {
-  border: none;
-  border-bottom: 0.15em solid #CBC9CF;
-  width: 98.3%;
-  font-size: 1.25rem;
-  color: #FFF;
-  background-color: #46424D;
-}
-
-.accomplish-input {
-  width: 99.3%;
-}
-
-/* -----------------START ACTIVITY BUTTON----------------- */
-.start-button-wrapper {
-  display: flex;
-  justify-content: flex-end;
-  width: 45vw;
-}
-
-.start-button {
-  border: none;
-  border-radius: 5px;
-  height: 5vh;
-  padding: 10px 30px;
-  font-size: 1rem;
-  font-weight: 300;
-}
-
-/* -----------------RIGHT-HAND CONTAINER------------------ */
+/* -----------------PAST ACTIVITIES------------------ */
 .past-activity-section {
   width: 33%;
   padding: 0 25px 25px 25px;
@@ -376,7 +375,7 @@ form {
   background-color: #FD8078;
 }
 
-/* -----------------HIDE THINGS------------------ */
+/* -----------------HIDE AND DISABLE THINGS------------------ */
 .cannot-click {
   pointer-events: none;
 }
@@ -384,24 +383,3 @@ form {
 .hidden {
   display: none;
 }
-
-.invisible {
-  visibility: hidden;
-}
-
-
-/* -----------------SPEC DETAILS------------------ */
-
-/* Colors
-Main background: #2B2733
-Text on main background: #CBC9CF
-Header, cards: #46424D
-Card shadow: #26222D
-Text on header and cards: #FFF
-Study: #B3FD78
-Meditate: #C278FD
-Exercise: #FD8078
-Error: #EFB7EC
-
-Fonts
-Montserrat, both 300 and 400 weights are used in the comp. You’ll need to link this in the HTML. */
