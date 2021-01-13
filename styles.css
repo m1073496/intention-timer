@@ -317,6 +317,7 @@ timer-box-wrapper {
   margin: 0;
   margin-bottom: 1.3rem;
   background-color: #46424D;
+  box-shadow: 10px 10px 10px #26222D;
 }
 
 .past-activity-text,

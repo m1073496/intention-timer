@@ -324,7 +324,7 @@ function logActivityEvents() {
   show(pastActivityCardHolder);
   countdownMinutes.innerText = formatNumber(currentActivity.minutes);
   countdownSeconds.innerText = formatNumber(currentActivity.seconds);
-  timerBoxHeader.innerText = currentActivity.description || "Placeholder";
+  timerBoxHeader.innerText = currentActivity.description;
   pageHeader.innerText = "Completed Activity";
   startCircleText.innerText = "START";
   pastActivities = [];
