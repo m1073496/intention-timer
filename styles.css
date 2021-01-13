@@ -1,6 +1,7 @@
 body, html {
   margin: 0;
   font-family: "Montserrat", sans-serif;
+  background-color: #46424D;
 }
 
 /* ---------------------HEADER SECTION--------------- */
@@ -22,9 +23,8 @@ body, html {
 .main-container {
   display: flex;
   flex-direction: row;
-  justify-content:space-between;
-  /* height: 91.5vh; */
-  height: auto;
+  justify-content: space-between;
+  min-height: 91.5vh;
   color: #FFF;
   background-color: #46424D;
 }
@@ -335,6 +335,7 @@ timer-box-wrapper {
   margin-bottom: 0.3em;
   width: 96.5%;
 }
+
 .past-activity-text {
   font-weight: bolder;
 }
@@ -355,7 +356,7 @@ timer-box-wrapper {
   height: 1.5em;
   margin-left: -3px;
   position: absolute;
-  left: 97.5%;
+  left: 96.5%;
 }
 
 .past-activity-description {
