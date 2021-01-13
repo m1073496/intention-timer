@@ -275,7 +275,6 @@ timer-box-wrapper {
   border-radius: 5px;
   height: 5.5vh;
   width: 17vw;
-  padding: 10px 30px;
   font-size: 1rem;
   font-weight: 300;
 }
@@ -286,7 +285,6 @@ timer-box-wrapper {
   height: 5.5vh;
   width: 25vw;
   margin: 5em;
-  padding: 10px 30px;
   font-size: 1rem;
   font-weight: 300;
 }
@@ -314,7 +312,6 @@ timer-box-wrapper {
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  margin: 0;
   margin-bottom: 1.3rem;
   background-color: #46424D;
   box-shadow: 10px 10px 10px #26222D;
