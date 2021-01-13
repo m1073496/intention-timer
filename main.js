@@ -66,38 +66,21 @@ createNewActivityButton.addEventListener('click', returnToActivityForm);
 
 // *** Functions ***
 window.onload = function() {
-  // var pastActivites = [];
-
-  populatePastActivities();
-
-  if (pastActivites !== undefined || pastActivities.length !== 0) {
-    hide(pastActivityMessage);
-  } else {
-    show(pastActivityMessage);
-  };
-
-  // if (pastActivites !== null) {
-  //   populatePastActivities();
-  //   hide(pastActivityMessage);
-  // }
-  //
-  // if (pastActivites.length === 0) {
-  //   show(pastActivityMessage);
-  // }
+  var pastActivites = [];
 
   // show(pastActivityMessage);
+  populatePastActivities();
 
-  // if (!pastActivites) {
-  //   show(pastActivityMessage);
-  // } else {
+  // if (pastActivites !== []) {
+  //   console.log("made it inside the if block");
   //   hide(pastActivityMessage);
   // };
 
-  // if (pastActivites !== undefined || pastActivities.length !== 0) {
-  //   hide(pastActivityMessage);
-  // } else {
-  //   show(pastActivityMessage);
-  // };
+  if (pastActivites === []) {
+    show(pastActivityMessage);
+  } else {
+    hide(pastActivityMessage);
+  };
 
   renderPastActivities();
   // hide(pastActivityMessage);
