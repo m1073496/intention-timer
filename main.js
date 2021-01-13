@@ -54,10 +54,7 @@ categoryBoxWrapper.addEventListener('click', findCategory);
 
 startActivityButton.addEventListener('click', submitForm);
 
-startTimerButton.addEventListener('click', function() {
-  startTimerButton.classList.add('cannot-click');
-  currentActivity.startTimer();
-});
+startTimerButton.addEventListener('click', beginCountdown);
 
 logActivityButton.addEventListener('click', logActivityEvents);
 
@@ -208,6 +205,16 @@ function submitForm(event) {
   }
 }
 
+function formatNumber(number) {
+  var parsedNumber = parseInt(number);
+  if (parsedNumber < 10) {
+    var stringNumber = `0` + parsedNumber;
+    return stringNumber;
+  } else {
+    return number;
+  }
+}
+
 function validateInput() {
   validateCategory();
   validateDescription();
@@ -299,14 +306,9 @@ function findCategoryChoice() {
   return myChoice;
 }
 
-function formatNumber(number) {
-  var parsedNumber = parseInt(number);
-  if (parsedNumber < 10) {
-    var stringNumber = `0` + parsedNumber;
-    return stringNumber;
-  } else {
-    return number;
-  }
+function beginCountdown() {
+  startTimerButton.classList.add('cannot-click');
+  currentActivity.startTimer();
 }
 
 function completeActivity() {
