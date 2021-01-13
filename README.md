@@ -65,7 +65,7 @@ Project requirements can be found [here](https://frontend.turing.io/projects/mod
 
   ![](https://media.giphy.com/media/CLpJhQYXfTPsLAUiOE/giphy.gif)
 
-###Iteration 3 - Build an MVP
+### Iteration 3 - Build an MVP
   * The user can start the time by clicking Start.
   * While timer is running, the user should see it count down by second.
   * When the timer completes, an alert should appear in the browser, letting the user know that the time is up and the activity has been completed.
