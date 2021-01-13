@@ -105,7 +105,7 @@ function reviveActivitiesFromStorage(storedActivities) {
 }
 
 function renderPastActivities() {
-  pastActivityCardHolder.innerHTML = "";
+  pastActivityCardHolder.innerHTML = '';
 
   for (var i = 0; i < pastActivities.length; i++) {
     var minutes = pastActivities[i].minutes;
@@ -151,13 +151,13 @@ function determineSecondsWord(seconds) {
 }
 
 function findCategory(event) {
-  if (event.target.classList.contains("radio-study")) {
+  if (event.target.classList.contains('radio-study')) {
     activateStudyImage();
     startTimerButton.className = 'circle-outline circle-outline-study';
-  } else if (event.target.classList.contains("radio-meditate")) {
+  } else if (event.target.classList.contains('radio-meditate')) {
     activateMeditateImage();
     startTimerButton.className = 'circle-outline circle-outline-meditate';
-  } else if (event.target.classList.contains("radio-exercise")) {
+  } else if (event.target.classList.contains('radio-exercise')) {
     activateExerciseImage();
     startTimerButton.className = 'circle-outline circle-outline-exercise';
   }
@@ -200,7 +200,7 @@ function submitForm(event) {
     countdownSeconds.innerText = formatNumber(currentActivity.seconds);
     timerBoxHeader.innerText = currentActivity.description;
     startTimerButton.classList.remove('cannot-click');
-    pageHeader.innerText = "Current Activity";
+    pageHeader.innerText = 'Current Activity';
     hide(logActivityButton);
   }
 }
@@ -314,7 +314,7 @@ function beginCountdown() {
 function completeActivity() {
   congratsMsg.classList.remove('hidden');
   countdownClock.classList.add('hidden');
-  startCircleText.innerText = "COMPLETE";
+  startCircleText.innerText = 'COMPLETE';
   show(logActivityButton);
   currentActivity.markComplete();
 }
@@ -327,8 +327,8 @@ function logActivityEvents() {
   countdownMinutes.innerText = formatNumber(currentActivity.minutes);
   countdownSeconds.innerText = formatNumber(currentActivity.seconds);
   timerBoxHeader.innerText = currentActivity.description;
-  pageHeader.innerText = "Completed Activity";
-  startCircleText.innerText = "START";
+  pageHeader.innerText = 'Completed Activity';
+  startCircleText.innerText = 'START';
   pastActivities = [];
   currentActivity.saveToStorage();
   populatePastActivities();
@@ -341,7 +341,7 @@ function returnToActivityForm() {
   clearActivityForm();
   congratsMsg.classList.add('hidden');
   countdownClock.classList.remove('hidden');
-  pageHeader.innerText = "New Activity";
+  pageHeader.innerText = 'New Activity';
 }
 
 function clearActivityForm() {
@@ -354,7 +354,7 @@ function clearActivityForm() {
   show(studyImage);
   show(meditateImage);
   show(exerciseImage);
-  accomplishInput.value = "";
-  minutesInput.value = "";
-  secondsInput.value = "";
+  accomplishInput.value = '';
+  minutesInput.value = '';
+  secondsInput.value = '';
 }
