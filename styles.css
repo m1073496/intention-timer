@@ -387,3 +387,16 @@ timer-box-wrapper {
 .hidden {
   display: none;
 }
+
+/* ------------------MEDIA QUERIES-------------------- */
+@media only screen and (max-width: 900px) {
+  .vertical-line {
+    left: 95%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .vertical-line {
+    left: 94%;
+  }
+}
